@@ -419,6 +419,18 @@ def sources_graph(current_user: User = Depends(get_current_user), db: Session = 
     ]
 
 
+@app.get("/graph/full")
+def graph_full(current_user: User = Depends(get_current_user)):
+    """Entity/relationship graph for the Knowledge Graph explorer page.
+    Read-only; derived from knowledge_sources + Chroma chunk metadata by a
+    graph-only adapter (graph_service). Does not touch the RAG pipeline."""
+    import graph_service
+    try:
+        return graph_service.build_graph()
+    except Exception as e:  # noqa: BLE001
+        raise HTTPException(status_code=500, detail=f"graph build failed: {e}")
+
+
 @app.delete("/sources/{source_id}")
 def remove_source(
     source_id: int,

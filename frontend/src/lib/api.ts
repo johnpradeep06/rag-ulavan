@@ -31,6 +31,7 @@ export const API_ENDPOINTS = {
   ingestFeed: `${API_BASE_URL}/ingest/feed`,
   sources: `${API_BASE_URL}/sources`,
   sourcesGraph: `${API_BASE_URL}/sources/graph`,
+  graphFull: `${API_BASE_URL}/graph/full`,
   deleteSource: (id: number | string) => `${API_BASE_URL}/sources/${id}`,
 
   // Admin runtime settings
