@@ -2,16 +2,18 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Sprout, Cpu, Filter, Layers, Waypoints } from "lucide-react";
+import { ArrowLeft, Sprout, Cpu, Filter, Layers, Waypoints, Map as MapIcon } from "lucide-react";
 import { API_ENDPOINTS } from "@/lib/api";
 import type { KnowledgeSource } from "@/lib/ingestStream";
 import IngestPanel from "@/components/admin/IngestPanel";
 import SourceList from "@/components/admin/SourceList";
 import GuardrailToggle from "@/components/admin/GuardrailToggle";
 import PageBackground from "@/components/primitives/PageBackground";
+import { useTranslation, LanguageToggle } from "@/i18n";
 
 export default function AdminPage() {
     const router = useRouter();
+    const { t } = useTranslation();
     const [loading, setLoading] = useState(true);
     const [sources, setSources] = useState<KnowledgeSource[]>([]);
 
@@ -39,7 +41,7 @@ export default function AdminPage() {
     }, [router, fetchSources]);
 
     if (loading) {
-        return <div className="flex min-h-[100dvh] items-center justify-center bg-canvas text-ink-2">Loading admin…</div>;
+        return <div className="flex min-h-[100dvh] items-center justify-center bg-canvas text-ink-2">{t("common.loading")}</div>;
     }
 
     const totalChunks = sources.reduce((n, s) => n + s.chunk_count, 0);
@@ -52,7 +54,7 @@ export default function AdminPage() {
                     <button
                         onClick={() => router.push("/")}
                         className="rounded-lg p-1.5 text-ink-3 transition-colors hover:bg-hover hover:text-ink"
-                        title="Back to consultation"
+                        title={t("common.back")}
                     >
                         <ArrowLeft size={18} />
                     </button>
@@ -63,15 +65,25 @@ export default function AdminPage() {
                         <span className="text-[13.5px] font-semibold tracking-wider text-ink uppercase">RAG UZHAVAN</span>
                     </div>
                     <span className="text-ink-3 font-mono text-xs">/</span>
-                    <span className="text-[13px] text-ink-2 font-light">Corpus Operations</span>
+                    <span className="text-[13px] text-ink-2 font-light">{t("admin.title")}</span>
                 </div>
-                <button
-                    onClick={() => router.push("/graph")}
-                    className="flex items-center gap-2 rounded-lg border border-line bg-surface/80 px-3 py-1.5 text-[12.5px] font-medium text-ink-2 shadow-sm backdrop-blur-sm transition-all hover:bg-hover hover:text-ink hover:border-emerald-500/40"
-                >
-                    <Waypoints size={14} className="text-emerald-400" />
-                    Knowledge Graph
-                </button>
+                <div className="flex items-center gap-2.5">
+                    <button
+                        onClick={() => router.push("/map")}
+                        className="flex items-center gap-2 rounded-lg border border-line bg-surface/80 px-3 py-1.5 text-[12.5px] font-medium text-ink-2 shadow-sm backdrop-blur-sm transition-all hover:bg-hover hover:text-ink hover:border-emerald-500/40"
+                    >
+                        <MapIcon size={14} className="text-emerald-400" />
+                        {t("nav.agriMap")}
+                    </button>
+                    <button
+                        onClick={() => router.push("/graph")}
+                        className="flex items-center gap-2 rounded-lg border border-line bg-surface/80 px-3 py-1.5 text-[12.5px] font-medium text-ink-2 shadow-sm backdrop-blur-sm transition-all hover:bg-hover hover:text-ink hover:border-emerald-500/40"
+                    >
+                        <Waypoints size={14} className="text-emerald-400" />
+                        {t("nav.graphExplorer")}
+                    </button>
+                    <LanguageToggle />
+                </div>
             </div>
 
             {/* Content */}

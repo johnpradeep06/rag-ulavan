@@ -1,0 +1,16 @@
+{
+  "IN-DL-DEL": {
+    "geo_id": "IN-DL-DEL",
+    "district_name": "Delhi",
+    "state_name": "Delhi",
+    "state_geo_id": "IN-DL",
+    "agro_climatic_zone": "North Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": null,
+    "weather_warning": null,
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  }
+}

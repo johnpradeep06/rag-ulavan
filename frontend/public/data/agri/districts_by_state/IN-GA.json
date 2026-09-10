@@ -1,0 +1,100 @@
+{
+  "IN-GA-NOR": {
+    "geo_id": "IN-GA-NOR",
+    "district_name": "North Goa",
+    "state_name": "Goa",
+    "state_geo_id": "IN-GA",
+    "agro_climatic_zone": "West Agro-Climatic Zone",
+    "recorded_crops": [
+      "Arecanut",
+      "Banana",
+      "Black pepper",
+      "Cashewnut",
+      "Coconut",
+      "Groundnut",
+      "Mango",
+      "Other  Rabi pulses",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Pineapple",
+      "Ragi",
+      "Rice",
+      "Sugarcane"
+    ],
+    "rainfall": {
+      "available": true,
+      "bulletin_date": "2026-09-09",
+      "period_type": "daily",
+      "period_label": "24-hour daily rainfall ending 08:30 IST",
+      "actual_rainfall_mm": 12.5,
+      "normal_rainfall_mm": 19.7,
+      "departure_pct": -36.5,
+      "category": "Deficient",
+      "source": "IMD District Rainfall Bulletin",
+      "source_url": "https://mausam.imd.gov.in"
+    },
+    "weather_warning": {
+      "available": true,
+      "alert_level": "No Warning",
+      "color_code": "Green",
+      "hazard": "No severe weather expected",
+      "valid_today": "2026-09-10",
+      "source": "IMD District Weather Warning",
+      "source_url": "https://mausam.imd.gov.in/responsive/districtWiseWarning.php"
+    },
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  },
+  "IN-GA-SOU": {
+    "geo_id": "IN-GA-SOU",
+    "district_name": "South Goa",
+    "state_name": "Goa",
+    "state_geo_id": "IN-GA",
+    "agro_climatic_zone": "West Agro-Climatic Zone",
+    "recorded_crops": [
+      "Arecanut",
+      "Banana",
+      "Black pepper",
+      "Cashewnut",
+      "Coconut",
+      "Groundnut",
+      "Mango",
+      "Other  Rabi pulses",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Pineapple",
+      "Ragi",
+      "Rice",
+      "Sugarcane"
+    ],
+    "rainfall": {
+      "available": true,
+      "bulletin_date": "2026-09-09",
+      "period_type": "daily",
+      "period_label": "24-hour daily rainfall ending 08:30 IST",
+      "actual_rainfall_mm": 47.2,
+      "normal_rainfall_mm": 23.8,
+      "departure_pct": 98.3,
+      "category": "Large Excess",
+      "source": "IMD District Rainfall Bulletin",
+      "source_url": "https://mausam.imd.gov.in"
+    },
+    "weather_warning": {
+      "available": true,
+      "alert_level": "No Warning",
+      "color_code": "Green",
+      "hazard": "No severe weather expected",
+      "valid_today": "2026-09-10",
+      "source": "IMD District Weather Warning",
+      "source_url": "https://mausam.imd.gov.in/responsive/districtWiseWarning.php"
+    },
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  }
+}

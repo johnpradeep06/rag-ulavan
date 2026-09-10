@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "../i18n";
 
 // Readable grotesque in the spirit of Perplexity's FK Grotesk — open apertures,
 // comfortable at reading sizes. Fills foundation's --font-inter slot.
@@ -37,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${bodyFont.variable} ${geistMono.variable}`}>
       <body className="antialiased">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

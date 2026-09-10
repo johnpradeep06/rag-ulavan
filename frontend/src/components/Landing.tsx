@@ -9,6 +9,7 @@ import {
 import BlurText from "@/components/primitives/BlurText";
 import PageBackground from "@/components/primitives/PageBackground";
 import BounceCardTrigger, { type PhotoItem } from "@/components/primitives/BounceCardTrigger";
+import { useTranslation, LanguageToggle } from "@/i18n";
 
 const IRRIGATION_PHOTOS: PhotoItem[] = [
     {
@@ -129,6 +130,7 @@ const MANDI_PHOTOS: PhotoItem[] = [
 
 export default function Landing() {
     const router = useRouter();
+    const { t } = useTranslation();
 
     return (
         <PageBackground variant="landing" className="h-[100dvh] overflow-y-auto text-ink">
@@ -142,30 +144,31 @@ export default function Landing() {
                         <div>
                             <div className="flex items-center gap-2">
                                 <span className="text-[15px] font-semibold tracking-wider text-ink uppercase">
-                                    RAG UZHAVAN
+                                    {t("landing.appName")}
                                 </span>
                                 <span className="font-mono text-[10px] text-emerald-400/80 uppercase">
                                     / உழவன்
                                 </span>
                             </div>
                             <p className="text-[11px] text-ink-3 font-mono tracking-tight">
-                                Region-Aware Agrarian Intelligence
+                                {t("landing.subtitle")}
                             </p>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-3">
+                        <LanguageToggle />
                         <button
                             onClick={() => router.push("/login")}
                             className="rounded-control border border-line bg-surface/80 px-4 py-2 text-[13px] font-medium text-ink-2 backdrop-blur-sm transition-all hover:bg-hover hover:text-ink hover:border-line-strong"
                         >
-                            Sign In
+                            {t("landing.signIn")}
                         </button>
                         <button
                             onClick={() => router.push("/register")}
                             className="flex items-center gap-2 rounded-control bg-emerald-600 px-4 py-2 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-emerald-500 active:scale-[0.98]"
                         >
-                            Get Started
+                            {t("landing.getStarted")}
                             <ArrowRight size={14} />
                         </button>
                     </div>
@@ -177,13 +180,13 @@ export default function Landing() {
                         {/* Status Label */}
                         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/20 px-3.5 py-1 text-[11.5px] font-mono tracking-wide text-emerald-300 backdrop-blur-sm">
                             <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                            OFFICIAL REGIONAL DATA · TAMIL NADU & DISTRICT ADVISORIES · ZERO GUESSWORK
+                            {t("landing.tagline")}
                         </div>
 
                         {/* Editorial Headline */}
                         <div className="mt-8">
                             <BlurText
-                                text="Local answers for the farm, grounded in regional science."
+                                text={t("landing.heroTitle")}
                                 as="h1"
                                 className="editorial-title text-[38px] font-medium tracking-tight text-ink sm:text-[54px] md:text-[62px]"
                                 delay={0.1}
@@ -192,9 +195,7 @@ export default function Landing() {
 
                         {/* Editorial Subhead */}
                         <p className="mx-auto mt-6 max-w-2xl text-[15.5px] leading-relaxed text-ink-2 md:text-[17.5px] font-light">
-                            Irrigation intervals, foliar disease management, sowing calendars, and mandi commodity prices — 
-                            answered strictly from university research bulletins indexed for <strong className="font-medium text-ink">your district</strong>.
-                            When reliable local evidence is absent, it refuses to guess.
+                            {t("landing.heroSubtitle")}
                         </p>
 
                         {/* CTA Buttons */}
@@ -203,14 +204,14 @@ export default function Landing() {
                                 onClick={() => router.push("/register")}
                                 className="flex w-full items-center justify-center gap-2.5 rounded-control bg-emerald-600 px-6 py-3.5 text-[14.5px] font-medium text-white shadow-lg transition-all hover:bg-emerald-500 sm:w-auto active:scale-[0.98]"
                             >
-                                Start Agronomic Consultation
+                                {t("landing.startConsultation")}
                                 <ArrowRight size={16} />
                             </button>
                             <button
                                 onClick={() => router.push("/score")}
                                 className="flex w-full items-center justify-center gap-2 rounded-control border border-line bg-surface/70 px-5 py-3.5 text-[14px] font-medium text-ink-2 backdrop-blur-sm transition-all hover:bg-hover hover:text-ink hover:border-line-strong sm:w-auto"
                             >
-                                View 52-Test Benchmark
+                                {t("landing.viewBenchmark")}
                                 <ExternalLink size={14} className="text-ink-3" />
                             </button>
                         </div>

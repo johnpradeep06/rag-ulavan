@@ -32,6 +32,10 @@ export const API_ENDPOINTS = {
   sources: `${API_BASE_URL}/sources`,
   sourcesGraph: `${API_BASE_URL}/sources/graph`,
   graphFull: `${API_BASE_URL}/graph/full`,
+  graphNeighbors: (id: string, depth = 1, limit = 12) =>
+    `${API_BASE_URL}/graph/entities/${encodeURIComponent(id)}/neighbors?depth=${depth}&limit=${limit}`,
+  graphEntity: (id: string) => `${API_BASE_URL}/graph/entities/${encodeURIComponent(id)}`,
+  graphSearch: (q: string, limit = 20) => `${API_BASE_URL}/graph/search?q=${encodeURIComponent(q)}&limit=${limit}`,
   deleteSource: (id: number | string) => `${API_BASE_URL}/sources/${id}`,
 
   // Admin runtime settings

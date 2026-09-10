@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Sprout, CheckCircle2, XCircle, ShieldCheck, FileText, Activity } from "lucide-react";
 import PageBackground from "@/components/primitives/PageBackground";
+import { useTranslation, LanguageToggle } from "@/i18n";
 
 const TOTAL = 52;
 const PASSED = 46;
@@ -26,6 +27,7 @@ function Stat({ label, value, sub, tone = "ink" }: { label: string; value: strin
 
 export default function ScorePage() {
     const router = useRouter();
+    const { t } = useTranslation();
     const [ready, setReady] = useState(false);
 
     useEffect(() => {
@@ -33,7 +35,7 @@ export default function ScorePage() {
         else setReady(true);
     }, [router]);
 
-    if (!ready) return <div className="flex h-[100dvh] items-center justify-center bg-canvas text-ink-2">Loading…</div>;
+    if (!ready) return <div className="flex h-[100dvh] items-center justify-center bg-canvas text-ink-2">{t("common.loading")}</div>;
 
     const pct = (n: number) => `${((n / TOTAL) * 100).toFixed(1)}%`;
 
@@ -42,7 +44,7 @@ export default function ScorePage() {
             {/* Top Bar */}
             <div className="sticky top-0 z-50 flex w-full items-center justify-between border-b border-line/70 bg-page/80 px-4 py-2.5 backdrop-blur-md">
                 <div className="flex items-center gap-3">
-                    <button onClick={() => router.push("/")} className="rounded-lg p-1.5 text-ink-3 transition-colors hover:bg-hover hover:text-ink" title="Back to consultation">
+                    <button onClick={() => router.push("/")} className="rounded-lg p-1.5 text-ink-3 transition-colors hover:bg-hover hover:text-ink" title={t("common.back")}>
                         <ArrowLeft size={18} />
                     </button>
                     <div className="flex items-center gap-2">
@@ -54,8 +56,11 @@ export default function ScorePage() {
                     <span className="text-ink-3 font-mono text-xs">/</span>
                     <span className="flex items-center gap-1.5 text-[13px] text-ink-2 font-light">
                         <Activity size={14} className="text-emerald-400" />
-                        Empirical Benchmark
+                        {t("score.empiricalBenchmark")}
                     </span>
+                </div>
+                <div className="flex items-center gap-3">
+                    <LanguageToggle />
                 </div>
             </div>
 
@@ -63,11 +68,11 @@ export default function ScorePage() {
                 {/* Hero */}
                 <div className="rounded-2xl border border-line bg-surface/80 p-8 shadow-xl backdrop-blur-sm">
                     <div className="text-[11.5px] font-mono tracking-widest text-emerald-400 uppercase">
-                        EMPIRICAL ACCURACY RATE
+                        {t("score.accuracyRate")}
                     </div>
                     <div className="mt-2 flex items-baseline gap-4">
                         <span className="text-[56px] font-semibold leading-none tracking-tight text-ink">{RATE}%</span>
-                        <span className="text-[14px] text-ink-3 font-mono">= {PASSED} passed / {TOTAL} total evaluations</span>
+                        <span className="text-[14px] text-ink-3 font-mono">{t("score.passedOfTotal", { passed: PASSED, total: TOTAL })}</span>
                     </div>
                     <p className="mt-3 max-w-xl text-[14.5px] leading-relaxed text-ink-2 font-light">
                         Across <span className="font-medium text-ink">{TOTAL}</span> district–crop question pairs with verified ground
@@ -82,44 +87,44 @@ export default function ScorePage() {
                         <div className="bg-rose-500 rounded-r-full transition-all" style={{ width: pct(FAILED) }} title={`${FAILED} below bar`} />
                     </div>
                     <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1.5 text-[12px] text-ink-3 font-mono">
-                        <span className="flex items-center gap-2"><span className="size-2 rounded-full bg-emerald-500" /> {ANSWERED_OK} Answered Correctly</span>
-                        <span className="flex items-center gap-2"><span className="size-2 rounded-full bg-teal-500" /> {REFUSED_OK} Correctly Refused</span>
-                        <span className="flex items-center gap-2"><span className="size-2 rounded-full bg-rose-500" /> {FAILED} Below Threshold</span>
+                        <span className="flex items-center gap-2"><span className="size-2 rounded-full bg-emerald-500" /> {t("score.answeredCorrectly", { count: ANSWERED_OK })}</span>
+                        <span className="flex items-center gap-2"><span className="size-2 rounded-full bg-teal-500" /> {t("score.correctlyRefused", { count: REFUSED_OK })}</span>
+                        <span className="flex items-center gap-2"><span className="size-2 rounded-full bg-rose-500" /> {t("score.belowThreshold", { count: FAILED })}</span>
                     </div>
                 </div>
 
                 {/* Stat grid */}
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                    <Stat label="Eval Pairs" value={String(TOTAL)} sub="District–crop questions" />
-                    <Stat label="Passed" value={String(PASSED)} sub={`${RATE}% overall score`} tone="green" />
-                    <Stat label="Refused Ok" value={String(REFUSED_OK)} sub="Zero hallucinations" tone="green" />
-                    <Stat label="Hallucination" value="≈ 0%" sub="All claims cited" tone="ink" />
+                    <Stat label={t("score.evalPairs")} value={String(TOTAL)} sub={t("score.evalPairsSub")} />
+                    <Stat label={t("score.passed")} value={String(PASSED)} sub={t("score.passedSub", { rate: RATE })} tone="green" />
+                    <Stat label={t("score.refusedOk")} value={String(REFUSED_OK)} sub={t("score.refusedOkSub")} tone="green" />
+                    <Stat label={t("score.hallucination")} value="≈ 0%" sub={t("score.hallucinationSub")} tone="ink" />
                 </div>
 
                 {/* Breakdown */}
                 <div className="rounded-xl border border-line bg-surface/70 p-6 shadow-sm backdrop-blur-sm">
                     <h3 className="mb-4 flex items-center gap-2 text-[14px] font-medium text-ink">
-                        <ShieldCheck size={16} className="text-emerald-400" /> Evaluation Taxonomy
+                        <ShieldCheck size={16} className="text-emerald-400" /> {t("score.taxonomy")}
                     </h3>
                     <div className="space-y-3.5 text-[13px] text-ink-2 font-light">
                         <div className="flex items-start gap-3">
                             <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-emerald-400" />
                             <div>
-                                <span className="font-medium text-ink">{ANSWERED_OK} answered correctly.</span> The system had published
+                                <span className="font-medium text-ink">{t("score.answeredCorrectly", { count: ANSWERED_OK })}.</span> The system had published
                                 regional advisories, retrieved the matching passages, and synthesized verbatim dosage and timing protocols.
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
                             <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-teal-400" />
                             <div>
-                                <span className="font-medium text-ink">{REFUSED_OK} correctly refused.</span> The query pertained to a district
+                                <span className="font-medium text-ink">{t("score.correctlyRefused", { count: REFUSED_OK })}.</span> The query pertained to a district
                                 or crop with no indexed coverage — the system cleanly emitted <span className="font-mono text-[12px] text-emerald-300">no current data for your location</span> instead of fabricating advice.
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
                             <XCircle size={16} className="mt-0.5 shrink-0 text-rose-400" />
                             <div>
-                                <span className="font-medium text-ink">{FAILED} below threshold.</span> Passages where retrieval confidence was borderline or district metadata was underspecified.
+                                <span className="font-medium text-ink">{t("score.belowThreshold", { count: FAILED })}.</span> Passages where retrieval confidence was borderline or district metadata was underspecified.
                             </div>
                         </div>
                     </div>
@@ -128,7 +133,7 @@ export default function ScorePage() {
                 {/* Groundedness */}
                 <div className="rounded-xl border border-line bg-surface/70 p-6 shadow-sm backdrop-blur-sm">
                     <h3 className="mb-3 flex items-center gap-2 text-[14px] font-medium text-ink">
-                        <FileText size={16} className="text-emerald-400" /> Groundedness & Provenance Protocol
+                        <FileText size={16} className="text-emerald-400" /> {t("score.groundednessProtocol")}
                     </h3>
                     <ul className="space-y-2 text-[13px] leading-relaxed text-ink-2 font-light">
                         <li>• 100% of numerical prescriptions (seed rates, fertilizer doses, spray schedules, APMC modal prices) are quoted verbatim.</li>
@@ -139,7 +144,7 @@ export default function ScorePage() {
 
                 {/* Method */}
                 <div className="rounded-xl border border-line bg-surface/70 p-6 shadow-sm backdrop-blur-sm">
-                    <h3 className="mb-2 text-[14px] font-medium text-ink">Reproduction Instructions</h3>
+                    <h3 className="mb-2 text-[14px] font-medium text-ink">{t("score.reproductionInstructions")}</h3>
                     <p className="text-[13px] text-ink-3 font-light">
                         The test suite evaluates retrieval coverage, region compliance, and grounding against ground-truth benchmarks.
                     </p>

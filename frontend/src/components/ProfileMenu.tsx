@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Pencil, Check, X, Loader2 } from "lucide-react";
 import { API_ENDPOINTS } from "@/lib/api";
+import { useTranslation } from "@/i18n";
 
 type Profile = {
     username: string;
@@ -14,21 +15,22 @@ type Profile = {
     primary_crop: string | null;
 };
 
-const FIELDS: { key: keyof Profile; label: string; placeholder: string }[] = [
-    { key: "full_name", label: "Name", placeholder: "Your name" },
-    { key: "phone", label: "Phone", placeholder: "Mobile number" },
-    { key: "state", label: "State", placeholder: "e.g. Tamil Nadu" },
-    { key: "district", label: "District", placeholder: "e.g. Thanjavur" },
-    { key: "primary_crop", label: "Primary crop", placeholder: "e.g. Rice" },
-];
-
 export default function ProfileMenu() {
+    const { t } = useTranslation();
     const [profile, setProfile] = useState<Profile | null>(null);
     const [open, setOpen] = useState(false);
     const [editing, setEditing] = useState(false);
     const [draft, setDraft] = useState<Partial<Profile>>({});
     const [saving, setSaving] = useState(false);
     const wrapRef = useRef<HTMLDivElement>(null);
+
+    const fields: { key: keyof Profile; label: string; placeholder: string }[] = [
+        { key: "full_name", label: t("profile.name"), placeholder: t("profile.namePlaceholder") },
+        { key: "phone", label: t("profile.phone"), placeholder: t("profile.phonePlaceholder") },
+        { key: "state", label: t("profile.state"), placeholder: t("profile.statePlaceholder") },
+        { key: "district", label: t("profile.district"), placeholder: t("profile.districtPlaceholder") },
+        { key: "primary_crop", label: t("profile.primaryCrop"), placeholder: t("profile.primaryCropPlaceholder") },
+    ];
 
     const load = useCallback(async () => {
         const token = localStorage.getItem("token");
@@ -118,7 +120,7 @@ export default function ProfileMenu() {
                         {!editing && (
                             <button
                                 onClick={startEdit}
-                                title="Edit profile"
+                                title={t("profile.edit")}
                                 className="ml-auto rounded-control p-1.5 text-ink-3 transition-colors hover:bg-hover hover:text-ink"
                             >
                                 <Pencil size={13} />
@@ -127,7 +129,7 @@ export default function ProfileMenu() {
                     </div>
 
                     <div className="space-y-1.5 border-t border-line pt-2.5 text-[12.5px]">
-                        {FIELDS.map((f) => (
+                        {fields.map((f) => (
                             <div key={f.key} className="flex items-center gap-2">
                                 <span className="w-[86px] shrink-0 text-ink-3">{f.label}</span>
                                 {editing ? (
@@ -154,14 +156,14 @@ export default function ProfileMenu() {
                                 className="flex flex-1 items-center justify-center gap-1.5 rounded-control bg-accent py-1.5 text-[12px] font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
                             >
                                 {saving ? <Loader2 size={13} className="animate-spin" /> : <Check size={13} />}
-                                Save
+                                {t("common.save")}
                             </button>
                             <button
                                 onClick={() => setEditing(false)}
                                 className="flex items-center justify-center gap-1.5 rounded-control border border-line px-3 py-1.5 text-[12px] font-medium text-ink-2 transition-colors hover:bg-hover"
                             >
                                 <X size={13} />
-                                Cancel
+                                {t("common.cancel")}
                             </button>
                         </div>
                     )}

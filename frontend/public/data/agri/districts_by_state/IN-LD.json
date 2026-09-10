@@ -1,0 +1,16 @@
+{
+  "IN-LD-KAV": {
+    "geo_id": "IN-LD-KAV",
+    "district_name": "Kavaratti",
+    "state_name": "Lakshadweep",
+    "state_geo_id": "IN-LD",
+    "agro_climatic_zone": "South Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": null,
+    "weather_warning": null,
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  }
+}

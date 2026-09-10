@@ -420,6 +420,7 @@ def sources_graph(current_user: User = Depends(get_current_user), db: Session = 
 
 
 @app.get("/graph/full")
+@app.get("/api/graph/full")
 def graph_full(current_user: User = Depends(get_current_user)):
     """Entity/relationship graph for the Knowledge Graph explorer page.
     Read-only; derived from knowledge_sources + Chroma chunk metadata by a
@@ -429,6 +430,52 @@ def graph_full(current_user: User = Depends(get_current_user)):
         return graph_service.build_graph()
     except Exception as e:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=f"graph build failed: {e}")
+
+
+@app.get("/graph/entities/{entity_id:path}/neighbors")
+@app.get("/api/graph/entities/{entity_id:path}/neighbors")
+def graph_neighbors(
+    entity_id: str,
+    depth: int = 1,
+    limit: int = 12,
+    current_user: User = Depends(get_current_user),
+):
+    """Read-only focused neighborhood query (1-hop or 2-hop) for an entity."""
+    import graph_service
+    try:
+        return graph_service.get_neighbors(entity_id=entity_id, depth=depth, limit=limit)
+    except Exception as e:  # noqa: BLE001
+        raise HTTPException(status_code=500, detail=f"neighborhood lookup failed: {e}")
+
+
+@app.get("/graph/entities/{entity_id:path}")
+@app.get("/api/graph/entities/{entity_id:path}")
+def graph_entity(
+    entity_id: str,
+    current_user: User = Depends(get_current_user),
+):
+    """Read-only lookup for a single entity."""
+    import graph_service
+    node = graph_service.get_entity(entity_id)
+    if not node:
+        raise HTTPException(status_code=404, detail="Entity not found")
+    return node
+
+
+@app.get("/graph/search")
+@app.get("/api/graph/search")
+def graph_search(
+    q: str = "",
+    type: str | None = None,
+    limit: int = 20,
+    current_user: User = Depends(get_current_user),
+):
+    """Read-only search across graph entities."""
+    import graph_service
+    try:
+        return graph_service.search_entities(q=q, ntype=type, limit=limit)
+    except Exception as e:  # noqa: BLE001
+        raise HTTPException(status_code=500, detail=f"graph search failed: {e}")
 
 
 @app.delete("/sources/{source_id}")

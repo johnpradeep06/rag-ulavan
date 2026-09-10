@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import {
     ArrowUp, Square, Menu, Plus, MessageSquare, X, Search as SearchIcon, Sprout, Waypoints,
     Droplets, Bug, IndianRupee, FlaskConical, Quote as QuoteIcon,
-    SlidersHorizontal, Gauge, Thermometer, Wind, Trash2,
+    SlidersHorizontal, Gauge, Thermometer, Wind, Trash2, Map as MapIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { API_ENDPOINTS } from "@/lib/api";
@@ -16,6 +16,7 @@ import LoadingState from "@/components/primitives/LoadingState";
 import SearchList from "@/components/primitives/SearchList";
 import SelectionActions from "@/components/primitives/SelectionActions";
 import PageBackground from "@/components/primitives/PageBackground";
+import { useTranslation, LanguageToggle } from "@/i18n";
 
 type Message = {
     role: "user" | "assistant";
@@ -32,21 +33,6 @@ type ChatSession = {
     title: string;
     created_at: string;
 };
-
-const SUGGESTED_QUERIES = [
-    { text: "When should I irrigate my paddy this week?", icon: Droplets, label: "Irrigation Schedule", color: "text-emerald-400" },
-    { text: "How do I identify and manage leaf blast in rice?", icon: Bug, label: "Pest & Blast Protocol", color: "text-amber-400" },
-    { text: "What is the recommended sowing window for groundnut in my district?", icon: Sprout, label: "District Sowing Window", color: "text-teal-400" },
-    { text: "What is the current mandi price for tomato?", icon: IndianRupee, label: "APMC Mandi Rates", color: "text-rose-400" },
-    { text: "What is the fertiliser dose for maize at the vegetative stage?", icon: FlaskConical, label: "Fertiliser Dosage", color: "text-emerald-400" },
-];
-
-const PLACEHOLDERS = [
-    "Ask about irrigation, pests, sowing or mandi prices…",
-    "When should I irrigate my paddy?",
-    "How do I manage stem borer in rice?",
-    "Today's mandi price for onion?",
-];
 
 /** Split a user message into its leading blockquote (from "Quote" on a selection)
  *  and the question body, so the bubble can render the excerpt as a real quote. */
@@ -72,6 +58,7 @@ function upsertStep(steps: Step[], next: Step): Step[] {
 }
 
 export default function ChatInterface() {
+    const { t } = useTranslation();
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState("");
     const [quote, setQuote] = useState<string | null>(null);
@@ -98,13 +85,28 @@ export default function ChatInterface() {
         el.style.height = `${Math.min(el.scrollHeight, 224)}px`;
     }, [input]);
 
+    // Localized suggestions and placeholders
+    const suggestedQueries = useMemo(() => [
+        { text: t("chat.suggestions.dripIrrigationQuery"), icon: Droplets, label: t("chat.suggestions.dripIrrigation"), color: "text-emerald-400" },
+        { text: t("chat.suggestions.paddyBlastQuery"), icon: Bug, label: t("chat.suggestions.paddyBlast"), color: "text-amber-400" },
+        { text: t("chat.suggestions.tomatoLeafCurlQuery"), icon: Sprout, label: t("chat.suggestions.tomatoLeafCurl"), color: "text-teal-400" },
+        { text: t("chat.suggestions.cottonFertilizerQuery"), icon: FlaskConical, label: t("chat.suggestions.cottonFertilizer"), color: "text-emerald-400" },
+    ], [t]);
+
+    const placeholders = useMemo(() => [
+        t("chat.askPlaceholder"),
+        t("chat.suggestions.paddyBlastQuery"),
+        t("chat.suggestions.dripIrrigationQuery"),
+        t("chat.suggestions.tomatoLeafCurlQuery"),
+    ], [t]);
+
     const [currentPlaceholder, setCurrentPlaceholder] = useState("");
     const [placeholderIndex, setPlaceholderIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
         const timeoutContext = setTimeout(() => {
-            const fullText = PLACEHOLDERS[placeholderIndex];
+            const fullText = placeholders[placeholderIndex % placeholders.length] || t("chat.askPlaceholder");
             if (!isDeleting) {
                 setCurrentPlaceholder(fullText.substring(0, currentPlaceholder.length + 1));
                 if (currentPlaceholder.length === fullText.length) {
@@ -114,12 +116,12 @@ export default function ChatInterface() {
                 setCurrentPlaceholder(fullText.substring(0, currentPlaceholder.length - 1));
                 if (currentPlaceholder.length === 0) {
                     setIsDeleting(false);
-                    setPlaceholderIndex((prev) => (prev + 1) % PLACEHOLDERS.length);
+                    setPlaceholderIndex((prev) => (prev + 1) % placeholders.length);
                 }
             }
         }, isDeleting ? 30 : 55);
         return () => clearTimeout(timeoutContext);
-    }, [currentPlaceholder, isDeleting, placeholderIndex]);
+    }, [currentPlaceholder, isDeleting, placeholderIndex, placeholders, t]);
 
     useEffect(() => {
         if (window.innerWidth < 768) setSidebarOpen(false);
@@ -395,7 +397,7 @@ export default function ChatInterface() {
                             text-[14px] font-medium text-ink shadow-btn transition-colors hover:bg-hover"
                     >
                         <Plus size={16} />
-                        New chat
+                        {t("chat.newChat")}
                     </button>
 
                     <button
@@ -404,7 +406,7 @@ export default function ChatInterface() {
                             text-ink-2 transition-colors hover:bg-hover hover:text-ink"
                     >
                         <SearchIcon size={16} />
-                        Search chats
+                        {t("chat.searchChats")}
                         <kbd className="ml-auto rounded-[5px] bg-inset px-1.5 py-0.5 font-mono text-[10px] text-ink-3 shadow-hairline">
                             ⌘K
                         </kbd>
@@ -416,7 +418,16 @@ export default function ChatInterface() {
                             text-ink-2 transition-colors hover:bg-hover hover:text-ink"
                     >
                         <Waypoints size={16} />
-                        Knowledge graph
+                        {t("nav.graphExplorer")}
+                    </button>
+
+                    <button
+                        onClick={() => router.push("/map")}
+                        className="flex items-center gap-2.5 rounded-control px-3 py-2 text-[14px]
+                            text-ink-2 transition-colors hover:bg-hover hover:text-ink"
+                    >
+                        <MapIcon size={16} />
+                        {t("nav.agriMap")}
                     </button>
 
                     <button
@@ -425,15 +436,15 @@ export default function ChatInterface() {
                             text-ink-2 transition-colors hover:bg-hover hover:text-ink"
                     >
                         <Gauge size={16} />
-                        Evaluation
+                        {t("nav.benchmark")}
                     </button>
 
                     <div className="custom-scrollbar mt-5 flex-1 overflow-y-auto pr-1">
                         <div className="px-2 py-1.5 text-[11px] font-semibold tracking-wide text-ink-3 uppercase">
-                            Recent
+                            {t("chat.recent")}
                         </div>
                         {sessions.length === 0 ? (
-                            <div className="px-2 py-2 text-[13.5px] text-ink-3">No previous chats</div>
+                            <div className="px-2 py-2 text-[13.5px] text-ink-3">{t("chat.noPreviousChats")}</div>
                         ) : (
                             sessions.map((session) => (
                                 <div
@@ -467,7 +478,7 @@ export default function ChatInterface() {
                             <div className="flex size-8 items-center justify-center rounded-full bg-inset text-[13px] font-semibold text-ink-2 shadow-hairline">
                                 U
                             </div>
-                            <div className="text-[13.5px] font-medium text-ink-2">Farmer</div>
+                            <div className="text-[13.5px] font-medium text-ink-2">{t("chat.farmer")}</div>
                         </div>
                     </div>
                 </div>
@@ -475,21 +486,26 @@ export default function ChatInterface() {
 
             {/* Main */}
             <div className="relative flex h-full w-full flex-1 flex-col overflow-hidden">
-                <div className="sticky top-0 z-20 flex items-center gap-2.5 p-3">
-                    <button
-                        onClick={() => setSidebarOpen(!sidebarOpen)}
-                        className="rounded-control p-2 text-ink-3 transition-colors hover:bg-hover hover:text-ink"
-                        title="Toggle sidebar"
-                    >
-                        <Menu size={18} />
-                    </button>
-                    <span className={`items-center gap-2.5 ${sidebarOpen ? "flex md:hidden" : "flex"}`}>
-                        <span className="flex size-6 items-center justify-center rounded-md bg-emerald-500/10 text-emerald-400">
-                            <Sprout size={13} strokeWidth={2.4} />
+                <div className="sticky top-0 z-20 flex items-center justify-between gap-2.5 p-3">
+                    <div className="flex items-center gap-2.5">
+                        <button
+                            onClick={() => setSidebarOpen(!sidebarOpen)}
+                            className="rounded-control p-2 text-ink-3 transition-colors hover:bg-hover hover:text-ink"
+                            title="Toggle sidebar"
+                        >
+                            <Menu size={18} />
+                        </button>
+                        <span className={`items-center gap-2.5 ${sidebarOpen ? "flex md:hidden" : "flex"}`}>
+                            <span className="flex size-6 items-center justify-center rounded-md bg-emerald-500/10 text-emerald-400">
+                                <Sprout size={13} strokeWidth={2.4} />
+                            </span>
+                            <span className="text-[13.5px] font-semibold tracking-wider text-ink uppercase">RAG UZHAVAN</span>
+                            <span className="hidden text-[12px] font-mono text-ink-3 sm:inline">· {t("chat.districtSupport")}</span>
                         </span>
-                        <span className="text-[13.5px] font-semibold tracking-wider text-ink uppercase">RAG UZHAVAN</span>
-                        <span className="hidden text-[12px] font-mono text-ink-3 sm:inline">· District Advisory Support</span>
-                    </span>
+                    </div>
+
+                    <div className="flex items-center gap-2 pr-40 md:pr-48">
+                    </div>
                 </div>
 
                 {messages.length > 0 && (
@@ -566,10 +582,10 @@ export default function ChatInterface() {
                                 onClick={jumpToBottom}
                                 className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-[12.5px] font-medium text-ink-2 shadow-overlay transition-colors hover:bg-hover hover:text-ink"
                                 style={{ animation: "fade-up 180ms cubic-bezier(0.23,1,0.32,1) both" }}
-                                title="Jump to latest"
+                                title={t("chat.jumpToLatest")}
                             >
                                 <ArrowUp size={13} className="rotate-180" />
-                                {isLoading ? "New replies" : "Jump to latest"}
+                                {isLoading ? t("chat.thinking") : t("chat.jumpToLatest")}
                             </button>
                         )}
                     </div>
@@ -587,10 +603,10 @@ export default function ChatInterface() {
                                     <Sprout size={24} strokeWidth={2.2} />
                                 </span>
                                 <h2 className="text-center text-[26px] font-medium tracking-tight text-ink md:text-[32px]">
-                                    Agronomic Advisory & Decision Support
+                                    {t("chat.welcome")}
                                 </h2>
                                 <p className="mt-2 text-center text-[14px] text-ink-3 font-light max-w-lg">
-                                    Query irrigation schedules, pest remediation, sowing windows, or mandi prices — grounded in verified university research for your district.
+                                    {t("chat.welcomeSub")}
                                 </p>
                             </div>
                         )}
@@ -598,9 +614,9 @@ export default function ChatInterface() {
                         {/* Mode switcher */}
                         <div className="mb-2.5 flex items-center gap-1 rounded-full bg-inset p-0.5 text-[12px] shadow-hairline">
                             {([
-                                { id: "normal", label: "Normal", icon: MessageSquare },
-                                { id: "metrics", label: "Metrics", icon: SlidersHorizontal },
-                                { id: "sensor", label: "Sensor", icon: Gauge },
+                                { id: "normal", label: t("chat.modes.normal"), title: t("chat.modes.normalDesc"), icon: MessageSquare },
+                                { id: "metrics", label: t("chat.modes.metrics"), title: t("chat.modes.metricsDesc"), icon: SlidersHorizontal },
+                                { id: "sensor", label: t("chat.modes.sensor"), title: t("chat.modes.sensorDesc"), icon: Gauge },
                             ] as const).map((m) => (
                                 <button
                                     key={m.id}
@@ -609,11 +625,7 @@ export default function ChatInterface() {
                                         ? "bg-surface text-ink shadow-btn"
                                         : "text-ink-3 hover:text-ink-2"
                                         }`}
-                                    title={
-                                        m.id === "normal" ? "Generic Q&A" :
-                                            m.id === "metrics" ? "Needs location, crop, growth stage, season" :
-                                                "Q&A with live field sensor readings"
-                                    }
+                                    title={m.title}
                                 >
                                     <m.icon size={13} />
                                     {m.label}
@@ -625,9 +637,9 @@ export default function ChatInterface() {
                         {mode === "sensor" && (
                             <div className="mb-2.5 flex w-full max-w-3xl gap-2">
                                 {([
-                                    { key: "water_level", label: "Water level", unit: "cm", icon: Droplets },
-                                    { key: "temperature", label: "Temperature", unit: "°C", icon: Thermometer },
-                                    { key: "humidity", label: "Humidity", unit: "%", icon: Wind },
+                                    { key: "water_level", label: t("telemetry.waterLevel"), unit: t("telemetry.cm"), icon: Droplets },
+                                    { key: "temperature", label: t("telemetry.temperature"), unit: t("telemetry.degC"), icon: Thermometer },
+                                    { key: "humidity", label: t("telemetry.humidity"), unit: t("telemetry.pct"), icon: Wind },
                                 ] as const).map((s) => (
                                     <div key={s.key} className="flex flex-1 items-center gap-1.5 rounded-control border border-line bg-surface px-2.5 py-1.5 focus-within:border-line-strong">
                                         <s.icon size={13} className="shrink-0 text-accent-ink" />
@@ -680,29 +692,26 @@ export default function ChatInterface() {
                             <div className="flex items-center justify-between px-3 pb-3">
                                 <span className="hidden pl-1 text-[11.5px] text-ink-3 sm:flex sm:items-center sm:gap-1.5">
                                     <kbd className="rounded-[4px] bg-inset px-1.5 py-0.5 font-mono text-[10px] shadow-hairline">⏎</kbd>
-                                    send
+                                    {t("chat.send")}
                                     <kbd className="ml-1 rounded-[4px] bg-inset px-1.5 py-0.5 font-mono text-[10px] shadow-hairline">⇧⏎</kbd>
-                                    new line
+                                    {t("chat.newLine")}
                                 </span>
                                 {isLoading ? (
                                     <button
                                         onClick={stop}
                                         className="flex size-8 items-center justify-center rounded-full bg-ink text-canvas transition-transform hover:scale-105"
-                                        title="Stop"
+                                        title={t("chat.stop")}
                                     >
                                         <Square size={13} fill="currentColor" />
                                     </button>
                                 ) : (
                                     <button
                                         onClick={() => handleSubmit()}
-                                        disabled={!input.trim()}
-                                        className={`flex size-8 items-center justify-center rounded-full transition-all ${input.trim()
-                                                ? "bg-accent text-white hover:opacity-90"
-                                                : "cursor-not-allowed bg-inset text-ink-3"
-                                            }`}
-                                        title="Send"
+                                        disabled={!input.trim() && !quote}
+                                        className="flex size-8 items-center justify-center rounded-full bg-ink text-canvas transition-transform hover:scale-105 disabled:opacity-30 disabled:hover:scale-100"
+                                        title={t("chat.send")}
                                     >
-                                        <ArrowUp size={16} />
+                                        <ArrowUp size={15} />
                                     </button>
                                 )}
                             </div>
@@ -710,7 +719,7 @@ export default function ChatInterface() {
 
                         {messages.length === 0 && (
                             <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-2">
-                                {SUGGESTED_QUERIES.map((query, idx) => (
+                                {suggestedQueries.map((query, idx) => (
                                     <button
                                         key={idx}
                                         onClick={() => handleSubmit(undefined, query.text)}
@@ -726,7 +735,7 @@ export default function ChatInterface() {
 
                         {messages.length > 0 && (
                             <p className="mt-2.5 text-center text-[11.5px] text-ink-3">
-                                RAG Uzhavan can make mistakes. Verify advice against the cited sources.
+                                {t("chat.disclaimer")}
                             </p>
                         )}
                     </div>

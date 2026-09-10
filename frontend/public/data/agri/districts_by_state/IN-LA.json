@@ -1,0 +1,57 @@
+{
+  "IN-LA-KAR": {
+    "geo_id": "IN-LA-KAR",
+    "district_name": "Kargil",
+    "state_name": "Ladakh",
+    "state_geo_id": "IN-LA",
+    "agro_climatic_zone": "North Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": {
+      "available": true,
+      "bulletin_date": "2026-09-09",
+      "period_type": "daily",
+      "period_label": "24-hour daily rainfall ending 08:30 IST",
+      "actual_rainfall_mm": 0.0,
+      "normal_rainfall_mm": 1.4,
+      "departure_pct": -100.0,
+      "category": "Large Deficient",
+      "source": "IMD District Rainfall Bulletin",
+      "source_url": "https://mausam.imd.gov.in"
+    },
+    "weather_warning": {
+      "available": true,
+      "alert_level": "No Warning",
+      "color_code": "Green",
+      "hazard": "No severe weather expected",
+      "valid_today": "2026-09-10",
+      "source": "IMD District Weather Warning",
+      "source_url": "https://mausam.imd.gov.in/responsive/districtWiseWarning.php"
+    },
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  },
+  "IN-LA-LEH": {
+    "geo_id": "IN-LA-LEH",
+    "district_name": "Leh",
+    "state_name": "Ladakh",
+    "state_geo_id": "IN-LA",
+    "agro_climatic_zone": "North Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": null,
+    "weather_warning": {
+      "available": true,
+      "alert_level": "No Warning",
+      "color_code": "Green",
+      "hazard": "No severe weather expected",
+      "valid_today": "2026-09-10",
+      "source": "IMD (District Weather Warning)",
+      "source_url": "https://mausam.imd.gov.in/responsive/districtWiseWarning.php"
+    },
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  }
+}
