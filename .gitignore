@@ -25,8 +25,9 @@ Thumbs.db
 
 # RAG Data
 users.db
-chroma_db/
 uploaded_files/
 Backend/users.db
-Backend/chroma_db/
 Backend/uploaded_files/
+Backend/campus_llm.db
+# Backend/chroma_db is committed on purpose — it is the seed vector store that
+# Railway copies onto its persistent volume on first boot.
