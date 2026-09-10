@@ -1,0 +1,79 @@
+{
+  "n_questions": 6,
+  "overall_accuracy_pct": 50.0,
+  "answerable_accuracy_pct": 50.0,
+  "refusal_accuracy_pct": null,
+  "hallucination_rate_pct": 0.0,
+  "ungrounded_claim_rate_pct": 0.0,
+  "localisation_accuracy_pct": 0.0,
+  "citation_accuracy_pct": 0.0,
+  "leakage_rate_pct": null,
+  "latency_s": {
+    "mean": 11.53,
+    "p50": 10.3,
+    "p95": 16.75,
+    "under_5s_pct": 0.0
+  },
+  "denominators": {
+    "answerable": 6,
+    "should_refuse": 0,
+    "answered": 3,
+    "retrieval_hit": 6,
+    "geographic_leakage": 0,
+    "citable": 6
+  },
+  "per_question_type": {
+    "district_advisory": {
+      "n": 6,
+      "accuracy_pct": 50.0
+    }
+  },
+  "per_language": {
+    "en": {
+      "n": 5,
+      "accuracy_pct": 40.0
+    },
+    "hi": {
+      "n": 1,
+      "accuracy_pct": 100.0
+    }
+  },
+  "per_state": {
+    "Maharashtra": {
+      "n": 3,
+      "accuracy_pct": 33.3
+    },
+    "Punjab": {
+      "n": 3,
+      "accuracy_pct": 66.7
+    }
+  },
+  "per_district": {
+    "Ahmednagar": {
+      "n": 1,
+      "accuracy_pct": 0.0
+    },
+    "Bathinda": {
+      "n": 1,
+      "accuracy_pct": 100.0
+    },
+    "Latur": {
+      "n": 1,
+      "accuracy_pct": 0.0
+    },
+    "Ludhiana": {
+      "n": 2,
+      "accuracy_pct": 50.0
+    },
+    "Nashik": {
+      "n": 1,
+      "accuracy_pct": 100.0
+    }
+  },
+  "per_file": {
+    "questions_india_wide.csv": {
+      "n": 6,
+      "accuracy_pct": 50.0
+    }
+  }
+}

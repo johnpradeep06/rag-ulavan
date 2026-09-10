@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import ChatInterface from "../components/ChatInterface";
+import ProfileMenu from "../components/ProfileMenu";
+
+import PageBackground from "../components/primitives/PageBackground";
 
 export default function Home() {
     const router = useRouter();
@@ -11,16 +14,14 @@ export default function Home() {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        const storedRole = localStorage.getItem('role');
-
         if (!token) {
-            router.push('/login');
-        } else {
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setRole(storedRole);
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setLoading(false);
+            router.replace('/home');   // logged out -> the public home page
+            return;
         }
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setRole(localStorage.getItem('role'));
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setLoading(false);
     }, [router]);
 
     const handleLogout = () => {
@@ -32,28 +33,31 @@ export default function Home() {
     if (loading) return <div className="flex h-[100dvh] items-center justify-center bg-canvas text-ink-2">Loading…</div>;
 
     return (
-        <main className="relative flex h-[100dvh] w-full flex-col overflow-hidden bg-canvas">
-            {/* Top Right Controls */}
-            <div className="absolute top-3 right-3 z-50 flex items-center gap-2">
-                {role === 'admin' && (
+        <PageBackground variant="chat" className="h-[100dvh]">
+            <main className="relative flex h-full w-full flex-col overflow-hidden bg-transparent">
+                {/* Top Right Controls */}
+                <div className="absolute top-3 right-3 z-50 flex items-center gap-2">
+                    {role === 'admin' && (
+                        <button
+                            onClick={() => router.push('/campus_admin')}
+                            className="rounded-control border border-line bg-surface/80 px-3 py-1.5 text-[12.5px] font-medium text-ink-2 shadow-btn backdrop-blur-sm transition-colors hover:bg-hover hover:text-ink hover:border-line-strong"
+                        >
+                            Admin dashboard
+                        </button>
+                    )}
                     <button
-                        onClick={() => router.push('/campus_admin')}
-                        className="rounded-control border border-line bg-surface px-3 py-1.5 text-[12.5px] font-medium text-ink-2 shadow-btn transition-colors hover:bg-hover hover:text-ink"
+                        onClick={handleLogout}
+                        className="rounded-control border border-line bg-surface/80 px-3 py-1.5 text-[12.5px] font-medium text-ink-3 shadow-btn backdrop-blur-sm transition-colors hover:bg-hover hover:text-red hover:border-line-strong"
                     >
-                        Admin dashboard
+                        Log out
                     </button>
-                )}
-                <button
-                    onClick={handleLogout}
-                    className="rounded-control border border-line bg-surface px-3 py-1.5 text-[12.5px] font-medium text-ink-3 shadow-btn transition-colors hover:bg-hover hover:text-red"
-                >
-                    Log out
-                </button>
-            </div>
+                    <ProfileMenu />
+                </div>
 
-            <div className="h-full w-full flex-1">
-                <ChatInterface />
-            </div>
-        </main>
+                <div className="h-full w-full flex-1">
+                    <ChatInterface />
+                </div>
+            </main>
+        </PageBackground>
     );
 }

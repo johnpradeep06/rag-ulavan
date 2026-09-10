@@ -48,7 +48,7 @@ export default function GithubIngest({ onSource }: { onSource: (s: KnowledgeSour
                     Clone &amp; index
                 </button>
             </div>
-            <p className="mt-2 text-[11px] text-ink-3">Indexes docs, configs and detection rules (.md .rst .yaml .py .yar …). Large binaries skipped.</p>
+            <p className="mt-2 text-[11px] text-ink-3">Indexes docs, configs and data files (.md .rst .yaml .py .json …). Large binaries skipped.</p>
             <IngestProgress {...ingest} />
         </div>
     );

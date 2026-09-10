@@ -31,7 +31,7 @@ export default function UrlIngest({ onSource }: { onSource: (s: KnowledgeSource)
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && submit()}
-                        placeholder="https://www.cisa.gov/news-events/cybersecurity-advisories/…"
+                        placeholder="https://agriwelfare.gov.in/en/Advisory/…"
                         className="min-w-0 flex-1 bg-transparent py-2.5 text-[13.5px] text-ink outline-none placeholder:text-ink-3"
                     />
                 </div>
@@ -71,9 +71,7 @@ export default function UrlIngest({ onSource }: { onSource: (s: KnowledgeSource)
             </div>
 
             <p className="mt-2 text-[11px] text-ink-3">
-                Any HTML page — advisories, write-ups, ATT&amp;CK pages. A{" "}
-                <span className="font-mono">cve.org</span> / <span className="font-mono">nvd.nist.gov</span> link
-                pulls the structured record from the CVE API.
+                Any HTML page — KVK / state advisories, package-of-practice notes, ICAR / SAU bulletins.
             </p>
             <IngestProgress {...ingest} />
         </div>

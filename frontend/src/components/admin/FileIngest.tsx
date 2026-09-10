@@ -55,7 +55,7 @@ export default function FileIngest({ onSource }: { onSource: (s: KnowledgeSource
                     <UploadCloud size={20} />
                 </div>
                 <p className="text-[14px] font-medium text-ink">Drag &amp; drop, or click to browse</p>
-                <p className="text-[12px] text-ink-3">Reports, advisories, playbooks, sheets — up to 50&nbsp;MB each</p>
+                <p className="text-[12px] text-ink-3">CSV datasets, advisories, package-of-practice notes, sheets — up to 50&nbsp;MB each</p>
             </div>
 
             {files.length > 0 && (

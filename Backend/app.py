@@ -64,6 +64,19 @@ class Token(BaseModel):
 
 class QueryRequest(BaseModel):
     question: str
+    mode: str = "normal"                       # normal | metrics | sensor
+    sensors: Optional[dict] = None             # {water_level, temperature, humidity, ...} for sensor mode
+
+
+def _persisted_question(q: "QueryRequest") -> str:
+    """Store the sensor readings alongside the question so a later follow-up in
+    the same session still has that context."""
+    if q.mode == "sensor" and q.sensors:
+        tag = ", ".join(f"{k.replace('_', ' ')} {v}"
+                        for k, v in q.sensors.items() if v not in (None, ""))
+        if tag:
+            return f"[readings: {tag}]\n{q.question}"
+    return q.question
 
 class ChatMessageResponse(BaseModel):
     id: int
@@ -179,12 +192,39 @@ def login_for_access_token(
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
+_PROFILE_FIELDS = ("full_name", "phone", "state", "district", "primary_crop")
+
+
+def _user_public(u: User) -> dict:
+    return {"username": u.username, "role": u.role,
+            **{f: getattr(u, f, None) for f in _PROFILE_FIELDS}}
+
+
+class ProfileUpdate(BaseModel):
+    full_name: Optional[str] = None
+    phone: Optional[str] = None
+    state: Optional[str] = None
+    district: Optional[str] = None
+    primary_crop: Optional[str] = None
+
+
 @app.get("/users/me")
 def read_users_me(current_user: User = Depends(get_current_user)):
-    return {
-        "username": current_user.username,
-        "role": current_user.role
-    }
+    return _user_public(current_user)
+
+
+@app.patch("/users/me")
+def update_users_me(
+    body: ProfileUpdate,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    for f, v in body.model_dump(exclude_unset=True).items():
+        setattr(current_user, f, (v or "").strip() or None)
+    db.add(current_user)
+    db.commit()
+    db.refresh(current_user)
+    return _user_public(current_user)
 
 # -------------------------
 # File Upload (Admin Only)
@@ -467,6 +507,17 @@ def get_session_messages(session_id: int, current_user: User = Depends(get_curre
         raise HTTPException(status_code=404, detail="Session not found")
     return session.messages
 
+@app.delete("/sessions/{session_id}")
+def delete_session(session_id: int, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    session = db.query(ChatSession).filter(
+        ChatSession.id == session_id, ChatSession.user_id == current_user.id
+    ).first()
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+    db.delete(session)   # messages cascade-delete via the relationship
+    db.commit()
+    return {"deleted": True}
+
 GUARDRAILS_SETTING_KEY = "guardrails_enabled"
 
 
@@ -511,8 +562,9 @@ def ask_rag_session(
     guard = guardrails.check_input(query.question, enabled=g_on)
     history = _load_history(db, session.id) if guard["allowed"] else []
 
-    # Save user message
-    user_msg = ChatMessage(session_id=session.id, role="user", content=query.question)
+    # Save user message (sensor readings prefixed so history stays coherent)
+    user_msg = ChatMessage(session_id=session.id, role="user",
+                           content=_persisted_question(query))
     db.add(user_msg)
     db.commit()
 
@@ -521,7 +573,8 @@ def ask_rag_session(
         answer = guard["message"]
     else:
         try:
-            answer = rag_answer(query.question, history=history)
+            answer = rag_answer(query.question, history=history,
+                                mode=query.mode, sensors=query.sensors)
         except Exception as e:
             answer = f"Error generating response: {str(e)}"
         answer = guardrails.check_output(answer, enabled=g_on)["text"]
@@ -557,7 +610,8 @@ def ask_rag_session_stream(
     guard = guardrails.check_input(query.question, enabled=g_on)
     history = _load_history(db, session.id) if guard["allowed"] else []
 
-    db.add(ChatMessage(session_id=session.id, role="user", content=query.question))
+    db.add(ChatMessage(session_id=session.id, role="user",
+                       content=_persisted_question(query)))
     db.commit()
 
     sid = session.id
@@ -589,7 +643,8 @@ def ask_rag_session_stream(
 
         answer_parts, reasoning_parts, sources = [], [], None
         try:
-            for evt in rag_answer_stream(question, history=history):
+            for evt in rag_answer_stream(question, history=history,
+                                         mode=query.mode, sensors=query.sensors):
                 etype = evt.get("type")
                 if etype == "delta":
                     answer_parts.append(evt["text"])

@@ -1,20 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { Upload, Globe, Braces, Github, Rss } from "lucide-react";
+import { Upload, Globe, Braces, Github } from "lucide-react";
 import type { KnowledgeSource } from "@/lib/ingestStream";
 import FileIngest from "./FileIngest";
 import UrlIngest from "./UrlIngest";
 import ApiIngest from "./ApiIngest";
 import GithubIngest from "./GithubIngest";
-import FeedIngest from "./FeedIngest";
 
+// "Feeds" tab (MITRE/CISA presets) hidden for the agri rebrand — FeedIngest.tsx
+// kept in the tree to repurpose for agri feeds (IMD / Agmarknet / data.gov.in).
 const TABS = [
     { id: "file", label: "Upload", icon: Upload },
     { id: "url", label: "URL", icon: Globe },
     { id: "api", label: "API", icon: Braces },
     { id: "github", label: "GitHub", icon: Github },
-    { id: "feed", label: "Feeds", icon: Rss },
 ] as const;
 
 type TabId = (typeof TABS)[number]["id"];
@@ -44,7 +44,6 @@ export default function IngestPanel({ onIngested }: { onIngested: (s: KnowledgeS
                 {tab === "url" && <UrlIngest onSource={onIngested} />}
                 {tab === "api" && <ApiIngest onSource={onIngested} />}
                 {tab === "github" && <GithubIngest onSource={onIngested} />}
-                {tab === "feed" && <FeedIngest onSource={onIngested} />}
             </div>
         </div>
     );

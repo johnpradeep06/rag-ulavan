@@ -2,8 +2,9 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import {
-    ArrowUp, Square, Menu, Plus, MessageSquare, X, Search as SearchIcon, Shield, Waypoints,
-    KeyRound, LockKeyhole, Mail, ShieldAlert, Network, Quote as QuoteIcon,
+    ArrowUp, Square, Menu, Plus, MessageSquare, X, Search as SearchIcon, Sprout, Waypoints,
+    Droplets, Bug, IndianRupee, FlaskConical, Quote as QuoteIcon,
+    SlidersHorizontal, Gauge, Thermometer, Wind, Trash2,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { API_ENDPOINTS } from "@/lib/api";
@@ -14,6 +15,7 @@ import Sources from "@/components/primitives/Sources";
 import LoadingState from "@/components/primitives/LoadingState";
 import SearchList from "@/components/primitives/SearchList";
 import SelectionActions from "@/components/primitives/SelectionActions";
+import PageBackground from "@/components/primitives/PageBackground";
 
 type Message = {
     role: "user" | "assistant";
@@ -32,18 +34,18 @@ type ChatSession = {
 };
 
 const SUGGESTED_QUERIES = [
-    { text: "What is password spraying and how is it detected?", icon: KeyRound, label: "Password spraying", color: "text-blue-400" },
-    { text: "Explain double extortion ransomware and how tactics have evolved.", icon: LockKeyhole, label: "Ransomware", color: "text-rose-400" },
-    { text: "How does a phishing attack work and what are the common indicators?", icon: Mail, label: "Phishing", color: "text-amber-400" },
-    { text: "What are the phases of a data breach?", icon: ShieldAlert, label: "Data breaches", color: "text-violet-400" },
-    { text: "What is Ransomware-as-a-Service (RaaS)?", icon: Network, label: "RaaS", color: "text-emerald-400" },
+    { text: "When should I irrigate my paddy this week?", icon: Droplets, label: "Irrigation Schedule", color: "text-emerald-400" },
+    { text: "How do I identify and manage leaf blast in rice?", icon: Bug, label: "Pest & Blast Protocol", color: "text-amber-400" },
+    { text: "What is the recommended sowing window for groundnut in my district?", icon: Sprout, label: "District Sowing Window", color: "text-teal-400" },
+    { text: "What is the current mandi price for tomato?", icon: IndianRupee, label: "APMC Mandi Rates", color: "text-rose-400" },
+    { text: "What is the fertiliser dose for maize at the vegetative stage?", icon: FlaskConical, label: "Fertiliser Dosage", color: "text-emerald-400" },
 ];
 
 const PLACEHOLDERS = [
-    "Ask about threats, techniques & defenses…",
-    "What is password spraying?",
-    "How does ransomware spread across a network?",
-    "Common indicators of a phishing email?",
+    "Ask about irrigation, pests, sowing or mandi prices…",
+    "When should I irrigate my paddy?",
+    "How do I manage stem borer in rice?",
+    "Today's mandi price for onion?",
 ];
 
 /** Split a user message into its leading blockquote (from "Quote" on a selection)
@@ -78,6 +80,8 @@ export default function ChatInterface() {
     const [searchOpen, setSearchOpen] = useState(false);
     const [sessions, setSessions] = useState<ChatSession[]>([]);
     const [currentSessionId, setCurrentSessionId] = useState<number | null>(null);
+    const [mode, setMode] = useState<"normal" | "metrics" | "sensor">("normal");
+    const [sensors, setSensors] = useState({ water_level: "", temperature: "", humidity: "" });
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
     const prevMessageCountRef = useRef(0); // only jump on new messages, never mid-stream
@@ -229,11 +233,27 @@ export default function ChatInterface() {
         const textToSubmit = overrideInput !== undefined ? overrideInput : input;
         if (!textToSubmit.trim() || isLoading) return;
 
+        // sensor mode: collect the filled readings as numbers
+        const sensorPayload =
+            mode === "sensor"
+                ? Object.fromEntries(
+                      Object.entries(sensors)
+                          .filter(([, v]) => v !== "" && !Number.isNaN(Number(v)))
+                          .map(([k, v]) => [k, Number(v)]),
+                  )
+                : {};
+        const readingsTag = Object.keys(sensorPayload).length
+            ? `_readings: ${Object.entries(sensorPayload)
+                  .map(([k, v]) => `${k.replace(/_/g, " ")} ${v}`)
+                  .join(", ")}_\n\n`
+            : "";
+
         // a pinned excerpt rides along as a markdown blockquote so the model sees it
         const attached = overrideInput === undefined ? quote : null;
-        const userMessage = attached
+        const questionForApi = attached
             ? `> ${attached.replace(/\n+/g, "\n> ")}\n\n${textToSubmit.trim()}`
             : textToSubmit.trim();
+        const userMessage = readingsTag + questionForApi; // display copy shows the readings
         setInput("");
         setQuote(null);
         setShowJumpButton(false);
@@ -269,7 +289,7 @@ export default function ChatInterface() {
 
             await streamAsk(
                 API_ENDPOINTS.sessionAskStream(activeSessionId),
-                userMessage,
+                questionForApi,
                 token,
                 {
                     onStep: (s) => patchLast((m) => ({ steps: upsertStep(m.steps ?? [], s) })),
@@ -290,6 +310,7 @@ export default function ChatInterface() {
                     },
                 },
                 ac.signal,
+                { mode, sensors: sensorPayload },
             );
         } catch (error) {
             console.error(error);
@@ -306,6 +327,23 @@ export default function ChatInterface() {
     };
 
     const stop = () => abortRef.current?.abort();
+
+    const deleteSession = async (id: number) => {
+        const token = localStorage.getItem("token");
+        setSessions((prev) => prev.filter((s) => s.id !== id));   // optimistic
+        if (currentSessionId === id) {
+            setMessages([]);
+            setCurrentSessionId(null);
+        }
+        try {
+            await fetch(API_ENDPOINTS.sessionDelete(id), {
+                method: "DELETE",
+                headers: { Authorization: `Bearer ${token}` },
+            });
+        } catch {
+            fetchSessions();   // rollback from the server on failure
+        }
+    };
 
     const newChat = () => {
         stop();
@@ -341,14 +379,14 @@ export default function ChatInterface() {
                         </button>
                     </div>
 
-                    <div className="mb-3 flex items-center gap-2.5 px-1.5 pt-1">
-                        <span className="flex size-7 items-center justify-center rounded-[8px] bg-accent text-white">
-                            <Shield size={15} strokeWidth={2.4} />
+                    <div className="mb-4 flex items-center gap-2.5 px-2 pt-2">
+                        <span className="flex size-7 items-center justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">
+                            <Sprout size={15} strokeWidth={2.2} />
                         </span>
-                        <span className="text-[14px] font-semibold tracking-tight text-ink">Sentinel</span>
-                        <span className="ml-auto rounded-full bg-inset px-1.5 py-0.5 font-mono text-[9.5px] tracking-wide text-ink-3 uppercase shadow-hairline">
-                            RAG
-                        </span>
+                        <div>
+                            <span className="block text-[13.5px] font-semibold tracking-wider text-ink uppercase">RAG UZHAVAN</span>
+                            <span className="block text-[10px] font-mono text-ink-3 tracking-tight">Precision Advisory</span>
+                        </div>
                     </div>
 
                     <button
@@ -381,6 +419,15 @@ export default function ChatInterface() {
                         Knowledge graph
                     </button>
 
+                    <button
+                        onClick={() => router.push("/score")}
+                        className="flex items-center gap-2.5 rounded-control px-3 py-2 text-[14px]
+                            text-ink-2 transition-colors hover:bg-hover hover:text-ink"
+                    >
+                        <Gauge size={16} />
+                        Evaluation
+                    </button>
+
                     <div className="custom-scrollbar mt-5 flex-1 overflow-y-auto pr-1">
                         <div className="px-2 py-1.5 text-[11px] font-semibold tracking-wide text-ink-3 uppercase">
                             Recent
@@ -389,10 +436,10 @@ export default function ChatInterface() {
                             <div className="px-2 py-2 text-[13.5px] text-ink-3">No previous chats</div>
                         ) : (
                             sessions.map((session) => (
-                                <button
+                                <div
                                     key={session.id}
                                     onClick={() => loadSession(session.id)}
-                                    className={`mb-0.5 flex w-full items-center gap-2.5 rounded-control px-2.5 py-2 text-left
+                                    className={`group mb-0.5 flex w-full cursor-pointer items-center gap-2.5 rounded-control px-2.5 py-2 text-left
                                         text-[13.5px] transition-colors ${currentSessionId === session.id
                                             ? "bg-hover-2 font-medium text-ink"
                                             : "text-ink-2 hover:bg-hover hover:text-ink"
@@ -400,10 +447,17 @@ export default function ChatInterface() {
                                 >
                                     <MessageSquare
                                         size={14}
-                                        className={currentSessionId === session.id ? "text-accent-ink" : "text-ink-3"}
+                                        className={`shrink-0 ${currentSessionId === session.id ? "text-accent-ink" : "text-ink-3"}`}
                                     />
-                                    <span className="truncate">{session.title}</span>
-                                </button>
+                                    <span className="flex-1 truncate">{session.title}</span>
+                                    <button
+                                        onClick={(e) => { e.stopPropagation(); deleteSession(session.id); }}
+                                        title="Delete chat"
+                                        className="shrink-0 rounded-[5px] p-0.5 text-ink-3 opacity-0 transition-opacity hover:bg-hover-2 hover:text-red group-hover:opacity-100"
+                                    >
+                                        <Trash2 size={13} />
+                                    </button>
+                                </div>
                             ))
                         )}
                     </div>
@@ -413,7 +467,7 @@ export default function ChatInterface() {
                             <div className="flex size-8 items-center justify-center rounded-full bg-inset text-[13px] font-semibold text-ink-2 shadow-hairline">
                                 U
                             </div>
-                            <div className="text-[13.5px] font-medium text-ink-2">Analyst</div>
+                            <div className="text-[13.5px] font-medium text-ink-2">Farmer</div>
                         </div>
                     </div>
                 </div>
@@ -429,10 +483,12 @@ export default function ChatInterface() {
                     >
                         <Menu size={18} />
                     </button>
-                    <span className={`items-center gap-2 ${sidebarOpen ? "flex md:hidden" : "flex"}`}>
-                        <Shield size={15} strokeWidth={2.4} className="text-accent-ink" />
-                        <span className="text-[14px] font-semibold tracking-tight text-ink">Sentinel</span>
-                        <span className="hidden text-[13px] text-ink-3 sm:inline">· Cyber Security Intelligence</span>
+                    <span className={`items-center gap-2.5 ${sidebarOpen ? "flex md:hidden" : "flex"}`}>
+                        <span className="flex size-6 items-center justify-center rounded-md bg-emerald-500/10 text-emerald-400">
+                            <Sprout size={13} strokeWidth={2.4} />
+                        </span>
+                        <span className="text-[13.5px] font-semibold tracking-wider text-ink uppercase">RAG UZHAVAN</span>
+                        <span className="hidden text-[12px] font-mono text-ink-3 sm:inline">· District Advisory Support</span>
                     </span>
                 </div>
 
@@ -527,15 +583,65 @@ export default function ChatInterface() {
                     <div className="relative flex w-full max-w-3xl flex-col items-center">
                         {messages.length === 0 && (
                             <div className="mb-8 flex flex-col items-center">
-                                <span className="mb-4 flex size-11 items-center justify-center rounded-[13px] bg-accent text-white shadow-raised">
-                                    <Shield size={22} strokeWidth={2.3} />
+                                <span className="mb-4 flex size-12 items-center justify-center rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 shadow-lg">
+                                    <Sprout size={24} strokeWidth={2.2} />
                                 </span>
-                                <h2 className="text-center text-[26px] font-semibold tracking-tight text-ink md:text-[30px]">
-                                    How can I help you today?
+                                <h2 className="text-center text-[26px] font-medium tracking-tight text-ink md:text-[32px]">
+                                    Agronomic Advisory & Decision Support
                                 </h2>
-                                <p className="mt-1.5 text-center text-[14px] text-ink-3">
-                                    Ask about attacks, techniques and defenses — grounded in your indexed sources.
+                                <p className="mt-2 text-center text-[14px] text-ink-3 font-light max-w-lg">
+                                    Query irrigation schedules, pest remediation, sowing windows, or mandi prices — grounded in verified university research for your district.
                                 </p>
+                            </div>
+                        )}
+
+                        {/* Mode switcher */}
+                        <div className="mb-2.5 flex items-center gap-1 rounded-full bg-inset p-0.5 text-[12px] shadow-hairline">
+                            {([
+                                { id: "normal", label: "Normal", icon: MessageSquare },
+                                { id: "metrics", label: "Metrics", icon: SlidersHorizontal },
+                                { id: "sensor", label: "Sensor", icon: Gauge },
+                            ] as const).map((m) => (
+                                <button
+                                    key={m.id}
+                                    onClick={() => setMode(m.id)}
+                                    className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 font-medium transition-colors ${mode === m.id
+                                        ? "bg-surface text-ink shadow-btn"
+                                        : "text-ink-3 hover:text-ink-2"
+                                        }`}
+                                    title={
+                                        m.id === "normal" ? "Generic Q&A" :
+                                            m.id === "metrics" ? "Needs location, crop, growth stage, season" :
+                                                "Q&A with live field sensor readings"
+                                    }
+                                >
+                                    <m.icon size={13} />
+                                    {m.label}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Sensor readings (manual now; IoT feed later) */}
+                        {mode === "sensor" && (
+                            <div className="mb-2.5 flex w-full max-w-3xl gap-2">
+                                {([
+                                    { key: "water_level", label: "Water level", unit: "cm", icon: Droplets },
+                                    { key: "temperature", label: "Temperature", unit: "°C", icon: Thermometer },
+                                    { key: "humidity", label: "Humidity", unit: "%", icon: Wind },
+                                ] as const).map((s) => (
+                                    <div key={s.key} className="flex flex-1 items-center gap-1.5 rounded-control border border-line bg-surface px-2.5 py-1.5 focus-within:border-line-strong">
+                                        <s.icon size={13} className="shrink-0 text-accent-ink" />
+                                        <input
+                                            type="number"
+                                            inputMode="decimal"
+                                            value={sensors[s.key]}
+                                            onChange={(e) => setSensors((p) => ({ ...p, [s.key]: e.target.value }))}
+                                            placeholder={s.label}
+                                            className="min-w-0 flex-1 bg-transparent text-[13px] text-ink outline-none placeholder:text-ink-3"
+                                        />
+                                        <span className="shrink-0 text-[11px] text-ink-3">{s.unit}</span>
+                                    </div>
+                                ))}
                             </div>
                         )}
 
@@ -620,7 +726,7 @@ export default function ChatInterface() {
 
                         {messages.length > 0 && (
                             <p className="mt-2.5 text-center text-[11.5px] text-ink-3">
-                                Sentinel can make mistakes. Verify findings against primary sources.
+                                RAG Uzhavan can make mistakes. Verify advice against the cited sources.
                             </p>
                         )}
                     </div>

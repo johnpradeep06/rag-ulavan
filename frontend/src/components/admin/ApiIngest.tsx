@@ -46,7 +46,7 @@ export default function ApiIngest({ onSource }: { onSource: (s: KnowledgeSource)
                     <input
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
-                        placeholder="https://services.nvd.nist.gov/rest/json/cves/2.0?…"
+                        placeholder="https://api.data.gov.in/resource/…?api-key=…&format=json"
                         className="min-w-0 flex-1 bg-transparent py-2.5 text-[13.5px] text-ink outline-none placeholder:text-ink-3"
                     />
                 </div>
@@ -57,7 +57,7 @@ export default function ApiIngest({ onSource }: { onSource: (s: KnowledgeSource)
                     <input
                         value={jsonPath}
                         onChange={(e) => setJsonPath(e.target.value)}
-                        placeholder="vulnerabilities"
+                        placeholder="records"
                         className="w-full rounded-control border border-line bg-field px-3 py-2.5 font-mono text-[12.5px] text-ink outline-none focus:border-line-strong"
                     />
                 </div>
@@ -66,7 +66,7 @@ export default function ApiIngest({ onSource }: { onSource: (s: KnowledgeSource)
                     <input
                         value={titleKey}
                         onChange={(e) => setTitleKey(e.target.value)}
-                        placeholder="cveID"
+                        placeholder="market"
                         className="w-full rounded-control border border-line bg-field px-3 py-2.5 font-mono text-[12.5px] text-ink outline-none focus:border-line-strong"
                     />
                 </div>

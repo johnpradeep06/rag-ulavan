@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sentinel — Cyber Security Intelligence",
+  title: "RAG Uzhavan — Region-Aware Farm Advisory",
   description:
-    "A RAG-based cyber security intelligence assistant. Ask about attacks, techniques and defenses, grounded in your indexed sources.",
+    "A region-aware agricultural decision-support system. Get cited, location-specific farming advice grounded in official public data — and a clear refusal when reliable local data is unavailable.",
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },

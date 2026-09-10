@@ -31,7 +31,7 @@ export default function IngestProgress({ phase, step, progress, error, added }: 
                     <p className="text-[13px] font-medium text-ink">
                         Indexed {added.length} source{added.length === 1 ? "" : "s"} · {chunks} chunks
                     </p>
-                    <p className="text-[11.5px] text-ink-3">Sentinel can now retrieve from this.</p>
+                    <p className="text-[11.5px] text-ink-3">RAG Uzhavan can now retrieve from this.</p>
                 </div>
             </div>
         );

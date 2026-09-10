@@ -23,12 +23,18 @@ type Handlers = {
   onError?: (message: string) => void;
 };
 
+export type AskOptions = {
+  mode?: "normal" | "metrics" | "sensor";
+  sensors?: Record<string, number | string>;
+};
+
 export async function streamAsk(
   url: string,
   question: string,
   token: string | null,
   handlers: Handlers,
   signal?: AbortSignal,
+  opts?: AskOptions,
 ): Promise<void> {
   let res: Response;
   try {
@@ -38,7 +44,11 @@ export async function streamAsk(
         "Content-Type": "application/json",
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
-      body: JSON.stringify({ question }),
+      body: JSON.stringify({
+        question,
+        mode: opts?.mode ?? "normal",
+        ...(opts?.sensors && Object.keys(opts.sensors).length ? { sensors: opts.sensors } : {}),
+      }),
       signal,
     });
   } catch (err) {

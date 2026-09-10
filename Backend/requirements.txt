@@ -3,10 +3,12 @@ uvicorn
 langchain
 langchain-community
 langchain-openai
+langchain-google-genai
 chromadb
 bs4
 python-dotenv
 sqlalchemy
+psycopg[binary]
 passlib[bcrypt]
 python-jose[cryptography]
 python-multipart

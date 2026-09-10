@@ -11,7 +11,6 @@ from urllib.parse import urljoin, urlparse
 import bs4
 import requests
 from dotenv import load_dotenv
-from exa_py import Exa
 from openai import OpenAI
 
 
@@ -24,7 +23,8 @@ from langchain_community.document_loaders import (
 from langchain_community.vectorstores import Chroma
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from google import genai
 from google.genai import types
 
@@ -33,7 +33,6 @@ from google.genai import types
 # =========================================================
 
 load_dotenv()
-exa = Exa(api_key=os.environ.get("EXA_API_KEY"))
 # =========================================================
 # LANGSMITH CONFIG
 # =========================================================
@@ -45,22 +44,31 @@ os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
 # CONFIG
 # =========================================================
 
-RELEVANCE_THRESHOLD = 0.15
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+# Cosine-relevance floor for a retrieved chunk. Embedder-dependent: 0.15 suited
+# ada-002; gemini-embedding-001 scores a strong match ~0.6-0.7 and noise ~0.3, so
+# the floor is lower and tunable. Retune against eval/run_benchmark.py.
+RELEVANCE_THRESHOLD = float(os.getenv("RELEVANCE_THRESHOLD", "0.05"))
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")   # chat model
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")           # embeddings
 # Same DATA_DIR convention as database.py — a persistent volume in production.
 CHROMA_PERSIST_DIR = os.path.join(os.getenv("DATA_DIR", "."), "chroma_db")
 
 if not OPENROUTER_API_KEY:
     raise ValueError("OPENROUTER_API_KEY not found in .env file")
+if not GEMINI_API_KEY:
+    raise ValueError("GEMINI_API_KEY not found in .env file")
 
 # =========================================================
 # INDEXING & STORAGE
 # =========================================================
 
-embedding_func = OpenAIEmbeddings(
-    api_key=OPENROUTER_API_KEY,
-    base_url="https://openrouter.ai/api/v1",
-    model="openai/text-embedding-ada-002",
+# Gemini embeddings — free tier, no per-request token cap (OpenRouter's free tier
+# rejects any embed request over a few thousand tokens). gemini-embedding-001 is
+# 3072-dim; the chroma_db collection is fixed at that dim once created, so swapping
+# the embedding model means wiping and rebuilding chroma_db.
+embedding_func = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001",
+    google_api_key=GEMINI_API_KEY,
 )
 
 vectorstore = Chroma(
@@ -250,29 +258,32 @@ def is_greeting(text: str) -> bool:
 # back. Caught here and answered with a fixed reply (also skips a round trip).
 
 _GREETING_REPLY = (
-    "Hi — I'm **Sentinel**, a cyber-security intelligence assistant. Ask me about a "
-    "vulnerability, an attack technique, a threat actor, or anything your team has "
-    "indexed, and I'll answer from those sources with citations."
+    "Hello — I'm **RAG Uzhavan**, a region-aware farm advisory assistant. Ask me "
+    "about irrigation, pests and diseases, sowing dates, soil, weather or mandi "
+    "prices for your district, and I'll answer only from official indexed sources "
+    "with the source and its date."
 )
 
 _CAPABILITY_REPLY = (
-    "I'm **Sentinel**, a cyber-security intelligence assistant. Unlike a general "
-    "chatbot, I answer from a curated knowledge base an analyst controls.\n\n"
-    "- **Grounded answers** — I retrieve from the indexed security documents "
-    "(reports, advisories, threat feeds, detection rules, repos) and answer only "
-    "from what's there, with citations.\n"
-    "- **Web fallback** — if nothing indexed matches, I can pull from the web instead.\n"
-    "- **Conversation memory** — I keep the current chat in context, so a follow-up "
-    "like \"how is it detected?\" resolves against what we were just discussing.\n\n"
-    "Ask me about a vulnerability, an attack technique, a threat actor, or anything "
-    "your team has added to the knowledge base."
+    "I'm **RAG Uzhavan**, a region-aware agricultural decision-support assistant. "
+    "I don't guess — I answer from official data indexed for your district.\n\n"
+    "- **Region-aware** — I filter to your state and district first, then search "
+    "the advisories, so I never hand you another district's recommendation.\n"
+    "- **Grounded & cited** — every answer comes from the indexed sources "
+    "(state/university advisories, crop calendars, soil and weather records, mandi "
+    "prices), with the source name and its publication date.\n"
+    "- **Refuses when unsure** — if there is no reliable local data for your "
+    "question, I say so instead of guessing.\n\n"
+    "Ask about a crop problem, an irrigation or fertiliser question, a sowing "
+    "window, or a mandi price for a named district."
 )
 
 _IDENTITY_RX = re.compile(
-    r"^\s*(who\s+are\s+you|what\s+are\s+you|what\s+is\s+this|what('?s| is)\s+sentinel|"
-    r"what\s+can\s+you\s+do|what\s+do\s+you\s+do|what\s+are\s+you\s+capable\s+of|"
-    r"what\s+are\s+your\s+(capabilities|features)|your\s+capabilities|how\s+do\s+you\s+work|"
-    r"introduce\s+yourself|help|what\s+can\s+i\s+ask)\s*\??\s*$",
+    r"^\s*(who\s+are\s+you|what\s+are\s+you|what\s+is\s+this|what('?s| is)\s+"
+    r"(rag\s+uzhavan|uzhavan)|what\s+can\s+you\s+do|what\s+do\s+you\s+do|"
+    r"what\s+are\s+you\s+capable\s+of|what\s+are\s+your\s+(capabilities|features)|"
+    r"your\s+capabilities|how\s+do\s+you\s+work|introduce\s+yourself|help|"
+    r"what\s+can\s+i\s+ask)\s*\??\s*$",
     re.I,
 )
 
@@ -296,20 +307,63 @@ def smalltalk_reply(text: str) -> str | None:
 prompt = PromptTemplate(
     input_variables=["context", "question"],
     template="""
-You are Sentinel, a cyber security intelligence assistant. You answer from the
-retrieved context below — security reports, advisories, playbooks, detection
-rules and reference material an analyst has indexed.
+You are RAG Uzhavan, a region-aware agricultural advisory assistant for farmers.
+Answer ONLY from the context passages below. Each passage begins with a tag:
+[source · date · district / state · crop].
 
-How to answer:
-- Synthesise an answer from the context. Combine details across passages — you do
-  NOT need a single passage that states the answer word for word. If the passages
-  partially cover the question, give the partial answer and note what is missing.
-- Write like a security analyst: precise and concise, no filler. Use short bullet
-  points or numbered steps where they help.
-- Ground every specific claim in the context. Do not introduce CVE numbers,
-  versions, commands, function names or IOCs that are not in the context.
-- Only if the context genuinely says nothing relevant to the question, reply with
-  one sentence: "The indexed sources don't cover this." and stop.
+Region rule: the question names a location (district / block). Some passages may
+be for other districts. Answer from the passage(s) whose district / state matches
+the asked location; ignore the rest. As long as ONE passage matches, answer from
+it — only refuse if NOT ONE passage matches the asked location and crop.
+
+Structure the answer with these headings, in this order:
+
+**What to do** — if the question is about a process or practice, the numbered
+steps the farmer should take, in order. Omit this heading for a pure fact lookup
+(price, weather, a date).
+**How much** — the exact numbers from the context: doses, rates, spray intervals,
+quantities, dates, prices. Copy them verbatim. Never invent or round a number,
+chemical, variety or date.
+**Why** — one or two lines on the reason for the recommendation.
+**Source** — the source name and its publication date, taken from a passage tag.
+If a passage has no date, write "date not stated".
+
+If no passage matches the asked location and crop, reply with EXACTLY this line
+and nothing else:
+no current data for your location (district / block)
+Do not guess and do not use general knowledge.
+If the question is about your identity or capabilities, answer directly instead.
+
+Context:
+{context}
+
+Question:
+{question}
+
+Answer:
+"""
+)
+
+# `prompt` above is the strict Metrics-mode template.
+PROMPT_METRICS = prompt
+
+# Normal mode — generic grounded answer, no rigid headings, no slot gate.
+PROMPT_NORMAL = PromptTemplate(
+    input_variables=["context", "question"],
+    template="""
+You are RAG Uzhavan, an agricultural assistant for farmers. Answer the question
+using ONLY the context passages below (each tagged [source · date · district / state · crop]).
+
+- Prefer passages for any place named in the question. Do not present another
+  district's data as if it were the asked district's.
+- Give specifics — quantities, chemicals, dates, prices — exactly as written in
+  the context. Never invent or round them.
+- Be concise and practical: bullets or short steps.
+- Name the source and its date at the end.
+- If the context does not cover the question, reply with EXACTLY this line and
+  nothing else:
+  no current data for your location (district / block)
+  Do not use general knowledge.
 - If the question is about your identity or capabilities, answer directly.
 
 Context:
@@ -321,6 +375,50 @@ Question:
 Answer:
 """
 )
+
+# Sensor mode — Normal + live field readings folded into the reasoning.
+PROMPT_SENSOR = PromptTemplate(
+    input_variables=["context", "question", "sensors"],
+    template="""
+You are RAG Uzhavan, an agricultural assistant for farmers. Answer using ONLY the
+context passages below (each tagged [source · date · district / state · crop]) AND
+the live field sensor readings.
+
+{sensors}
+
+- Use the readings to judge timing and immediate action — e.g. low water level ->
+  irrigate now; high humidity at a susceptible stage -> disease risk. State plainly
+  what the readings imply.
+- Keep every agronomic specific (dose, chemical, spray interval, variety) grounded
+  in the context passages, quoted exactly. Never invent a number.
+- Prefer passages for any place named in the question.
+- Name the source and its date at the end.
+- If the context does not cover the crop or practice asked, say so, but still give
+  the reading-based timing guidance you safely can.
+
+Context:
+{context}
+
+Question:
+{question}
+
+Answer:
+"""
+)
+
+_SENSOR_UNITS = {"water_level": "cm", "temperature": "°C", "humidity": "%",
+                 "soil_moisture": "%", "ph": "pH", "rainfall": "mm"}
+
+
+def _format_sensors(sensors) -> str:
+    """{'water_level': 4, 'temperature': 32, ...} -> a one-line readings block."""
+    parts = []
+    for k, v in (sensors or {}).items():
+        if v in (None, "", "null"):
+            continue
+        parts.append(f"{k.replace('_', ' ')} {v} {_SENSOR_UNITS.get(k, '')}".strip())
+    return "Current field sensor readings: " + ", ".join(parts) + "." if parts else ""
+
 
 # =========================================================
 # LLM
@@ -334,81 +432,31 @@ llm = ChatOpenAI(
 )
 
 # =========================================================
-# SECONDARY RAG / FALLBACK
+# REFUSAL
 # =========================================================
+# No web / general-knowledge fallback: the problem statement requires the system
+# to refuse when there is no reliable local data rather than guess.
 
-def is_university_relevant(question: str) -> bool:
-    """Kept name for call-site stability; now gates on cyber-security relevance."""
-    relevance_prompt = PromptTemplate(
-        input_variables=["question"],
-        template="""
-Determine if the following question is about cyber security, information security,
-threat intelligence, hacking techniques, malware, or digital defence.
-Respond with exactly YES or NO.
-
-Question: {question}
-"""
-    )
-    chain = relevance_prompt | llm | StrOutputParser()
-    try:
-        result = chain.invoke({"question": question})
-        return "YES" in result.strip().upper()
-    except Exception:
-        return False
-
-def exa_search_fallback(question: str) -> str:
-    import re
-    try:
-        response = exa.answer(question)
-        answer_text = response.answer
-        
-        # Extract markdown links from Exa's response
-        links = re.findall(r'\[([^\]]+)\]\((https?://[^\)]+)\)', answer_text)
-        
-        sources = []
-        seen_urls = set()
-        for title, url in links:
-            if url not in seen_urls:
-                sources.append(f"- [{title}]({url})")
-                seen_urls.add(url)
-                
-        # Remove the citation blocks e.g., ([Title](url), [Title](url))
-        answer_text = re.sub(r'\s*\((?:\[[^\]]+\]\((?:https?://[^\)]+)\)(?:,\s*)?)+\)', '', answer_text)
-        # Also remove any remaining bare inline links like [Title](url) -> Title
-        answer_text = re.sub(r'\[([^\]]+)\]\((https?://[^\)]+)\)', r'\1', answer_text)
-        
-        if sources:
-            sources_text = "\n\n**Sources:**\n" + "\n".join(sources)
-            answer_text += sources_text
-            
-        return answer_text
-    except Exception as e:
-        # Web search is a best-effort extra (needs a valid EXA_API_KEY). Never
-        # surface a raw transport/401 error as the answer.
-        print(f"[exa_search_fallback] disabled: {e}")
-        return "I couldn't find this in the indexed sources. Add a relevant document from the admin panel and ask again."
+NO_LOCAL_DATA_MSG = "no current data for your location (district / block)"
 
 # =========================================================
 # RAG FUNCTION
 # =========================================================
 
 FALLBACK_TRIGGERS = [
-    "don't know based on the given context",
-    "don’t know based on the given context",
-    "do not know based on the given context",
-    "don't know based on the context",
-    "don’t know based on the context",
+    "no current data for your location",
+    "no reliable local data",
     "indexed sources don't cover this",
     "indexed sources don’t cover this",
-    "sources don't cover this",
-    "don't know",  # catch shorter versions of the LLM defying prompt rules
+    "don't know based on the given context",
+    "don’t know based on the given context",
 ]
 
 
 def _is_refusal(text: str) -> bool:
-    """True when the whole reply is a 'not covered' notice (not a real answer)."""
+    """True when the whole reply is a 'no local data' notice (not a real answer)."""
     t = (text or "").strip().lower()
-    return len(t) < 120 and any(trigger in t for trigger in FALLBACK_TRIGGERS)
+    return len(t) < 160 and any(trigger in t for trigger in FALLBACK_TRIGGERS)
 
 
 # =========================================================
@@ -465,29 +513,113 @@ def _condense_question(history, question: str) -> str:
         return question
 
 
-def rag_answer(question: str, history=None) -> str:
+# =========================================================
+# QUERY UNDERSTANDING — slot filling + clarification gate
+# =========================================================
+# Every question must carry location, crop, growth stage and season. If any is
+# missing we ask the farmer for it and DO NOT run retrieval / generation.
+
+REQUIRED_SLOTS = ("location", "crop", "growth_stage", "season")
+
+_SLOT_LABELS = {
+    "location": "your district (or block / village)",
+    "crop": "the crop",
+    "growth_stage": "the crop's growth stage",
+    "season": "the season",
+}
+
+_SLOT_PROMPT = """Extract these fields from the farmer's question. Use the \
+conversation for any field that was given in an earlier turn. Return ONLY a JSON \
+object, no prose:
+{{"location": <district or block/village name; a state or country alone is NOT enough, use null>,
+ "crop": <crop name, else null>,
+ "growth_stage": <crop / growth stage e.g. nursery, tillering, flowering, boll formation, sowing; else null>,
+ "season": <season e.g. Kharif, Rabi, Zaid, Samba, Kuruvai, Rangada, Boro; else null>}}
+
+Conversation:
+{history}
+
+Question: {question}
+
+JSON:"""
+
+
+def extract_slots(question: str, history=None):
+    """Return (slots dict, missing list). On any extraction error returns
+    ([], []) i.e. 'proceed' — a transient blip must not block a good question."""
+    block = _history_block(history) if history else ""
+    try:
+        r = _stream_client.chat.completions.create(
+            model="openai/gpt-oss-120b", max_tokens=300, temperature=0.0,
+            messages=[{"role": "user", "content": _SLOT_PROMPT.format(
+                history=block or "(none)", question=question)}],
+            extra_body={"reasoning": {"effort": "low", "exclude": True}},
+        )
+        m = re.search(r"\{.*\}", r.choices[0].message.content or "", re.S)
+        raw = json.loads(m.group(0)) if m else {}
+    except Exception as e:  # noqa: BLE001 - fail open
+        print(f"[slots] extraction failed, proceeding: {e}")
+        return {}, []
+    slots = {k: (str(raw.get(k)).strip()
+                 if raw.get(k) not in (None, "", "null", "None") else None)
+             for k in REQUIRED_SLOTS}
+    missing = [k for k in REQUIRED_SLOTS if not slots[k]]
+    return slots, missing
+
+
+def clarify_message(missing) -> str:
+    ask = ", ".join(_SLOT_LABELS[k] for k in missing)
+    return ("To give you a reliable answer for your area I still need "
+            f"{ask}. Please add {'that' if len(missing) == 1 else 'those'} and ask again.")
+
+
+def _doc_for_prompt(doc) -> str:
+    """One passage, tagged with its provenance so the model can cite it and
+    respect the region."""
+    m = doc.metadata or {}
+    tag = " · ".join(x for x in (
+        m.get("source_name") or m.get("source") or m.get("title"),
+        m.get("publication_date"),
+        " / ".join(y for y in (m.get("district"), m.get("state")) if y) or None,
+        m.get("crop"),
+    ) if x)
+    body = doc.page_content or ""
+    return f"[{tag}]\n{body}" if tag else body
+
+
+def rag_answer(question: str, history=None, mode: str = "normal", sensors=None) -> str:
+    """Non-streaming counterpart of rag_answer_stream (legacy /ask). Same three
+    modes."""
     small = smalltalk_reply(question)
     if small:
         return small
 
-    search_q = _condense_question(history, question) if (history and _memory_on()) else question
-    context = retrieve_context(search_q)
+    mem = bool(history) and _memory_on()
+    block = _history_block(history) if mem else ""
 
-    if context is None:
-        # Nothing retrieved — try the (best-effort) web fallback for on-topic questions.
-        if is_university_relevant(search_q):
-            return exa_search_fallback(f"{search_q} (cyber security)")
-        return "The indexed sources don't cover this."
+    district = None
+    if mode == "metrics":
+        slots, missing = extract_slots(question, history)
+        if missing:
+            return clarify_message(missing)
+        district = slots.get("location")
 
-    block = _history_block(history) if (history and _memory_on()) else ""
-    q_for_prompt = f"Conversation so far:\n{block}\n\n{question}" if block else question
-    chain = (
-        {"context": lambda _: context, "question": RunnablePassthrough()}
-        | prompt
-        | llm
-        | StrOutputParser()
-    )
-    return chain.invoke(q_for_prompt)
+    search_q = _condense_question(history, question) if mem else question
+    docs = retrieve_context_docs(search_q, district=district)
+    if not docs:
+        return NO_LOCAL_DATA_MSG
+    context = "\n\n---\n\n".join(_doc_for_prompt(d) for d in docs)
+
+    if mode == "metrics":
+        pt = PROMPT_METRICS.format(context=context, question=question)
+    elif mode == "sensor" and sensors:
+        pt = PROMPT_SENSOR.format(context=context, question=question,
+                                  sensors=_format_sensors(sensors))
+    else:
+        pt = PROMPT_NORMAL.format(context=context, question=question)
+    if block:
+        pt = f"Conversation so far:\n{block}\n\n{pt}"
+    return _generate_once(pt) or NO_LOCAL_DATA_MSG
 
 
 # =========================================================
@@ -503,21 +635,38 @@ _stream_client = OpenAI(
 )
 
 
-def retrieve_context_docs(question: str):
-    """Same retrieval as retrieve_context(), but keeps the Document objects
-    (and their metadata) instead of collapsing to a joined string.
+def retrieve_context_docs(question: str, district: str | None = None):
+    """Retrieve Document objects (with metadata). When `district` is given, keep
+    only passages tagged for that district (passages with no district tag — e.g.
+    weather/price CSV rows — are kept and left for the prompt's region rule).
+    This is the region-first filter: another district's advisory is never used.
 
-    With RETRIEVAL_V2 set, delegates to the opt-in hybrid/rerank pipeline in
-    retrieval.py; any failure there falls back to the baseline below."""
+    With RETRIEVAL_V2 set, delegates to the opt-in hybrid/rerank pipeline."""
     if os.getenv("RETRIEVAL_V2", "").strip().lower() in ("1", "true", "yes", "on"):
         try:
             import retrieval
             return retrieval.retrieve(question)
         except Exception as e:  # noqa: BLE001 - baseline is always a safe fallback
             print(f"[retrieve_context_docs] v2 unavailable, using baseline: {e}")
-    results = vectorstore.similarity_search_with_relevance_scores(question, k=4)
+    results = vectorstore.similarity_search_with_relevance_scores(question, k=8)
     docs = [doc for doc, score in results if score >= RELEVANCE_THRESHOLD]
-    return docs or None
+    if district:
+        dl = _norm_place(district)
+        docs = [d for d in docs
+                if not (d.metadata or {}).get("district")
+                or _place_match(dl, _norm_place((d.metadata or {})["district"]))]
+    return docs[:4] or None
+
+
+_PLACE_SUFFIX = re.compile(r"\b(district|dist|block|taluk|taluka|tehsil|mandal|division)\b", re.I)
+
+
+def _norm_place(s: str) -> str:
+    return _PLACE_SUFFIX.sub("", str(s or "")).strip().lower().strip(" ,.-")
+
+
+def _place_match(a: str, b: str) -> bool:
+    return bool(a) and bool(b) and (a == b or a in b or b in a)
 
 
 def _source_from_doc(doc, i: int) -> dict:
@@ -537,40 +686,29 @@ def _source_from_doc(doc, i: int) -> dict:
     }
 
 
-def _split_exa_sources(text: str):
-    """exa_search_fallback() appends '\\n\\n**Sources:**\\n- [t](u)\\n- ...'.
-    Split that back into (clean_body, [structured web sources])."""
-    m = re.search(r"\n\n\*\*Sources:\*\*\s*\n(.+)$", text, re.S)
-    if not m:
-        return text.strip(), []
-    body = text[: m.start()].strip()
-    sources = []
-    for j, (title, url) in enumerate(
-        re.findall(r"-\s*\[([^\]]+)\]\((https?://[^)]+)\)", m.group(1))
-    ):
-        sources.append({"id": f"web-{j}", "title": title, "url": url,
-                        "snippet": url, "kind": "web"})
-    return body, sources
-
-
 def _typewriter(text: str, size: int = 18):
-    # ponytail: naive server-side typewriter; Exa answer() isn't streamable
+    # ponytail: naive server-side typewriter for canned / non-streamed text
     for i in range(0, len(text), size):
         yield {"type": "delta", "text": text[i : i + size]}
         time.sleep(0.015)
 
 
-def _stream_llm(prompt_text: str):
+def _stream_llm(prompt_text: str, *, reasoning_effort: str = "low", max_tokens: int = 1500):
     """Stream one completion from OpenRouter. Yields {type:'reasoning'} and
-    {type:'delta'} events as they arrive; returns the full answer text."""
+    {type:'delta'} events as they arrive; returns the full answer text.
+
+    gpt-oss-120b's hidden reasoning counts against max_tokens — with 'medium'
+    effort and a tight budget it sometimes spends the whole budget thinking and
+    emits no answer. 'low' + 1500 keeps the answer inside the budget and inside
+    the 5 s target."""
     buf = []
     try:
         stream = _stream_client.chat.completions.create(
             model="openai/gpt-oss-120b",
             messages=[{"role": "user", "content": prompt_text}],
-            max_tokens=1000,
+            max_tokens=max_tokens,
             stream=True,
-            extra_body={"reasoning": {"effort": "medium"}},
+            extra_body={"reasoning": {"effort": reasoning_effort}},
         )
     except Exception as e:  # noqa: BLE001 - surface any transport error to the UI
         yield {"type": "delta", "text": f"(model error: {e})"}
@@ -588,17 +726,91 @@ def _stream_llm(prompt_text: str):
     return "".join(buf)
 
 
-def rag_answer_stream(question: str, history=None):
-    """Generator of content event dicts (the endpoint adds the SSE envelope
-    and a trailing {type:'done'}):
-      {type:'step', id, label, state:'active'|'done'}
-      {type:'reasoning', delta}
-      {type:'sources', sources:[...]}
-      {type:'delta', text}
+def _generate_once(prompt_text: str):
+    """Non-streaming completion — used to retry when the streamed attempt
+    returned reasoning but no answer text."""
+    try:
+        r = _stream_client.chat.completions.create(
+            model="openai/gpt-oss-120b",
+            messages=[{"role": "user", "content": prompt_text}],
+            max_tokens=1200,
+            extra_body={"reasoning": {"effort": "low", "exclude": True}},
+        )
+        return (r.choices[0].message.content or "").strip()
+    except Exception as e:  # noqa: BLE001
+        print(f"[_generate_once] retry failed: {e}")
+        return ""
 
-    `history` (optional) is recent [{role, content}] for the session, oldest
-    first — used to condense the follow-up for retrieval and to keep the answer
-    coherent with earlier turns.
+
+def _answer_from_docs(docs, build_prompt_text):
+    """Shared tail: stream the LLM, retry once if it came back empty, and emit
+    the source list ONLY when a real answer was produced — a refusal / no-data
+    reply carries no citations. `build_prompt_text(context)` -> str."""
+    yield {"type": "step", "id": "draft",
+           "label": "Drafting answer from context", "state": "active"}
+
+    context = "\n\n---\n\n".join(_doc_for_prompt(d) for d in docs)
+    prompt_text = build_prompt_text(context)
+    full = yield from _stream_llm(prompt_text)
+
+    if not full.strip():                    # model spent the budget reasoning — retry
+        retry = _generate_once(prompt_text)
+        if retry:
+            full = retry
+            yield from _typewriter(retry)
+
+    if not full.strip():
+        yield from _typewriter(NO_LOCAL_DATA_MSG)
+        yield {"type": "step", "id": "draft", "label": "No answer produced", "state": "done"}
+    elif _is_refusal(full):
+        yield {"type": "step", "id": "draft",
+               "label": "No local data for this", "state": "done"}
+    else:
+        yield {"type": "sources",
+               "sources": [_source_from_doc(d, i) for i, d in enumerate(docs)]}
+        yield {"type": "step", "id": "draft", "label": "Answer complete", "state": "done"}
+
+
+def _stream_metrics(question, history, hist_block, use_memory):
+    """Mode 2 — strict: require location, crop, growth stage, season; clarify if
+    any is missing; region-filter retrieval; answer in the fixed framework."""
+    yield {"type": "step", "id": "understand",
+           "label": "Reading location, crop, stage and season", "state": "active"}
+    slots, missing = extract_slots(question, history)
+    if missing:
+        yield {"type": "step", "id": "understand",
+               "label": f"Need more detail: {', '.join(missing)}", "state": "done"}
+        yield from _typewriter(clarify_message(missing))
+        return
+    yield {"type": "step", "id": "understand",
+           "label": f"{slots.get('crop')} · {slots.get('growth_stage')} · "
+                    f"{slots.get('season')} · {slots.get('location')}", "state": "done"}
+
+    search_q = _condense_question(history, question) if use_memory else question
+    yield {"type": "step", "id": "retrieve",
+           "label": f"Searching {slots.get('location')} data", "state": "active"}
+    docs = retrieve_context_docs(search_q, district=slots.get("location"))
+    if not docs:
+        yield {"type": "step", "id": "retrieve",
+               "label": "No matching local data", "state": "done"}
+        yield from _typewriter(NO_LOCAL_DATA_MSG)
+        return
+    yield {"type": "step", "id": "retrieve",
+           "label": f"Retrieved {len(docs)} passage(s)", "state": "done"}
+
+    def _build(context):
+        pt = PROMPT_METRICS.format(context=context, question=question)
+        return f"Conversation so far:\n{hist_block}\n\n{pt}" if hist_block else pt
+
+    yield from _answer_from_docs(docs, _build)
+
+
+def rag_answer_stream(question: str, history=None, mode: str = "normal", sensors=None):
+    """Generator of SSE content events. `mode` selects the pipeline:
+      normal  — generic grounded Q&A, no slot gate  (default)
+      metrics — strict: all four slots required, fixed answer framework
+      sensor  — normal + live water-level / temperature / humidity readings
+    `sensors` is {water_level, temperature, humidity, ...} for sensor mode.
     """
     small = smalltalk_reply(question)
     if small:
@@ -607,59 +819,38 @@ def rag_answer_stream(question: str, history=None):
         return
 
     use_memory = bool(history) and _memory_on()
-    search_q = _condense_question(history, question) if use_memory else question
     hist_block = _history_block(history) if use_memory else ""
-    if use_memory and search_q != question:
-        yield {"type": "step", "id": "condense",
-               "label": "Resolved follow-up from conversation", "state": "done"}
 
+    if mode == "metrics":
+        yield from _stream_metrics(question, history, hist_block, use_memory)
+        return
+
+    # normal / sensor — no slot gate, always attempt an answer
+    search_q = _condense_question(history, question) if use_memory else question
     yield {"type": "step", "id": "retrieve",
            "label": "Searching the knowledge base", "state": "active"}
     docs = retrieve_context_docs(search_q)
-
-    if docs:
-        yield {"type": "step", "id": "retrieve",
-               "label": f"Retrieved {len(docs)} passage(s) from indexed documents",
-               "state": "done"}
-        yield {"type": "sources",
-               "sources": [_source_from_doc(d, i) for i, d in enumerate(docs)]}
-        yield {"type": "step", "id": "draft",
-               "label": "Drafting answer from context", "state": "active"}
-
-        context = "\n\n".join(d.page_content for d in docs)
-        prompt_text = prompt.format(context=context, question=question)
-        if hist_block:
-            prompt_text = f"Conversation so far:\n{hist_block}\n\n{prompt_text}"
-        full = yield from _stream_llm(prompt_text)
-
-        # We have retrieved passages, so the answer stands on them — no web pivot.
-        if not full.strip():
-            yield from _typewriter(
-                "The indexed sources don't contain enough to answer this. "
-                "Add a more specific document from the admin panel and try again."
-            )
-            yield {"type": "step", "id": "draft", "label": "No answer in context", "state": "done"}
-        elif _is_refusal(full):
-            yield {"type": "step", "id": "draft",
-                   "label": "Not covered by the indexed sources", "state": "done"}
-        else:
-            yield {"type": "step", "id": "draft", "label": "Answer complete", "state": "done"}
+    if not docs:
+        yield {"type": "step", "id": "retrieve", "label": "No matching data", "state": "done"}
+        yield from _typewriter(NO_LOCAL_DATA_MSG)
         return
-
     yield {"type": "step", "id": "retrieve",
-           "label": "No matching indexed documents", "state": "done"}
+           "label": f"Retrieved {len(docs)} passage(s)", "state": "done"}
 
-    if is_university_relevant(search_q):
-        yield {"type": "step", "id": "web", "label": "Searching the web", "state": "active"}
-        body, web_sources = _split_exa_sources(
-            exa_search_fallback(f"{search_q} (cyber security)")
-        )
-        yield {"type": "step", "id": "web", "label": "Searched the web", "state": "done"}
-        if web_sources:
-            yield {"type": "sources", "sources": web_sources}
-        yield from _typewriter(body)
-    else:
-        yield from _typewriter("Sorry, I don't know based on the given context.")
+    sensor_block = _format_sensors(sensors) if mode == "sensor" else ""
+    if sensor_block:
+        yield {"type": "step", "id": "sensor",
+               "label": sensor_block.replace("Current field sensor readings: ", "Readings: ").rstrip("."),
+               "state": "done"}
+
+    def _build(context):
+        if sensor_block:
+            pt = PROMPT_SENSOR.format(context=context, question=question, sensors=sensor_block)
+        else:
+            pt = PROMPT_NORMAL.format(context=context, question=question)
+        return f"Conversation so far:\n{hist_block}\n\n{pt}" if hist_block else pt
+
+    yield from _answer_from_docs(docs, _build)
 
 
 # =========================================================
@@ -710,7 +901,7 @@ def ingest_file_stream(path: str):
 
 
 _CVE_ID_RE = re.compile(r"CVE-\d{4}-\d{4,7}", re.I)
-_UA = {"User-Agent": "sentinel-rag/1.0"}
+_UA = {"User-Agent": "rag-uzhavan/1.0"}
 
 
 def _fetch_cve_record(cve_id: str) -> Document:

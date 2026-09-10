@@ -10,6 +10,7 @@ export const API_ENDPOINTS = {
   sessionMessages: (sessionId: number | string | null | undefined) => `${API_BASE_URL}/sessions/${sessionId}/messages`,
   sessionAsk: (sessionId: number | string | null | undefined) => `${API_BASE_URL}/sessions/${sessionId}/ask`,
   sessionAskStream: (sessionId: number | string | null | undefined) => `${API_BASE_URL}/sessions/${sessionId}/ask/stream`,
+  sessionDelete: (sessionId: number | string) => `${API_BASE_URL}/sessions/${sessionId}`,
 
   // Authentication & Users
   login: `${API_BASE_URL}/token`,

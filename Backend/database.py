@@ -2,15 +2,32 @@ import os
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
 from datetime import datetime
+from dotenv import load_dotenv
 
-# DATA_DIR points at a persistent volume in production (e.g. Railway) so the
+load_dotenv()  # this module reads DATABASE_URL / DATA_DIR before anything else imports it
+
+# DATABASE_URL (Railway Postgres) wins when set; otherwise fall back to a local
+# SQLite file. DATA_DIR points at a persistent volume in production so the
 # SQLite file survives redeploys; defaults to the working directory locally.
 DATA_DIR = os.getenv("DATA_DIR", ".")
 os.makedirs(DATA_DIR, exist_ok=True)
-SQLALCHEMY_DATABASE_URL = f"sqlite:///{DATA_DIR}/users.db"
+
+_db_url = os.getenv("DATABASE_URL", "").strip()
+if _db_url:
+    # Railway/Heroku give postgres:// or postgresql://; SQLAlchemy 2 + psycopg3
+    # needs the driver named explicitly.
+    if _db_url.startswith("postgres://"):
+        _db_url = "postgresql://" + _db_url[len("postgres://"):]
+    if _db_url.startswith("postgresql://"):
+        _db_url = "postgresql+psycopg://" + _db_url[len("postgresql://"):]
+    SQLALCHEMY_DATABASE_URL = _db_url
+    _connect_args = {}
+else:
+    SQLALCHEMY_DATABASE_URL = f"sqlite:///{DATA_DIR}/users.db"
+    _connect_args = {"check_same_thread": False}
 
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    SQLALCHEMY_DATABASE_URL, connect_args=_connect_args, pool_pre_ping=True
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -23,6 +40,12 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     hashed_password = Column(String)
     role = Column(String)  # "admin" or "student"
+    # profile (all optional, editable from the app)
+    full_name = Column(String, nullable=True)
+    phone = Column(String, nullable=True)
+    state = Column(String, nullable=True)
+    district = Column(String, nullable=True)
+    primary_crop = Column(String, nullable=True)
     sessions = relationship("ChatSession", back_populates="user", cascade="all, delete-orphan")
 
 class ChatSession(Base):
@@ -86,14 +109,20 @@ def set_setting(db, key: str, value: str) -> None:
 
 
 def ensure_columns():
-    """Idempotent add of columns introduced after the table already existed.
-    ponytail: raw ALTER over Alembic — one dev SQLite file, two nullable columns."""
+    """Idempotent add of nullable columns introduced after a table already existed.
+    ponytail: raw ALTER over Alembic — a couple of dev DBs, a handful of columns."""
     from sqlalchemy import inspect, text
-    existing = {c["name"] for c in inspect(engine).get_columns("chat_messages")}
+    insp = inspect(engine)
+    want = {
+        "chat_messages": ["reasoning", "sources"],
+        "users": ["full_name", "phone", "state", "district", "primary_crop"],
+    }
     with engine.begin() as conn:
-        for col in ("reasoning", "sources"):
-            if col not in existing:
-                conn.execute(text(f"ALTER TABLE chat_messages ADD COLUMN {col} TEXT"))
+        for table, cols in want.items():
+            existing = {c["name"] for c in insp.get_columns(table)}
+            for col in cols:
+                if col not in existing:
+                    conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {col} TEXT"))
 
 def get_db():
     db = SessionLocal()
