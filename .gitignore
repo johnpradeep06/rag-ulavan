@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+env/
+venv/
+.env
+.env.local
+
+# Node.js & Next.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.next/
+out/
+build/
+.vercel/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# RAG Data
+users.db
+uploaded_files/
+Backend/users.db
+Backend/uploaded_files/
+Backend/campus_llm.db
+# Backend/chroma_db is committed on purpose — it is the seed vector store that
+# Railway copies onto its persistent volume on first boot.
+
+# Reference prototype directory
+india-agriculture-map/
