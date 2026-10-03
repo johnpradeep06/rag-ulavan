@@ -1,0 +1,995 @@
+"use client";
+
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import {
+    ArrowUp, Square, Menu, Plus, MessageSquare, X, Search as SearchIcon, Sprout, Waypoints,
+    Droplets, Bug, IndianRupee, FlaskConical, Quote as QuoteIcon,
+    SlidersHorizontal, Gauge, Thermometer, Wind, Trash2, Map as MapIcon, Radio, DownloadCloud,
+    Smartphone, CheckCircle2,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
+import { API_ENDPOINTS } from "@/lib/api";
+import { fetchTelemetry, readFieldCapture, clearFieldCapture, summarizeCapture, type FieldCapture } from "@/lib/iot";
+import { streamAsk, type Source, type Step } from "@/lib/chatStream";
+import ThinkingState from "@/components/primitives/ThinkingState";
+import StreamingText from "@/components/primitives/StreamingText";
+import Sources from "@/components/primitives/Sources";
+import LoadingState from "@/components/primitives/LoadingState";
+import SearchList from "@/components/primitives/SearchList";
+import SelectionActions from "@/components/primitives/SelectionActions";
+import PageBackground from "@/components/primitives/PageBackground";
+import { useTranslation, LanguageToggle } from "@/i18n";
+import SmsAdvisoryModal, { type SmsResult } from "@/components/SmsAdvisoryModal";
+
+type Message = {
+    role: "user" | "assistant";
+    content: string;
+    reasoning?: string;
+    sources?: Source[];
+    steps?: Step[];
+    streaming?: boolean;
+    error?: boolean;
+};
+
+type ChatSession = {
+    id: number;
+    title: string;
+    created_at: string;
+};
+
+/** Split a user message into its leading blockquote (from "Quote" on a selection)
+ *  and the question body, so the bubble can render the excerpt as a real quote. */
+function splitQuote(content: string): { quote: string | null; body: string } {
+    if (!content.startsWith(">")) return { quote: null, body: content };
+    const lines = content.split("\n");
+    const quoted: string[] = [];
+    let i = 0;
+    for (; i < lines.length; i++) {
+        if (!lines[i].startsWith(">")) break;
+        quoted.push(lines[i].replace(/^>\s?/, ""));
+    }
+    while (i < lines.length && lines[i].trim() === "") i++;
+    return { quote: quoted.join("\n").trim(), body: lines.slice(i).join("\n").trim() };
+}
+
+function upsertStep(steps: Step[], next: Step): Step[] {
+    const i = steps.findIndex((s) => s.id === next.id);
+    if (i === -1) return [...steps, next];
+    const copy = [...steps];
+    copy[i] = next;
+    return copy;
+}
+
+interface ChatInterfaceProps {
+    onActiveConversationChange?: (active: boolean) => void;
+}
+
+export default function ChatInterface({ onActiveConversationChange }: ChatInterfaceProps = {}) {
+    const { t } = useTranslation();
+    const [messages, setMessages] = useState<Message[]>([]);
+    const [input, setInput] = useState("");
+    const [quote, setQuote] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(true);
+    const [searchOpen, setSearchOpen] = useState(false);
+    const [sessions, setSessions] = useState<ChatSession[]>([]);
+    const [currentSessionId, setCurrentSessionId] = useState<number | null>(null);
+    const [mode, setMode] = useState<"normal" | "metrics" | "sensor">("normal");
+    const [sensors, setSensors] = useState({ water_level: "", temperature: "", humidity: "" });
+    const [pullState, setPullState] = useState<"idle" | "loading" | "ok" | "fail">("idle");
+    const [fieldCapture, setFieldCapture] = useState<FieldCapture | null>(null);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const prevMessageCountRef = useRef(0); // only jump on new messages, never mid-stream
+    const [showJumpButton, setShowJumpButton] = useState(false);
+    const abortRef = useRef<AbortController | null>(null);
+    const taRef = useRef<HTMLTextAreaElement>(null);
+    const router = useRouter();
+
+    // Low-bandwidth Fast2SMS advisory state
+    const [userPhone, setUserPhone] = useState<string>("+916362337992");
+    const [smsModalOpen, setSmsModalOpen] = useState(false);
+    const [smsTargetText, setSmsTargetText] = useState("");
+    const [smsTargetIdx, setSmsTargetIdx] = useState<number | null>(null);
+    const [smsSentMap, setSmsSentMap] = useState<Record<number, SmsResult>>({});
+
+    // Fetch user profile to retrieve registered phone number for WhatsApp dispatch
+    useEffect(() => {
+        const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+        if (token) {
+            fetch(API_ENDPOINTS.me, { headers: { Authorization: `Bearer ${token}` } })
+                .then((r) => (r.ok ? r.json() : null))
+                .then((d) => {
+                    if (d?.phone) setUserPhone(d.phone);
+                })
+                .catch(() => {});
+        }
+
+        const handleProfileUpdate = (e: Event) => {
+            const customEvent = e as CustomEvent;
+            if (customEvent.detail?.phone) {
+                setUserPhone(customEvent.detail.phone);
+            }
+        };
+        window.addEventListener("profile-updated", handleProfileUpdate);
+        return () => window.removeEventListener("profile-updated", handleProfileUpdate);
+    }, []);
+
+    // Notify parent when a chat conversation is active vs empty welcome state
+    useEffect(() => {
+        onActiveConversationChange?.(messages.length > 0);
+    }, [messages.length, onActiveConversationChange]);
+
+    // auto-grow the composer (ChatGPT-style) up to a max height
+    useEffect(() => {
+        const el = taRef.current;
+        if (!el) return;
+        el.style.height = "auto";
+        el.style.height = `${Math.min(el.scrollHeight, 224)}px`;
+    }, [input]);
+
+    // Localized suggestions and placeholders
+    const suggestedQueries = useMemo(() => [
+        { text: t("chat.suggestions.dripIrrigationQuery"), icon: Droplets, label: t("chat.suggestions.dripIrrigation"), color: "text-emerald-400" },
+        { text: t("chat.suggestions.paddyBlastQuery"), icon: Bug, label: t("chat.suggestions.paddyBlast"), color: "text-amber-400" },
+        { text: t("chat.suggestions.tomatoLeafCurlQuery"), icon: Sprout, label: t("chat.suggestions.tomatoLeafCurl"), color: "text-teal-400" },
+        { text: t("chat.suggestions.cottonFertilizerQuery"), icon: FlaskConical, label: t("chat.suggestions.cottonFertilizer"), color: "text-emerald-400" },
+    ], [t]);
+
+    const placeholders = useMemo(() => [
+        t("chat.askPlaceholder"),
+        t("chat.suggestions.paddyBlastQuery"),
+        t("chat.suggestions.dripIrrigationQuery"),
+        t("chat.suggestions.tomatoLeafCurlQuery"),
+    ], [t]);
+
+    const [currentPlaceholder, setCurrentPlaceholder] = useState("");
+    const [placeholderIndex, setPlaceholderIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const timeoutContext = setTimeout(() => {
+            const fullText = placeholders[placeholderIndex % placeholders.length] || t("chat.askPlaceholder");
+            if (!isDeleting) {
+                setCurrentPlaceholder(fullText.substring(0, currentPlaceholder.length + 1));
+                if (currentPlaceholder.length === fullText.length) {
+                    setTimeout(() => setIsDeleting(true), 1800);
+                }
+            } else {
+                setCurrentPlaceholder(fullText.substring(0, currentPlaceholder.length - 1));
+                if (currentPlaceholder.length === 0) {
+                    setIsDeleting(false);
+                    setPlaceholderIndex((prev) => (prev + 1) % placeholders.length);
+                }
+            }
+        }, isDeleting ? 30 : 55);
+        return () => clearTimeout(timeoutContext);
+    }, [currentPlaceholder, isDeleting, placeholderIndex, placeholders, t]);
+
+    useEffect(() => {
+        if (window.innerWidth < 768) setSidebarOpen(false);
+    }, []);
+
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+                e.preventDefault();
+                setSearchOpen((v) => !v);
+            }
+        };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, []);
+
+    // Never auto-follow while text streams in — the user reads from the top and
+    // scrolls themself. We only jump once when a new message is appended.
+    const scrollToBottom = (behavior: ScrollBehavior = "auto") => {
+        const el = scrollRef.current;
+        if (!el) return;
+        el.scrollTo({ top: el.scrollHeight, behavior });
+    };
+
+    const onMessagesScroll = () => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const distanceFromBottom = el.scrollHeight - el.scrollTop - el.clientHeight;
+        setShowJumpButton(distanceFromBottom >= 96);
+    };
+
+    useEffect(() => {
+        if (messages.length > prevMessageCountRef.current) {
+            requestAnimationFrame(() => scrollToBottom());
+        }
+        prevMessageCountRef.current = messages.length;
+    }, [messages.length]);
+
+    const jumpToBottom = () => {
+        setShowJumpButton(false);
+        scrollToBottom("smooth");
+    };
+
+    const fetchSessions = useCallback(async () => {
+        try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+                router.push("/login");
+                return;
+            }
+            const res = await fetch(API_ENDPOINTS.sessions, {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+            if (res.status === 401) {
+                localStorage.removeItem("token");
+                localStorage.removeItem("role");
+                router.push("/login");
+                return;
+            }
+            if (res.ok) setSessions(await res.json());
+        } catch (error) {
+            console.error("Failed to fetch sessions", error);
+        }
+    }, [router]);
+
+    const loadSession = async (sessionId: number) => {
+        setCurrentSessionId(sessionId);
+        setSearchOpen(false);
+        try {
+            const token = localStorage.getItem("token");
+            const res = await fetch(API_ENDPOINTS.sessionMessages(sessionId), {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+            if (res.status === 401) {
+                localStorage.removeItem("token");
+                localStorage.removeItem("role");
+                router.push("/login");
+                return;
+            }
+            if (res.ok) {
+                const data = await res.json();
+                setMessages(
+                    data.map((m: Message & { sources?: Source[] }) => ({
+                        role: m.role,
+                        content: m.content,
+                        reasoning: m.reasoning ?? undefined,
+                        sources: m.sources ?? undefined,
+                    })),
+                );
+            }
+        } catch (error) {
+            console.error("Failed to load session", error);
+        } finally {
+            if (window.innerWidth < 768) setSidebarOpen(false);
+        }
+    };
+
+    useEffect(() => { fetchSessions(); }, [fetchSessions]);
+
+    // consume a "Send to chat" capture handed over from the Live Field page (once)
+    useEffect(() => {
+        const c = readFieldCapture();
+        if (c) { setFieldCapture(c); clearFieldCapture(); }
+    }, []);
+
+    const patchLast = (fn: (m: Message) => Partial<Message>) =>
+        setMessages((prev) => {
+            if (!prev.length) return prev;
+            const copy = [...prev];
+            const last = copy[copy.length - 1];
+            copy[copy.length - 1] = { ...last, ...fn(last) };
+            return copy;
+        });
+
+    const handleSubmit = async (e?: React.FormEvent, overrideInput?: string) => {
+        e?.preventDefault();
+        const textToSubmit = overrideInput !== undefined ? overrideInput : input;
+        if (!textToSubmit.trim() || isLoading) return;
+
+        // sensor mode: collect the filled readings as numbers
+        const sensorPayload =
+            mode === "sensor"
+                ? Object.fromEntries(
+                      Object.entries(sensors)
+                          .filter(([, v]) => v !== "" && !Number.isNaN(Number(v)))
+                          .map(([k, v]) => [k, Number(v)]),
+                  )
+                : {};
+        const readingsTag = Object.keys(sensorPayload).length
+            ? `_readings: ${Object.entries(sensorPayload)
+                  .map(([k, v]) => `${k.replace(/_/g, " ")} ${v}`)
+                  .join(", ")}_\n\n`
+            : "";
+
+        // a pinned excerpt rides along as a markdown blockquote so the model sees it
+        const attached = overrideInput === undefined ? quote : null;
+        const baseQuestion = attached
+            ? `> ${attached.replace(/\n+/g, "\n> ")}\n\n${textToSubmit.trim()}`
+            : textToSubmit.trim();
+        // live field readings captured from the Live Field page are prepended inline
+        const capture = overrideInput === undefined ? fieldCapture : null;
+        const captureLine = capture ? `[Live field readings — ${summarizeCapture(capture)}]\n\n` : "";
+        const questionForApi = captureLine + baseQuestion;
+        const userMessage = readingsTag + questionForApi; // display copy shows the readings
+        setInput("");
+        setQuote(null);
+        setFieldCapture(null);
+        setShowJumpButton(false);
+        setMessages((prev) => [
+            ...prev,
+            { role: "user", content: userMessage },
+            { role: "assistant", content: "", steps: [], reasoning: "", streaming: true },
+        ]);
+        setIsLoading(true);
+
+        const token = localStorage.getItem("token");
+        let activeSessionId = currentSessionId;
+
+        try {
+            if (!activeSessionId) {
+                const createRes = await fetch(API_ENDPOINTS.sessions, {
+                    method: "POST",
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+                if (createRes.status === 401) {
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("role");
+                    router.push("/login");
+                    return;
+                }
+                if (!createRes.ok) throw new Error("Failed to create session");
+                activeSessionId = (await createRes.json()).id as number;
+                setCurrentSessionId(activeSessionId);
+            }
+
+            const ac = new AbortController();
+            abortRef.current = ac;
+
+            await streamAsk(
+                API_ENDPOINTS.sessionAskStream(activeSessionId),
+                questionForApi,
+                token,
+                {
+                    onStep: (s) => patchLast((m) => ({ steps: upsertStep(m.steps ?? [], s) })),
+                    onReasoning: (d) => patchLast((m) => ({ reasoning: (m.reasoning ?? "") + d })),
+                    onSources: (srcs) => patchLast(() => ({ sources: srcs })),
+                    onDelta: (t) => patchLast((m) => ({ content: m.content + t })),
+                    onError: (msg) => {
+                        if (msg === "unauthorized") {
+                            localStorage.removeItem("token");
+                            localStorage.removeItem("role");
+                            router.push("/login");
+                            return;
+                        }
+                        patchLast((m) => ({
+                            content: m.content || `Something went wrong: ${msg}`,
+                            error: true,
+                        }));
+                    },
+                },
+                ac.signal,
+                { mode, sensors: sensorPayload },
+            );
+        } catch (error) {
+            console.error(error);
+            patchLast(() => ({
+                content: "Sorry, I had trouble connecting to the server. Please check your backend connection.",
+                error: true,
+            }));
+        } finally {
+            abortRef.current = null;
+            setIsLoading(false);
+            patchLast(() => ({ streaming: false }));
+            fetchSessions();
+        }
+    };
+
+    const stop = () => abortRef.current?.abort();
+
+    const deleteSession = async (id: number) => {
+        const token = localStorage.getItem("token");
+        setSessions((prev) => prev.filter((s) => s.id !== id));   // optimistic
+        if (currentSessionId === id) {
+            setMessages([]);
+            setCurrentSessionId(null);
+        }
+        try {
+            await fetch(API_ENDPOINTS.sessionDelete(id), {
+                method: "DELETE",
+                headers: { Authorization: `Bearer ${token}` },
+            });
+        } catch {
+            fetchSessions();   // rollback from the server on failure
+        }
+    };
+
+    const newChat = () => {
+        stop();
+        setMessages([]);
+        setCurrentSessionId(null);
+        if (window.innerWidth < 768) setSidebarOpen(false);
+    };
+
+    // sensor mode: one-shot pull of live readings from the ESP32 control node
+    const pullFromDevice = async () => {
+        setPullState("loading");
+        const r = await fetchTelemetry();
+        if (r.ok) {
+            setSensors({
+                water_level: r.data.waterDistance.toFixed(1),
+                temperature: r.data.temperature.toFixed(1),
+                humidity: r.data.humidity.toFixed(0),
+            });
+            setPullState("ok");
+        } else {
+            setPullState("fail");
+        }
+        setTimeout(() => setPullState("idle"), 2500);
+    };
+
+    return (
+        <div className={`flex h-full w-full overflow-hidden font-sans text-ink transition-colors duration-500 ease-in-out ${messages.length > 0 ? "bg-canvas" : "bg-transparent"}`}>
+            {sidebarOpen && (
+                <div
+                    className="fixed inset-0 z-30 bg-black/50 md:hidden"
+                    onClick={() => setSidebarOpen(false)}
+                />
+            )}
+
+            {/* Sidebar */}
+            <aside
+                className={`fixed inset-y-0 left-0 z-40 flex w-[264px] transform flex-col border-r border-line/70
+                    transition-all duration-300 ease-out md:relative md:translate-x-0
+                    ${messages.length > 0 ? "bg-page" : "bg-page/75 backdrop-blur-xl"}
+                    ${sidebarOpen ? "" : "-translate-x-full md:w-0 md:overflow-hidden md:border-none md:opacity-0"}`}
+            >
+                <div className="flex h-full w-[264px] flex-col p-3">
+                    <div className="mb-2 flex items-center justify-between px-1 md:hidden">
+                        <span className="text-[13px] font-semibold text-ink">Chats</span>
+                        <button
+                            onClick={() => setSidebarOpen(false)}
+                            className="rounded-control p-1 text-ink-3 transition-colors hover:bg-hover hover:text-ink"
+                            title="Close sidebar"
+                        >
+                            <X size={18} />
+                        </button>
+                    </div>
+
+                    <div className="mb-4 flex items-center gap-2.5 px-2 pt-2">
+                        <span className="flex size-7 items-center justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">
+                            <Sprout size={15} strokeWidth={2.2} />
+                        </span>
+                        <div>
+                            <span className="block text-[13.5px] font-semibold tracking-wider text-ink uppercase">RAG UZHAVAN</span>
+                            <span className="block text-[10px] font-mono text-ink-3 tracking-tight">Precision Advisory</span>
+                        </div>
+                    </div>
+
+                    <button
+                        onClick={newChat}
+                        className="flex items-center gap-2.5 rounded-control border border-line bg-surface px-3 py-2.5
+                            text-[14px] font-medium text-ink shadow-btn transition-colors hover:bg-hover"
+                    >
+                        <Plus size={16} />
+                        {t("chat.newChat")}
+                    </button>
+
+                    <button
+                        onClick={() => setSearchOpen(true)}
+                        className="mt-2 flex items-center gap-2.5 rounded-control px-3 py-2 text-[14px]
+                            text-ink-2 transition-colors hover:bg-hover hover:text-ink"
+                    >
+                        <SearchIcon size={16} />
+                        {t("chat.searchChats")}
+                        <kbd className="ml-auto rounded-[5px] bg-inset px-1.5 py-0.5 font-mono text-[10px] text-ink-3 shadow-hairline">
+                            ⌘K
+                        </kbd>
+                    </button>
+
+                    <button
+                        onClick={() => router.push("/graph")}
+                        className="flex items-center gap-2.5 rounded-control px-3 py-2 text-[14px]
+                            text-ink-2 transition-colors hover:bg-hover hover:text-ink"
+                    >
+                        <Waypoints size={16} />
+                        {t("nav.graphExplorer")}
+                    </button>
+
+                    <button
+                        onClick={() => router.push("/map")}
+                        className="flex items-center gap-2.5 rounded-control px-3 py-2 text-[14px]
+                            text-ink-2 transition-colors hover:bg-hover hover:text-ink"
+                    >
+                        <MapIcon size={16} />
+                        {t("nav.agriMap")}
+                    </button>
+
+                    <button
+                        onClick={() => router.push("/score")}
+                        className="flex items-center gap-2.5 rounded-control px-3 py-2 text-[14px]
+                            text-ink-2 transition-colors hover:bg-hover hover:text-ink"
+                    >
+                        <Gauge size={16} />
+                        {t("nav.benchmark")}
+                    </button>
+
+                    <button
+                        onClick={() => router.push("/field")}
+                        className="flex items-center gap-2.5 rounded-control px-3 py-2 text-[14px]
+                            text-ink-2 transition-colors hover:bg-hover hover:text-ink"
+                    >
+                        <Radio size={16} />
+                        {t("field.title", "Live Field")}
+                    </button>
+
+                    <div className="custom-scrollbar mt-5 flex-1 overflow-y-auto pr-1">
+                        <div className="px-2 py-1.5 text-[11px] font-semibold tracking-wide text-ink-3 uppercase">
+                            {t("chat.recent")}
+                        </div>
+                        {sessions.length === 0 ? (
+                            <div className="px-2 py-2 text-[13.5px] text-ink-3">{t("chat.noPreviousChats")}</div>
+                        ) : (
+                            sessions.map((session) => (
+                                <div
+                                    key={session.id}
+                                    onClick={() => loadSession(session.id)}
+                                    className={`group mb-0.5 flex w-full cursor-pointer items-center gap-2.5 rounded-control px-2.5 py-2 text-left
+                                        text-[13.5px] transition-colors ${currentSessionId === session.id
+                                            ? "bg-hover-2 font-medium text-ink"
+                                            : "text-ink-2 hover:bg-hover hover:text-ink"
+                                        }`}
+                                >
+                                    <MessageSquare
+                                        size={14}
+                                        className={`shrink-0 ${currentSessionId === session.id ? "text-accent-ink" : "text-ink-3"}`}
+                                    />
+                                    <span className="flex-1 truncate">{session.title}</span>
+                                    <button
+                                        onClick={(e) => { e.stopPropagation(); deleteSession(session.id); }}
+                                        title="Delete chat"
+                                        className="shrink-0 rounded-[5px] p-0.5 text-ink-3 opacity-0 transition-opacity hover:bg-hover-2 hover:text-red group-hover:opacity-100"
+                                    >
+                                        <Trash2 size={13} />
+                                    </button>
+                                </div>
+                            ))
+                        )}
+                    </div>
+
+                    <div className="mt-2 border-t border-line pt-3">
+                        <div className="flex items-center gap-2.5 rounded-control px-2 py-2">
+                            <div className="flex size-8 items-center justify-center rounded-full bg-inset text-[13px] font-semibold text-ink-2 shadow-hairline">
+                                U
+                            </div>
+                            <div className="text-[13.5px] font-medium text-ink-2">{t("chat.farmer")}</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            {/* Main */}
+            <div className="relative flex h-full w-full flex-1 flex-col overflow-hidden">
+                <div className={`sticky top-0 z-20 flex items-center justify-between gap-2.5 px-4 py-3 transition-colors duration-300 border-b border-line/30 ${messages.length > 0 ? "bg-canvas/95 backdrop-blur-md" : "bg-page/30 backdrop-blur-md"}`}>
+                    <div className="flex items-center gap-2.5">
+                        <button
+                            onClick={() => setSidebarOpen(!sidebarOpen)}
+                            className="rounded-control p-2 text-ink-3 transition-colors hover:bg-hover hover:text-ink"
+                            title="Toggle sidebar"
+                        >
+                            <Menu size={18} />
+                        </button>
+                        <span className={`items-center gap-2.5 ${sidebarOpen ? "flex md:hidden" : "flex"}`}>
+                            <span className="flex size-6 items-center justify-center rounded-md bg-emerald-500/10 text-emerald-400">
+                                <Sprout size={13} strokeWidth={2.4} />
+                            </span>
+                            <span className="text-[13.5px] font-semibold tracking-wider text-ink uppercase">RAG UZHAVAN</span>
+                            <span className="hidden text-[12px] font-mono text-ink-3 sm:inline">· {t("chat.districtSupport")}</span>
+                        </span>
+                    </div>
+
+                    <div className="flex items-center gap-2 pr-40 md:pr-48">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                const asstEntries = messages.map((m, i) => ({ m, i })).filter(({ m }) => m.role === "assistant" && m.content);
+                                const last = asstEntries[asstEntries.length - 1];
+                                if (last) {
+                                    setSmsTargetText(last.m.content);
+                                    setSmsTargetIdx(last.i);
+                                } else {
+                                    setSmsTargetText(input.trim() || "RAG UZHAVAN: Verified agronomic advisory notification for registered farmer.");
+                                    setSmsTargetIdx(null);
+                                }
+                                setSmsModalOpen(true);
+                            }}
+                            className="group flex items-center gap-2 rounded-full border border-emerald-500/45 bg-emerald-500/15 px-3.5 py-1.5 text-[12px] font-semibold text-emerald-300 shadow-sm transition-all hover:bg-emerald-500/25 hover:border-emerald-400 active:scale-95"
+                            title={t("sms.sendAdvisoryFull", "Dispatch Advisory to WhatsApp (<50 KB, <5s)")}
+                        >
+                            <span className="relative flex size-2">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+                            </span>
+                            <Smartphone size={13.5} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+                            <span>{t("sms.sendAdvisory", "WhatsApp")}</span>
+                            <span className="hidden sm:inline-block rounded-full bg-emerald-500/25 px-2 py-0.2 text-[10.5px] font-mono text-emerald-300">
+                                {userPhone}
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                {messages.length > 0 && (
+                    <div className="relative min-h-0 w-full flex-1">
+                        <div
+                            ref={scrollRef}
+                            onScroll={onMessagesScroll}
+                            style={{ overflowAnchor: "none" }}
+                            className="custom-scrollbar flex h-full w-full flex-col items-center overflow-y-auto"
+                        >
+                            <div
+                                className="flex w-full max-w-3xl flex-col gap-8 px-4 pt-4 pb-6 md:px-0"
+                                data-selectable
+                            >
+                                {messages.map((msg, idx) => (
+                                    <div
+                                        key={idx}
+                                        className={`flex w-full ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                                    >
+                                        {msg.role === "user" ? (
+                                            (() => {
+                                                const { quote: q, body } = splitQuote(msg.content);
+                                                return (
+                                                    <div className="max-w-[85%] overflow-hidden rounded-window rounded-br-md border border-line bg-surface shadow-card">
+                                                        {q && (
+                                                            <div className="flex gap-2 border-b border-line bg-inset px-3.5 py-2.5">
+                                                                <QuoteIcon size={12} className="mt-1 shrink-0 text-accent-ink" />
+                                                                <p className="line-clamp-3 text-[13px] leading-[1.5] text-ink-3 italic">
+                                                                    {q}
+                                                                </p>
+                                                            </div>
+                                                        )}
+                                                        <div className="px-4 py-2.5 text-[15.5px] leading-[1.65] whitespace-pre-wrap text-ink">
+                                                            {body}
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })()
+                                        ) : (
+                                            <div className="flex w-full">
+                                                <div className="flex w-full min-w-0 flex-col gap-3">
+                                                    {(msg.steps?.length || msg.reasoning) ? (
+                                                        <ThinkingState
+                                                            steps={msg.steps ?? []}
+                                                            reasoning={msg.reasoning}
+                                                            working={!!msg.streaming && !msg.content}
+                                                        />
+                                                    ) : null}
+
+                                                    {msg.streaming && !msg.content && !msg.steps?.length && (
+                                                        <LoadingState variant="Drive" label="Fathoming..." />
+                                                    )}
+
+                                                    {msg.content && (
+                                                        <div className={msg.error ? "text-red" : undefined}>
+                                                            <StreamingText text={msg.content} streaming={msg.streaming} />
+                                                        </div>
+                                                    )}
+
+                                                    {msg.sources?.length && !msg.streaming ? (
+                                                        <Sources items={msg.sources} />
+                                                    ) : null}
+
+                                                    {!msg.streaming && msg.content && !msg.error && (
+                                                        <div className="mt-2.5 flex flex-wrap items-center gap-2.5 pt-2 border-t border-line/60">
+                                                            <button
+                                                                type="button"
+                                                                onClick={() => {
+                                                                    setSmsTargetText(msg.content);
+                                                                    setSmsTargetIdx(idx);
+                                                                    setSmsModalOpen(true);
+                                                                }}
+                                                                className="group flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3.5 py-1.5 text-[12px] font-medium text-emerald-400 shadow-sm transition-all hover:border-emerald-500/70 hover:bg-emerald-500/20 active:scale-95"
+                                                                title={t("sms.sendAdvisoryFull", "Dispatch Advisory to WhatsApp (<50 KB, <5s)")}
+                                                            >
+                                                                <span className="relative flex size-2">
+                                                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                                                                    <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+                                                                </span>
+                                                                <Smartphone size={13.5} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+                                                                <span className="font-semibold">{t("sms.sendAdvisory", "WhatsApp")}</span>
+                                                                <span className="hidden sm:inline-block rounded-full bg-emerald-500/20 px-2 py-0.2 text-[10px] font-mono text-emerald-300">
+                                                                    &lt;50 KB · &lt;5s
+                                                                </span>
+                                                            </button>
+
+                                                            {smsSentMap[idx] ? (
+                                                                <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[11.5px] font-medium text-emerald-300">
+                                                                    <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
+                                                                    <span>
+                                                                        {t("sms.sentStatus", "Sent to {phone} ({size} KB • {latency}s)", {
+                                                                            phone: smsSentMap[idx].recipient,
+                                                                            size: smsSentMap[idx].payload_size_kb,
+                                                                            latency: smsSentMap[idx].latency_seconds,
+                                                                        })}
+                                                                    </span>
+                                                                    <span className="text-[10px] text-ink-3 font-mono">({smsSentMap[idx].sid.slice(-6)})</span>
+                                                                </div>
+                                                            ) : (
+                                                                <span className="text-[11.5px] text-ink-3">
+                                                                    {userPhone ? `→ ${userPhone}` : "→ +91 6362337992"}
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                                <div ref={messagesEndRef} className="h-2" />
+                            </div>
+                        </div>
+
+                        {showJumpButton && (
+                            <button
+                                onClick={jumpToBottom}
+                                className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-[12.5px] font-medium text-ink-2 shadow-overlay transition-colors hover:bg-hover hover:text-ink"
+                                style={{ animation: "fade-up 180ms cubic-bezier(0.23,1,0.32,1) both" }}
+                                title={t("chat.jumpToLatest")}
+                            >
+                                <ArrowUp size={13} className="rotate-180" />
+                                {isLoading ? t("chat.thinking") : t("chat.jumpToLatest")}
+                            </button>
+                        )}
+                    </div>
+                )}
+
+                {/* Composer */}
+                <div
+                    className={`z-10 flex w-full shrink-0 flex-col items-center px-4 transition-all duration-500 md:px-0 ${messages.length === 0 ? "mt-[-6vh] flex-1 justify-center" : "justify-end bg-canvas pt-3 pb-5 border-t border-line/40"
+                        }`}
+                >
+                    <div className="relative flex w-full max-w-3xl flex-col items-center">
+                        {messages.length === 0 && (
+                            <div className="mb-8 flex flex-col items-center">
+                                <span className="mb-4 flex size-12 items-center justify-center rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 shadow-lg">
+                                    <Sprout size={24} strokeWidth={2.2} />
+                                </span>
+                                <h2 className="text-center text-[26px] font-medium tracking-tight text-ink md:text-[32px]">
+                                    {t("chat.welcome")}
+                                </h2>
+                                <p className="mt-2 text-center text-[14px] text-ink-3 font-light max-w-lg">
+                                    {t("chat.welcomeSub")}
+                                </p>
+                            </div>
+                        )}
+
+                        {/* Mode switcher & Low-Bandwidth SMS trigger */}
+                        <div className="mb-2.5 flex items-center gap-2 flex-wrap justify-center">
+                            <div className="flex items-center gap-1 rounded-full bg-inset p-0.5 text-[12px] shadow-hairline">
+                                {([
+                                    { id: "normal", label: t("chat.modes.normal"), title: t("chat.modes.normalDesc"), icon: MessageSquare },
+                                    { id: "metrics", label: t("chat.modes.metrics"), title: t("chat.modes.metricsDesc"), icon: SlidersHorizontal },
+                                    { id: "sensor", label: t("chat.modes.sensor"), title: t("chat.modes.sensorDesc"), icon: Gauge },
+                                ] as const).map((m) => (
+                                    <button
+                                        key={m.id}
+                                        onClick={() => setMode(m.id)}
+                                        className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 font-medium transition-colors ${mode === m.id
+                                            ? "bg-surface text-ink shadow-btn"
+                                            : "text-ink-3 hover:text-ink-2"
+                                            }`}
+                                        title={m.title}
+                                    >
+                                        <m.icon size={13} />
+                                        {m.label}
+                                    </button>
+                                ))}
+                            </div>
+
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    const asstEntries = messages.map((m, i) => ({ m, i })).filter(({ m }) => m.role === "assistant" && m.content);
+                                    const last = asstEntries[asstEntries.length - 1];
+                                    if (last) {
+                                        setSmsTargetText(last.m.content);
+                                        setSmsTargetIdx(last.i);
+                                    } else {
+                                        setSmsTargetText(input.trim() || "RAG UZHAVAN: Verified agronomic advisory notification for registered farmer.");
+                                        setSmsTargetIdx(null);
+                                    }
+                                    setSmsModalOpen(true);
+                                }}
+                                className="flex items-center gap-1.5 rounded-full border border-emerald-500/35 bg-emerald-500/10 px-3 py-1.5 text-[12px] font-medium text-emerald-300 hover:bg-emerald-500/20 hover:border-emerald-400 transition-all active:scale-95 shadow-hairline"
+                                title={t("sms.sendAdvisoryFull", "Dispatch Advisory to WhatsApp (<50 KB, <5s)")}
+                            >
+                                <Smartphone size={13} className="text-emerald-400" />
+                                <span>{t("sms.sendAdvisory", "WhatsApp")}</span>
+                                <span className="text-[10px] font-mono text-emerald-400/80 bg-emerald-500/15 px-1.5 py-0.5 rounded-full">&lt;50 KB · &lt;5s</span>
+                            </button>
+                        </div>
+
+                        {/* Sensor readings — type them or pull live from the field control node */}
+                        {mode === "sensor" && (
+                            <div className="mb-2.5 flex w-full max-w-3xl flex-col gap-1.5">
+                                <div className="flex gap-2">
+                                    {([
+                                        { key: "water_level", label: t("telemetry.waterLevel"), unit: t("telemetry.cm"), icon: Droplets },
+                                        { key: "temperature", label: t("telemetry.temperature"), unit: t("telemetry.degC"), icon: Thermometer },
+                                        { key: "humidity", label: t("telemetry.humidity"), unit: t("telemetry.pct"), icon: Wind },
+                                    ] as const).map((s) => (
+                                        <div key={s.key} className="flex flex-1 items-center gap-1.5 rounded-control border border-line bg-surface px-2.5 py-1.5 focus-within:border-line-strong">
+                                            <s.icon size={13} className="shrink-0 text-accent-ink" />
+                                            <input
+                                                type="number"
+                                                inputMode="decimal"
+                                                value={sensors[s.key]}
+                                                onChange={(e) => setSensors((p) => ({ ...p, [s.key]: e.target.value }))}
+                                                placeholder={s.label}
+                                                className="min-w-0 flex-1 bg-transparent text-[13px] text-ink outline-none placeholder:text-ink-3"
+                                            />
+                                            <span className="shrink-0 text-[11px] text-ink-3">{s.unit}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={pullFromDevice}
+                                    disabled={pullState === "loading"}
+                                    className="flex items-center gap-1.5 self-start rounded-control px-2 py-1 text-[11.5px] font-medium text-ink-3 transition-colors hover:bg-hover hover:text-ink disabled:opacity-60"
+                                >
+                                    <DownloadCloud size={12} className={pullState === "loading" ? "animate-pulse" : ""} />
+                                    {pullState === "ok"
+                                        ? t("field.pulled", "Live readings loaded")
+                                        : pullState === "fail"
+                                            ? t("field.pullFailed", "Device unreachable")
+                                            : t("field.pullFromDevice", "Pull live from field device")}
+                                </button>
+                            </div>
+                        )}
+
+                        <div className="w-full overflow-hidden rounded-window border border-line bg-surface shadow-card transition-colors focus-within:border-line-strong">
+                            {quote && (
+                                <div
+                                    className="flex items-start gap-2.5 border-b border-line bg-inset py-2.5 pr-2 pl-3.5"
+                                    style={{ animation: "fade-up 220ms cubic-bezier(0.23,1,0.32,1) both" }}
+                                >
+                                    <QuoteIcon size={13} className="mt-[3px] shrink-0 text-accent-ink" />
+                                    <p className="line-clamp-2 flex-1 text-[13px] leading-[1.5] text-ink-2">{quote}</p>
+                                    <button
+                                        onClick={() => setQuote(null)}
+                                        className="shrink-0 rounded-control p-1 text-ink-3 transition-colors hover:bg-hover hover:text-ink"
+                                        title="Remove excerpt"
+                                    >
+                                        <X size={13} />
+                                    </button>
+                                </div>
+                            )}
+                            {fieldCapture && (
+                                <div
+                                    className="flex items-center gap-2.5 border-b border-line bg-inset py-2.5 pr-2 pl-3.5"
+                                    style={{ animation: "fade-up 220ms cubic-bezier(0.23,1,0.32,1) both" }}
+                                >
+                                    <Radio size={13} className="shrink-0 text-emerald-400" />
+                                    <p className="flex-1 truncate text-[13px] leading-[1.5] text-ink-2">
+                                        {t("field.attached", "Field readings")}: {fieldCapture.temperature.toFixed(1)} °C · {fieldCapture.humidity.toFixed(0)} % · {fieldCapture.waterDistance.toFixed(1)} cm · {fieldCapture.waterStatus}
+                                    </p>
+                                    <button
+                                        onClick={() => setFieldCapture(null)}
+                                        className="shrink-0 rounded-control p-1 text-ink-3 transition-colors hover:bg-hover hover:text-ink"
+                                        title={t("field.removeReadings", "Remove readings")}
+                                    >
+                                        <X size={13} />
+                                    </button>
+                                </div>
+                            )}
+                            <textarea
+                                ref={taRef}
+                                value={input}
+                                onChange={(e) => setInput(e.target.value)}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter" && !e.shiftKey) {
+                                        e.preventDefault();
+                                        handleSubmit();
+                                    }
+                                    if (e.key === "Escape" && quote) setQuote(null);
+                                }}
+                                placeholder={quote ? "Ask about this excerpt…" : currentPlaceholder + (isDeleting ? "" : "▏")}
+                                className="custom-scrollbar block max-h-[224px] min-h-[54px] w-full resize-none bg-transparent px-4 py-3.5 text-[16px] leading-[1.6] text-ink outline-none placeholder:text-ink-3"
+                                rows={1}
+                            />
+                            <div className="flex items-center justify-between px-3 pb-3">
+                                <span className="hidden pl-1 text-[11.5px] text-ink-3 sm:flex sm:items-center sm:gap-1.5">
+                                    <kbd className="rounded-[4px] bg-inset px-1.5 py-0.5 font-mono text-[10px] shadow-hairline">⏎</kbd>
+                                    {t("chat.send")}
+                                    <kbd className="ml-1 rounded-[4px] bg-inset px-1.5 py-0.5 font-mono text-[10px] shadow-hairline">⇧⏎</kbd>
+                                    {t("chat.newLine")}
+                                </span>
+                                {isLoading ? (
+                                    <button
+                                        onClick={stop}
+                                        className="flex size-8 items-center justify-center rounded-full bg-ink text-canvas transition-transform hover:scale-105"
+                                        title={t("chat.stop")}
+                                    >
+                                        <Square size={13} fill="currentColor" />
+                                    </button>
+                                ) : (
+                                    <button
+                                        onClick={() => handleSubmit()}
+                                        disabled={!input.trim() && !quote}
+                                        className="flex size-8 items-center justify-center rounded-full bg-ink text-canvas transition-transform hover:scale-105 disabled:opacity-30 disabled:hover:scale-100"
+                                        title={t("chat.send")}
+                                    >
+                                        <ArrowUp size={15} />
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+
+                        {messages.length === 0 && (
+                            <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-2">
+                                {suggestedQueries.map((query, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => handleSubmit(undefined, query.text)}
+                                        className="flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 text-[13px]
+                                            font-medium text-ink-2 shadow-btn transition-colors hover:bg-hover hover:text-ink"
+                                    >
+                                        <query.icon size={15} className={query.color} />
+                                        {query.label}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+
+                        {messages.length > 0 && (
+                            <p className="mt-2.5 text-center text-[11.5px] text-ink-3">
+                                {t("chat.disclaimer")}
+                            </p>
+                        )}
+                    </div>
+                </div>
+            </div>
+
+            {/* Search palette */}
+            {searchOpen && (
+                <div
+                    className="fixed inset-0 z-[70] flex items-start justify-center bg-black/40 pt-[15vh]"
+                    onClick={() => setSearchOpen(false)}
+                >
+                    <div className="w-full max-w-md px-4" onClick={(e) => e.stopPropagation()}>
+                        <SearchList
+                            items={sessions.map((s) => ({ id: s.id, label: s.title }))}
+                            onSelect={(id) => loadSession(id)}
+                        />
+                    </div>
+                </div>
+            )}
+
+            <SelectionActions
+                onQuote={(t) => {
+                    setQuote(t.replace(/\s+/g, " ").trim());
+                    taRef.current?.focus();
+                }}
+                onExplain={(t) => handleSubmit(undefined, `Explain this: "${t}"`)}
+            />
+
+            <SmsAdvisoryModal
+                isOpen={smsModalOpen}
+                onClose={() => setSmsModalOpen(false)}
+                defaultText={smsTargetText}
+                defaultPhone={userPhone}
+                onSuccess={(result) => {
+                    if (smsTargetIdx != null) {
+                        setSmsSentMap((prev) => ({
+                            ...prev,
+                            [smsTargetIdx]: result,
+                        }));
+                    }
+                    if (result.recipient) {
+                        setUserPhone(result.recipient);
+                    }
+                }}
+            />
+        </div>
+    );
+}
