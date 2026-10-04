@@ -1,0 +1,2966 @@
+{
+  "IN-AP": {
+    "geo_id": "IN-AP",
+    "state_name": "Andhra Pradesh",
+    "zone": "South",
+    "capital": "Amaravati",
+    "total_districts": 28,
+    "crops_count": 69,
+    "recorded_crops": [
+      "Arecanut",
+      "Arhar/Tur",
+      "Bajra",
+      "Banana",
+      "Beans & Mutter(Vegetable)",
+      "Bhindi",
+      "Bottle Gourd",
+      "Brinjal",
+      "Cabbage",
+      "Cashewnut",
+      "Castor seed",
+      "Citrus Fruit",
+      "Coconut",
+      "Coriander",
+      "Cotton(lint)",
+      "Cowpea(Lobia)",
+      "Cucumber",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Ginger",
+      "Gram",
+      "Grapes",
+      "Groundnut",
+      "Horse-gram",
+      "Jowar",
+      "Korra",
+      "Lemon",
+      "Linseed",
+      "Maize",
+      "Mango",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Niger seed",
+      "Onion",
+      "Orange",
+      "Other  Rabi pulses",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Papaya",
+      "Peas  (vegetable)",
+      "Pome Fruit",
+      "Pome Granet",
+      "Potato",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Safflower"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Normal",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Normal",
+        "district_count": 18,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 20,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-AR": {
+    "geo_id": "IN-AR",
+    "state_name": "Arunachal Pradesh",
+    "zone": "North East",
+    "capital": "Itanagar",
+    "total_districts": 14,
+    "crops_count": 16,
+    "recorded_crops": [
+      "Dry chillies",
+      "Dry ginger",
+      "Groundnut",
+      "Maize",
+      "Oilseeds total",
+      "Potato",
+      "Pulses total",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sesamum",
+      "Small millets",
+      "Soyabean",
+      "Sugarcane",
+      "Sunflower",
+      "Turmeric",
+      "Wheat"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Excess",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Excess",
+        "district_count": 13,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 12,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-AS": {
+    "geo_id": "IN-AS",
+    "state_name": "Assam",
+    "zone": "North East",
+    "capital": "Dispur",
+    "total_districts": 26,
+    "crops_count": 40,
+    "recorded_crops": [
+      "Arecanut",
+      "Arhar/Tur",
+      "Banana",
+      "Black pepper",
+      "Blackgram",
+      "Castor seed",
+      "Coconut",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Ginger",
+      "Gram",
+      "Jute",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Niger seed",
+      "Onion",
+      "Orange",
+      "Other  Rabi pulses",
+      "Paddy",
+      "Papaya",
+      "Peas & beans (Pulses)",
+      "Pineapple",
+      "Potato",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Rice (Boro / Summer)",
+      "Sesamum",
+      "Small millets",
+      "Sugarcane",
+      "Sweet potato",
+      "Tapioca",
+      "Tobacco",
+      "Turmeric",
+      "Urad",
+      "Wheat",
+      "other misc. pulses"
+    ],
+    "coverage_level": "medium",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 21,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 21,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": true,
+        "records_count": 1,
+        "source": "State Agricultural University / ICAR"
+      }
+    }
+  },
+  "IN-BR": {
+    "geo_id": "IN-BR",
+    "state_name": "Bihar",
+    "zone": "East",
+    "capital": "Patna",
+    "total_districts": 39,
+    "crops_count": 42,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Banana",
+      "Barley",
+      "Blackgram",
+      "Castor seed",
+      "Coriander",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Gram",
+      "Groundnut",
+      "Horse-gram",
+      "Jowar",
+      "Jute",
+      "Khesari",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Niger seed",
+      "Onion",
+      "Other  Rabi pulses",
+      "Other Kharif pulses",
+      "Peas & beans (Pulses)",
+      "Potato",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Safflower",
+      "Sannhamp",
+      "Sesamum",
+      "Small millets",
+      "Sugarcane",
+      "Sunflower",
+      "Sweet potato",
+      "Tobacco",
+      "Turmeric",
+      "Urad",
+      "Wheat"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Yellow",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 34,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Yellow",
+        "district_count": 31,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-CG": {
+    "geo_id": "IN-CG",
+    "state_name": "Chhattisgarh",
+    "zone": "Central",
+    "capital": "Raipur",
+    "total_districts": 36,
+    "crops_count": 46,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Banana",
+      "Barley",
+      "Castor seed",
+      "Coconut",
+      "Coriander",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Gram",
+      "Groundnut",
+      "Guar seed",
+      "Horse-gram",
+      "Jowar",
+      "Jute",
+      "Khesari",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Niger seed",
+      "Onion",
+      "Other  Rabi pulses",
+      "Other Kharif pulses",
+      "Papaya",
+      "Peas & beans (Pulses)",
+      "Potato",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Safflower",
+      "Sannhamp",
+      "Sesamum",
+      "Small millets",
+      "Soyabean",
+      "Sugarcane",
+      "Sunflower",
+      "Sweet potato",
+      "Tobacco",
+      "Turmeric",
+      "Urad",
+      "Wheat",
+      "other misc. pulses"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Normal",
+    "warning_color": "Yellow",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Normal",
+        "district_count": 30,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Yellow",
+        "district_count": 21,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-GA": {
+    "geo_id": "IN-GA",
+    "state_name": "Goa",
+    "zone": "West",
+    "capital": "Panaji",
+    "total_districts": 2,
+    "crops_count": 15,
+    "recorded_crops": [
+      "Arecanut",
+      "Banana",
+      "Black pepper",
+      "Cashewnut",
+      "Coconut",
+      "Groundnut",
+      "Mango",
+      "Other  Rabi pulses",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Pineapple",
+      "Ragi",
+      "Rice",
+      "Sugarcane"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Deficient",
+        "district_count": 2,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 2,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-GJ": {
+    "geo_id": "IN-GJ",
+    "state_name": "Gujarat",
+    "zone": "West",
+    "capital": "Gandhinagar",
+    "total_districts": 34,
+    "crops_count": 84,
+    "recorded_crops": [
+      "Apple",
+      "Arhar/Tur",
+      "Bajra",
+      "Bajra(Pearl Millet/Cumbu)",
+      "Banana",
+      "Bhindi(Ladies Finger)",
+      "Bitter gourd",
+      "Bottle gourd",
+      "Brinjal",
+      "Cabbage",
+      "Capsicum",
+      "Carrot",
+      "Castor seed",
+      "Cauliflower",
+      "Chikoos(Sapota)",
+      "Cluster beans",
+      "Colacasia",
+      "Coriander(Leaves)",
+      "Cotton",
+      "Cotton(lint)",
+      "Cucumbar(Kheera)",
+      "Dry Fodder",
+      "Dry chillies",
+      "Garlic",
+      "Ginger(Dry)",
+      "Ginger(Green)",
+      "Gram",
+      "Grapes",
+      "Green Chilli",
+      "Green Fodder",
+      "Groundnut",
+      "Guar",
+      "Guar seed",
+      "Guava",
+      "Jowar",
+      "Leafy Vegetable",
+      "Lemon",
+      "Maize",
+      "Mashrooms",
+      "Methi(Leaves)",
+      "Moong(Green Gram)",
+      "Moth",
+      "Mousambi(Sweet Lime)",
+      "Mustard",
+      "Oilseeds total",
+      "Onion",
+      "Orange",
+      "Other  Rabi pulses",
+      "Other Cereals & Millets",
+      "Other Kharif pulses"
+    ],
+    "coverage_level": "medium",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 30,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 25,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": true,
+        "records_count": 685,
+        "commodity_count": 58,
+        "source": "Agmarknet (Ministry of Agriculture)"
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-HR": {
+    "geo_id": "IN-HR",
+    "state_name": "Haryana",
+    "zone": "North",
+    "capital": "Chandigarh",
+    "total_districts": 21,
+    "crops_count": 42,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Banana",
+      "Barley",
+      "Castor seed",
+      "Coriander",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Gram",
+      "Grapes",
+      "Groundnut",
+      "Guar seed",
+      "Horse-gram",
+      "Jowar",
+      "Jute",
+      "Maize",
+      "Mango",
+      "Masoor",
+      "Moong(Green Gram)",
+      "Moth",
+      "Onion",
+      "Other  Rabi pulses",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Peas & beans (Pulses)",
+      "Potato",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sannhamp",
+      "Sesamum",
+      "Soyabean",
+      "Sugarcane",
+      "Sunflower",
+      "Sweet potato",
+      "Tobacco",
+      "Turmeric",
+      "Urad",
+      "Wheat",
+      "other oilseeds"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 16,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 18,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-HP": {
+    "geo_id": "IN-HP",
+    "state_name": "Himachal Pradesh",
+    "zone": "North",
+    "capital": "Shimla",
+    "total_districts": 13,
+    "crops_count": 36,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Barley",
+      "Coriander",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Ginger",
+      "Gram",
+      "Groundnut",
+      "Horse-gram",
+      "Jowar",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Moong(Green Gram)",
+      "Moth",
+      "Onion",
+      "Other  Rabi pulses",
+      "Other Kharif pulses",
+      "Peas & beans (Pulses)",
+      "Potato",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sannhamp",
+      "Sesamum",
+      "Small millets",
+      "Soyabean",
+      "Sugarcane",
+      "Sweet potato",
+      "Tobacco",
+      "Turmeric",
+      "Urad",
+      "Wheat"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 10,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 8,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-JH": {
+    "geo_id": "IN-JH",
+    "state_name": "Jharkhand",
+    "zone": "East",
+    "capital": "Ranchi",
+    "total_districts": 22,
+    "crops_count": 12,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Barley",
+      "Gram",
+      "Maize",
+      "Masoor",
+      "Onion",
+      "Potato",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sugarcane",
+      "Wheat"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 20,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 15,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-KA": {
+    "geo_id": "IN-KA",
+    "state_name": "Karnataka",
+    "zone": "South",
+    "capital": "Bengaluru",
+    "total_districts": 32,
+    "crops_count": 145,
+    "recorded_crops": [
+      "Alasande Gram",
+      "Alsandikai",
+      "Apple",
+      "Arcanut (Processed)",
+      "Arecanut",
+      "Arecanut(Betelnut/Supari)",
+      "Arhar/Tur",
+      "Ashgourd",
+      "Atcanut (Raw)",
+      "Avare Dal",
+      "Bajra",
+      "Bajra(Pearl Millet/Cumbu)",
+      "Banana",
+      "Banana - Green",
+      "Beans",
+      "Beans & Mutter(Vegetable)",
+      "Beetroot",
+      "Bengal Gram Dal(Chana Dal)",
+      "Bengal Gram(Gram)(Whole)",
+      "Betal Leaves",
+      "Bitter gourd",
+      "Black Gram Dal(Urd Dal)",
+      "Black Gram(Urd Beans)(Whole)",
+      "Black pepper",
+      "Bottle gourd",
+      "Brinjal",
+      "Bunch Beans",
+      "Cabbage",
+      "Capsicum",
+      "Cardamom",
+      "Carrot",
+      "Cashewnut",
+      "Cashewnut Processed",
+      "Cashewnut Raw",
+      "Castor seed",
+      "Cauliflower",
+      "Chapparad Avare",
+      "Chennangi Dal",
+      "Chikoos(Sapota)",
+      "Chilly Capsicum",
+      "Citrus Fruit",
+      "Coconut",
+      "Copra",
+      "Coriander",
+      "Corriander seed",
+      "Cotton",
+      "Cotton(lint)",
+      "Cowpea(Lobia)",
+      "Cowpea(Lobia/Karamani)",
+      "Cowpea(Veg)"
+    ],
+    "coverage_level": "high",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Yellow",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 26,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Yellow",
+        "district_count": 17,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": true,
+        "records_count": 809,
+        "commodity_count": 100,
+        "source": "Agmarknet (Ministry of Agriculture)"
+      },
+      "soil_observations": {
+        "available": true,
+        "records_count": 2,
+        "source": "Soil Health System / Dept of Agriculture"
+      },
+      "advisories": {
+        "available": true,
+        "records_count": 2,
+        "source": "State Agricultural Extension & KVK"
+      },
+      "crop_calendars": {
+        "available": true,
+        "records_count": 2,
+        "source": "State Agricultural University / ICAR"
+      }
+    }
+  },
+  "IN-KL": {
+    "geo_id": "IN-KL",
+    "state_name": "Kerala",
+    "zone": "South",
+    "capital": "Thiruvananthapuram",
+    "total_districts": 16,
+    "crops_count": 49,
+    "recorded_crops": [
+      "Arecanut",
+      "Arhar/Tur",
+      "Banana",
+      "Bhindi",
+      "Bitter Gourd",
+      "Black pepper",
+      "Blackgram",
+      "Brinjal",
+      "Cardamom",
+      "Cashewnut",
+      "Cashewnut Raw",
+      "Coconut",
+      "Coffee",
+      "Cotton(lint)",
+      "Cowpea(Lobia)",
+      "Drum Stick",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Groundnut",
+      "Horse-gram",
+      "Jack Fruit",
+      "Jowar",
+      "Maize",
+      "Mango",
+      "Moong(Green Gram)",
+      "Onion",
+      "Other Cereals & Millets",
+      "Other Fresh Fruits",
+      "Other Vegetables",
+      "Papaya",
+      "Pineapple",
+      "Potato",
+      "Pump Kin",
+      "Ragi",
+      "Rice",
+      "Rubber",
+      "Sesamum",
+      "Small millets",
+      "Snak Guard",
+      "Soyabean",
+      "Sugarcane",
+      "Sweet potato",
+      "Tapioca",
+      "Tea",
+      "Tobacco",
+      "Turmeric",
+      "Wheat",
+      "other oilseeds"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Normal",
+    "warning_color": "Yellow",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Normal",
+        "district_count": 12,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Yellow",
+        "district_count": 10,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-MP": {
+    "geo_id": "IN-MP",
+    "state_name": "Madhya Pradesh",
+    "zone": "Central",
+    "capital": "Bhopal",
+    "total_districts": 55,
+    "crops_count": 62,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Banana",
+      "Barley",
+      "Beans & Mutter(Vegetable)",
+      "Bhindi",
+      "Brinjal",
+      "Cabbage",
+      "Cashewnut",
+      "Castor seed",
+      "Cauliflower",
+      "Citrus Fruit",
+      "Coriander",
+      "Cotton(lint)",
+      "Cowpea(Lobia)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Gram",
+      "Grapes",
+      "Groundnut",
+      "Horse-gram",
+      "Jowar",
+      "Jute",
+      "Khesari",
+      "Linseed",
+      "Maize",
+      "Mango",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Niger seed",
+      "Onion",
+      "Orange",
+      "Other  Rabi pulses",
+      "Other Citrus Fruit",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Paddy",
+      "Papaya",
+      "Peas & beans (Pulses)",
+      "Pome Fruit",
+      "Potato",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Safflower",
+      "Sannhamp",
+      "Sesamum"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 53,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 44,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-MH": {
+    "geo_id": "IN-MH",
+    "state_name": "Maharashtra",
+    "zone": "West",
+    "capital": "Mumbai",
+    "total_districts": 38,
+    "crops_count": 134,
+    "recorded_crops": [
+      "Almond(Badam)",
+      "Amla(Nelli Kai)",
+      "Apple",
+      "Arhar/Tur",
+      "Astera",
+      "Bajra",
+      "Bajra(Pearl Millet/Cumbu)",
+      "Banana",
+      "Banana - Green",
+      "Beans",
+      "Beetroot",
+      "Bengal Gram Dal(Chana Dal)",
+      "Bengal Gram(Gram)(Whole)",
+      "Bhindi(Ladies Finger)",
+      "Bitter gourd",
+      "Black Gram Dal(Urd Dal)",
+      "Black Gram(Urd Beans)(Whole)",
+      "Black pepper",
+      "Bottle gourd",
+      "Brinjal",
+      "Cabbage",
+      "Cardamom",
+      "Carrot",
+      "Cashewnuts",
+      "Castor seed",
+      "Cauliflower",
+      "Chikoos(Sapota)",
+      "Chili Red",
+      "Chilly Capsicum",
+      "Cinamon(Dalchini)",
+      "Coconut",
+      "Coriander(Leaves)",
+      "Corriander seed",
+      "Cotton",
+      "Cotton(lint)",
+      "Cow",
+      "Cowpea(Lobia/Karamani)",
+      "Cucumbar(Kheera)",
+      "Cummin Seed(Jeera)",
+      "Drumstick",
+      "Elephant Yam(Suran)/Amorphophallus",
+      "French Beans(Frasbean)",
+      "Garlic",
+      "Ginger(Green)",
+      "Gram",
+      "Gram / Chickpea",
+      "Grapes",
+      "Green Chilli",
+      "Green Gram Dal(Moong Dal)",
+      "Green Gram(Moong)(Whole)"
+    ],
+    "coverage_level": "high",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 28,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 30,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": true,
+        "records_count": 1348,
+        "commodity_count": 104,
+        "source": "Agmarknet (Ministry of Agriculture)"
+      },
+      "soil_observations": {
+        "available": true,
+        "records_count": 3,
+        "source": "Soil Health System / Dept of Agriculture"
+      },
+      "advisories": {
+        "available": true,
+        "records_count": 3,
+        "source": "State Agricultural Extension & KVK"
+      },
+      "crop_calendars": {
+        "available": true,
+        "records_count": 4,
+        "source": "State Agricultural University / ICAR"
+      }
+    }
+  },
+  "IN-MN": {
+    "geo_id": "IN-MN",
+    "state_name": "Manipur",
+    "zone": "North East",
+    "capital": "Imphal",
+    "total_districts": 11,
+    "crops_count": 41,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Banana",
+      "Beans & Mutter(Vegetable)",
+      "Bhindi",
+      "Bitter Gourd",
+      "Bottle Gourd",
+      "Brinjal",
+      "Cabbage",
+      "Carrot",
+      "Cashewnut",
+      "Cauliflower",
+      "Citrus Fruit",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Jack Fruit",
+      "Jute",
+      "Kapas",
+      "Maize",
+      "Mango",
+      "Onion",
+      "Orange",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Papaya",
+      "Peas & beans (Pulses)",
+      "Pineapple",
+      "Pome Fruit",
+      "Potato",
+      "Rapeseed &Mustard",
+      "Redish",
+      "Rice",
+      "Rubber",
+      "Sesamum",
+      "Soyabean",
+      "Sugarcane",
+      "Sweet potato",
+      "Tapioca",
+      "Tomato",
+      "Turmeric"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 9,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 11,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-ML": {
+    "geo_id": "IN-ML",
+    "state_name": "Meghalaya",
+    "zone": "North East",
+    "capital": "Shillong",
+    "total_districts": 11,
+    "crops_count": 39,
+    "recorded_crops": [
+      "Arecanut",
+      "Arhar/Tur",
+      "Banana",
+      "Black pepper",
+      "Cashewnut",
+      "Castor seed",
+      "Citrus Fruit",
+      "Coriander",
+      "Cotton(lint)",
+      "Cowpea(Lobia)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Gram",
+      "Jute",
+      "Kapas",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Mesta",
+      "Oilseeds total",
+      "Other  Rabi pulses",
+      "Papaya",
+      "Peas & beans (Pulses)",
+      "Pineapple",
+      "Potato",
+      "Pulses total",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sesamum",
+      "Small millets",
+      "Soyabean",
+      "Sugarcane",
+      "Sweet potato",
+      "Tapioca",
+      "Tobacco",
+      "Total foodgrain",
+      "Turmeric",
+      "Wheat"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Normal",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Normal",
+        "district_count": 10,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 10,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-MZ": {
+    "geo_id": "IN-MZ",
+    "state_name": "Mizoram",
+    "zone": "North East",
+    "capital": "Aizawl",
+    "total_districts": 5,
+    "crops_count": 24,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Coconut",
+      "Cotton(lint)",
+      "Gram",
+      "Groundnut",
+      "Kapas",
+      "Maize",
+      "Masoor",
+      "Moong(Green Gram)",
+      "Other  Rabi pulses",
+      "Other Kharif pulses",
+      "Peas & beans (Pulses)",
+      "Potato",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sesamum",
+      "Soyabean",
+      "Sugarcane",
+      "Sunflower",
+      "Tapioca",
+      "Tobacco",
+      "Urad",
+      "Wheat",
+      "other oilseeds"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 5,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 4,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-NL": {
+    "geo_id": "IN-NL",
+    "state_name": "Nagaland",
+    "zone": "North East",
+    "capital": "Kohima",
+    "total_districts": 12,
+    "crops_count": 48,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Barley",
+      "Bean",
+      "Blackgram",
+      "Cardamom",
+      "Castor seed",
+      "Colocosia",
+      "Cotton(lint)",
+      "Cowpea(Lobia)",
+      "Dry chillies",
+      "Dry ginger",
+      "Ginger",
+      "Gram",
+      "Groundnut",
+      "Horse-gram",
+      "Jobster",
+      "Jowar",
+      "Jute",
+      "Lentil",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Niger seed",
+      "Oilseeds total",
+      "Other  Rabi pulses",
+      "Other Kharif pulses",
+      "Peas & beans (Pulses)",
+      "Perilla",
+      "Potato",
+      "Ragi",
+      "Rajmash Kholar",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Ricebean (nagadal)",
+      "Sesamum",
+      "Small millets",
+      "Soyabean",
+      "Sugarcane",
+      "Sunflower",
+      "Sweet potato",
+      "Tapioca",
+      "Tea",
+      "Turmeric",
+      "Urad",
+      "Wheat"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Normal",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Normal",
+        "district_count": 6,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 11,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-OD": {
+    "geo_id": "IN-OD",
+    "state_name": "Odisha",
+    "zone": "East",
+    "capital": "Bhubaneswar",
+    "total_districts": 33,
+    "crops_count": 39,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Castor seed",
+      "Coriander",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Gram",
+      "Groundnut",
+      "Horse-gram",
+      "Jowar",
+      "Jute",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Niger seed",
+      "Onion",
+      "Other  Rabi pulses",
+      "Other Kharif pulses",
+      "Paddy",
+      "Potato",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Safflower",
+      "Sannhamp",
+      "Sesamum",
+      "Small millets",
+      "Soyabean",
+      "Sugarcane",
+      "Sunflower",
+      "Sweet potato",
+      "Tobacco",
+      "Turmeric",
+      "Urad",
+      "Wheat"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Normal",
+    "warning_color": "Yellow",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Normal",
+        "district_count": 27,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Yellow",
+        "district_count": 14,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-PB": {
+    "geo_id": "IN-PB",
+    "state_name": "Punjab",
+    "zone": "North",
+    "capital": "Chandigarh",
+    "total_districts": 22,
+    "crops_count": 89,
+    "recorded_crops": [
+      "Apple",
+      "Arhar/Tur",
+      "Ashgourd",
+      "Bajra",
+      "Banana",
+      "Banana - Green",
+      "Barley",
+      "Basmati Rice (Oryza sativa)",
+      "Beetroot",
+      "Bhindi(Ladies Finger)",
+      "Bitter gourd",
+      "Bottle gourd",
+      "Brinjal",
+      "Cabbage",
+      "Capsicum",
+      "Carrot",
+      "Cauliflower",
+      "Chilly Capsicum",
+      "Cluster beans",
+      "Coconut Coir",
+      "Colacasia",
+      "Coriander(Leaves)",
+      "Cotton",
+      "Cotton(lint)",
+      "Cowpea(Veg)",
+      "Cucumbar(Kheera)",
+      "Elephant Yam(Suran)/Amorphophallus",
+      "Field Pea",
+      "French Beans(Frasbean)",
+      "Garlic",
+      "Ginger(Dry)",
+      "Ginger(Green)",
+      "Gram",
+      "Grapes",
+      "Green Chilli",
+      "Green Peas",
+      "Groundnut",
+      "Guar seed",
+      "Guava",
+      "Jowar",
+      "Karbuja(Musk Melon)",
+      "Leafy Vegetable",
+      "Lemon",
+      "Linseed",
+      "Maize",
+      "Mango",
+      "Marasebu",
+      "Mashrooms",
+      "Masoor",
+      "Methi(Leaves)"
+    ],
+    "coverage_level": "high",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Yellow",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 19,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Yellow",
+        "district_count": 16,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": true,
+        "records_count": 1085,
+        "commodity_count": 65,
+        "source": "Agmarknet (Ministry of Agriculture)"
+      },
+      "soil_observations": {
+        "available": true,
+        "records_count": 3,
+        "source": "Soil Health System / Dept of Agriculture"
+      },
+      "advisories": {
+        "available": true,
+        "records_count": 3,
+        "source": "State Agricultural Extension & KVK"
+      },
+      "crop_calendars": {
+        "available": true,
+        "records_count": 4,
+        "source": "State Agricultural University / ICAR"
+      }
+    }
+  },
+  "IN-RJ": {
+    "geo_id": "IN-RJ",
+    "state_name": "Rajasthan",
+    "zone": "North",
+    "capital": "Jaipur",
+    "total_districts": 50,
+    "crops_count": 51,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Banana",
+      "Barley",
+      "Castor seed",
+      "Citrus Fruit",
+      "Coriander",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Gram",
+      "Grapes",
+      "Groundnut",
+      "Guar seed",
+      "Jowar",
+      "Linseed",
+      "Maize",
+      "Mango",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Moth",
+      "Oilseeds total",
+      "Onion",
+      "Orange",
+      "Other  Rabi pulses",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Papaya",
+      "Peas & beans (Pulses)",
+      "Pome Fruit",
+      "Potato",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sannhamp",
+      "Sesamum",
+      "Small millets",
+      "Soyabean",
+      "Sugarcane",
+      "Sunflower",
+      "Sweet potato",
+      "Tapioca",
+      "Tobacco",
+      "Turmeric",
+      "Urad",
+      "Water Melon",
+      "Wheat",
+      "other fibres"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 30,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 30,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-SK": {
+    "geo_id": "IN-SK",
+    "state_name": "Sikkim",
+    "zone": "North East",
+    "capital": "Gangtok",
+    "total_districts": 4,
+    "crops_count": 18,
+    "recorded_crops": [
+      "Barley",
+      "Maize",
+      "Oilseeds total",
+      "Other  Rabi pulses",
+      "Other Cereals & Millets",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Potato",
+      "Pulses total",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Small millets",
+      "Soyabean",
+      "Total foodgrain",
+      "Urad",
+      "Wheat",
+      "other oilseeds"
+    ],
+    "coverage_level": "none",
+    "rainfall_status": "No Data",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": false,
+        "status": "No Data",
+        "district_count": 0,
+        "source": null
+      },
+      "weather_warning": {
+        "available": false,
+        "status": "Green",
+        "district_count": 0,
+        "source": null
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-TN": {
+    "geo_id": "IN-TN",
+    "state_name": "Tamil Nadu",
+    "zone": "South",
+    "capital": "Chennai",
+    "total_districts": 38,
+    "crops_count": 132,
+    "recorded_crops": [
+      "Amaranthus",
+      "Amla(Nelli Kai)",
+      "Apple",
+      "Arecanut",
+      "Arhar/Tur",
+      "Ash Gourd",
+      "Ashgourd",
+      "Baby Corn",
+      "Bajra",
+      "Banana",
+      "Banana (Musa spp.)",
+      "Banana - Green",
+      "Beans",
+      "Beans & Mutter(Vegetable)",
+      "Beet Root",
+      "Beetroot",
+      "Ber",
+      "Bhindi",
+      "Bhindi(Ladies Finger)",
+      "Bitter Gourd",
+      "Bitter gourd",
+      "Black pepper",
+      "Blackgram",
+      "Blackgram / Greengram (Vigna mungo / V. radiata)",
+      "Bottle Gourd",
+      "Bottle gourd",
+      "Brinjal",
+      "Cabbage",
+      "Capsicum",
+      "Cardamom",
+      "Carrot",
+      "Cashewnut",
+      "Castor seed",
+      "Cauliflower",
+      "Chow Chow",
+      "Citrus Fruit",
+      "Cluster beans",
+      "Coconut",
+      "Colacasia",
+      "Coriander",
+      "Cotton",
+      "Cotton (Gossypium hirsutum)",
+      "Cotton(lint)",
+      "Cucumbar(Kheera)",
+      "Cucumber",
+      "Custard Apple(Sharifa)",
+      "Drum Stick",
+      "Drumstick",
+      "Dry chillies",
+      "Dry ginger"
+    ],
+    "coverage_level": "high",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 37,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 27,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": true,
+        "records_count": 80,
+        "commodity_count": 47,
+        "source": "Agmarknet (Ministry of Agriculture)"
+      },
+      "soil_observations": {
+        "available": true,
+        "records_count": 30,
+        "source": "Soil Health System / Dept of Agriculture"
+      },
+      "advisories": {
+        "available": true,
+        "records_count": 31,
+        "source": "State Agricultural Extension & KVK"
+      },
+      "crop_calendars": {
+        "available": true,
+        "records_count": 19,
+        "source": "State Agricultural University / ICAR"
+      }
+    }
+  },
+  "IN-TG": {
+    "geo_id": "IN-TG",
+    "state_name": "Telangana",
+    "zone": "South",
+    "capital": "Hyderabad",
+    "total_districts": 33,
+    "crops_count": 65,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Banana",
+      "Beans & Mutter(Vegetable)",
+      "Bhindi",
+      "Bottle Gourd",
+      "Brinjal",
+      "Cabbage",
+      "Cashewnut",
+      "Castor seed",
+      "Citrus Fruit",
+      "Coconut",
+      "Coriander",
+      "Cotton(lint)",
+      "Cowpea(Lobia)",
+      "Cucumber",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Ginger",
+      "Gram",
+      "Grapes",
+      "Groundnut",
+      "Horse-gram",
+      "Jowar",
+      "Korra",
+      "Linseed",
+      "Maize",
+      "Mango",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Niger seed",
+      "Onion",
+      "Orange",
+      "Other  Rabi pulses",
+      "Other Dry Fruit",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Papaya",
+      "Peas  (vegetable)",
+      "Pome Fruit",
+      "Potato",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Safflower",
+      "Samai",
+      "Sesamum"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Normal",
+    "warning_color": "Yellow",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Normal",
+        "district_count": 27,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Yellow",
+        "district_count": 24,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-TR": {
+    "geo_id": "IN-TR",
+    "state_name": "Tripura",
+    "zone": "North East",
+    "capital": "Agartala",
+    "total_districts": 8,
+    "crops_count": 22,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Cotton(lint)",
+      "Gram",
+      "Groundnut",
+      "Jute",
+      "Jute & mesta",
+      "Maize",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Oilseeds total",
+      "Other  Rabi pulses",
+      "Other Kharif pulses",
+      "Peas & beans (Pulses)",
+      "Potato",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sesamum",
+      "Sugarcane",
+      "Urad",
+      "Wheat",
+      "other oilseeds"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Normal",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Normal",
+        "district_count": 6,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 7,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-UP": {
+    "geo_id": "IN-UP",
+    "state_name": "Uttar Pradesh",
+    "zone": "North",
+    "capital": "Lucknow",
+    "total_districts": 74,
+    "crops_count": 116,
+    "recorded_crops": [
+      "Apple",
+      "Arecanut(Betelnut/Supari)",
+      "Arhar/Tur",
+      "Ashgourd",
+      "Bajra",
+      "Bajra(Pearl Millet/Cumbu)",
+      "Banana",
+      "Banana - Green",
+      "Barley",
+      "Barley(Jau)",
+      "Bengal Gram Dal(Chana Dal)",
+      "Bhindi(Ladies Finger)",
+      "Big Gram",
+      "Bitter gourd",
+      "Black Gram Dal(Urd Dal)",
+      "Bottle gourd",
+      "Brinjal",
+      "Broken Rice",
+      "Cabbage",
+      "Capsicum",
+      "Carrot",
+      "Castor Seed",
+      "Castor seed",
+      "Cauliflower",
+      "Chicory(Chikori/Kasni)",
+      "Chili Red",
+      "Colacasia",
+      "Coriander",
+      "Coriander(Leaves)",
+      "Cotton",
+      "Cotton(lint)",
+      "Cowpea(Lobia/Karamani)",
+      "Cowpea(Veg)",
+      "Cucumbar(Kheera)",
+      "Dal Mix",
+      "Dry chillies",
+      "Dry ginger",
+      "Firewood",
+      "Fish",
+      "Garlic",
+      "Ginger",
+      "Ginger(Green)",
+      "Gram",
+      "Gram Raw(Chholia)",
+      "Grapes",
+      "Green Chilli",
+      "Green Gram Dal(Moong Dal)",
+      "Green Gram(Moong)(Whole)",
+      "Groundnut",
+      "Guar seed"
+    ],
+    "coverage_level": "high",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Orange",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 71,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Orange",
+        "district_count": 53,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": true,
+        "records_count": 1523,
+        "commodity_count": 83,
+        "source": "Agmarknet (Ministry of Agriculture)"
+      },
+      "soil_observations": {
+        "available": true,
+        "records_count": 2,
+        "source": "Soil Health System / Dept of Agriculture"
+      },
+      "advisories": {
+        "available": true,
+        "records_count": 2,
+        "source": "State Agricultural Extension & KVK"
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-UK": {
+    "geo_id": "IN-UK",
+    "state_name": "Uttarakhand",
+    "zone": "North",
+    "capital": "Dehradun",
+    "total_districts": 14,
+    "crops_count": 39,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Barley",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Ginger",
+      "Gram",
+      "Groundnut",
+      "Horse-gram",
+      "Jowar",
+      "Lentil",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Moong(Green Gram)",
+      "Moth",
+      "Onion",
+      "Other  Rabi pulses",
+      "Other Cereals & Millets",
+      "Other Kharif pulses",
+      "Peas & beans (Pulses)",
+      "Potato",
+      "Pulses total",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sannhamp",
+      "Sesamum",
+      "Small millets",
+      "Soyabean",
+      "Sugarcane",
+      "Sunflower",
+      "Tobacco",
+      "Total foodgrain",
+      "Turmeric",
+      "Urad",
+      "Wheat",
+      "other oilseeds"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 11,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 9,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-WB": {
+    "geo_id": "IN-WB",
+    "state_name": "West Bengal",
+    "zone": "East",
+    "capital": "Kolkata",
+    "total_districts": 24,
+    "crops_count": 45,
+    "recorded_crops": [
+      "Arecanut",
+      "Arhar/Tur",
+      "Bajra",
+      "Barley",
+      "Cardamom",
+      "Castor seed",
+      "Coconut",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Gram",
+      "Groundnut",
+      "Horse-gram",
+      "Jowar",
+      "Jute",
+      "Jute (Tossa & White)",
+      "Khesari",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Mesta",
+      "Moong(Green Gram)",
+      "Moth",
+      "Niger seed",
+      "Oilseeds total",
+      "Other  Rabi pulses",
+      "Other Kharif pulses",
+      "Peas & beans (Pulses)",
+      "Potato",
+      "Pulses total",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Safflower",
+      "Sannhamp",
+      "Sesamum",
+      "Small millets",
+      "Soyabean",
+      "Sugarcane",
+      "Sunflower",
+      "Tobacco",
+      "Turmeric",
+      "Urad",
+      "Wheat"
+    ],
+    "coverage_level": "medium",
+    "rainfall_status": "Normal",
+    "warning_color": "Yellow",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Normal",
+        "district_count": 16,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Yellow",
+        "district_count": 18,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": true,
+        "records_count": 1,
+        "source": "State Agricultural University / ICAR"
+      }
+    }
+  },
+  "IN-AN": {
+    "geo_id": "IN-AN",
+    "state_name": "Andaman and Nicobar Islands",
+    "zone": "South",
+    "capital": "Port Blair",
+    "total_districts": 3,
+    "crops_count": 20,
+    "recorded_crops": [
+      "Arecanut",
+      "Arhar/Tur",
+      "Banana",
+      "Black pepper",
+      "Cashewnut",
+      "Coconut",
+      "Dry chillies",
+      "Dry ginger",
+      "Groundnut",
+      "Maize",
+      "Moong(Green Gram)",
+      "Other Kharif pulses",
+      "Rice",
+      "Sugarcane",
+      "Sunflower",
+      "Sweet potato",
+      "Tapioca",
+      "Turmeric",
+      "Urad",
+      "other oilseeds"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Excess",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Excess",
+        "district_count": 2,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 2,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-CH": {
+    "geo_id": "IN-CH",
+    "state_name": "Chandigarh",
+    "zone": "North",
+    "capital": "Chandigarh",
+    "total_districts": 1,
+    "crops_count": 12,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Gram",
+      "Maize",
+      "Masoor",
+      "Moong(Green Gram)",
+      "Onion",
+      "Potato",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sunflower",
+      "Urad",
+      "Wheat"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 1,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 1,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-DH": {
+    "geo_id": "IN-DH",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "zone": "West",
+    "capital": "Daman",
+    "total_districts": 4,
+    "crops_count": 21,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Banana",
+      "Coconut",
+      "Coriander",
+      "Gram",
+      "Groundnut",
+      "Jowar",
+      "Maize",
+      "Niger seed",
+      "Other  Rabi pulses",
+      "Other Kharif pulses",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sannhamp",
+      "Sesamum",
+      "Small millets",
+      "Sugarcane",
+      "Sunflower",
+      "Urad",
+      "Wheat"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 2,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 2,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-DL": {
+    "geo_id": "IN-DL",
+    "state_name": "Delhi",
+    "zone": "North",
+    "capital": "New Delhi",
+    "total_districts": 1,
+    "crops_count": 0,
+    "recorded_crops": [],
+    "coverage_level": "none",
+    "rainfall_status": "No Data",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": false,
+        "status": "No Data",
+        "district_count": 0,
+        "source": null
+      },
+      "weather_warning": {
+        "available": false,
+        "status": "Green",
+        "district_count": 0,
+        "source": null
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-JK": {
+    "geo_id": "IN-JK",
+    "state_name": "Jammu and Kashmir",
+    "zone": "North",
+    "capital": "Srinagar / Jammu",
+    "total_districts": 19,
+    "crops_count": 42,
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Bajra",
+      "Barley",
+      "Beans & Mutter(Vegetable)",
+      "Carrot",
+      "Cond-spcs other",
+      "Coriander",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Garlic",
+      "Ginger",
+      "Gram",
+      "Groundnut",
+      "Horse-gram",
+      "Jowar",
+      "Linseed",
+      "Maize",
+      "Masoor",
+      "Moong(Green Gram)",
+      "Moth",
+      "Onion",
+      "Other  Rabi pulses",
+      "Other Cereals & Millets",
+      "Other Fresh Fruits",
+      "Other Kharif pulses",
+      "Other Vegetables",
+      "Peas & beans (Pulses)",
+      "Potato",
+      "Rapeseed &Mustard",
+      "Redish",
+      "Rice",
+      "Sannhamp",
+      "Sesamum",
+      "Small millets",
+      "Sugarcane",
+      "Tobacco",
+      "Turmeric",
+      "Turnip",
+      "Urad",
+      "Wheat",
+      "other oilseeds"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 16,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 19,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-LA": {
+    "geo_id": "IN-LA",
+    "state_name": "Ladakh",
+    "zone": "North",
+    "capital": "Leh / Kargil",
+    "total_districts": 2,
+    "crops_count": 0,
+    "recorded_crops": [],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 1,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 2,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-LD": {
+    "geo_id": "IN-LD",
+    "state_name": "Lakshadweep",
+    "zone": "South",
+    "capital": "Kavaratti",
+    "total_districts": 1,
+    "crops_count": 0,
+    "recorded_crops": [],
+    "coverage_level": "basic",
+    "rainfall_status": "No Data",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "No Data",
+        "district_count": 0,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": false,
+        "status": "Green",
+        "district_count": 0,
+        "source": null
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  },
+  "IN-PY": {
+    "geo_id": "IN-PY",
+    "state_name": "Puducherry",
+    "zone": "South",
+    "capital": "Puducherry",
+    "total_districts": 4,
+    "crops_count": 31,
+    "recorded_crops": [
+      "Arecanut",
+      "Bajra",
+      "Banana",
+      "Black pepper",
+      "Brinjal",
+      "Cashewnut",
+      "Coconut",
+      "Coriander",
+      "Cotton(lint)",
+      "Dry chillies",
+      "Dry ginger",
+      "Groundnut",
+      "Jowar",
+      "Mango",
+      "Moong(Green Gram)",
+      "Onion",
+      "Other  Rabi pulses",
+      "Other Cereals & Millets",
+      "Other Kharif pulses",
+      "Paddy",
+      "Ragi",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sesamum",
+      "Small millets",
+      "Sugarcane",
+      "Sunflower",
+      "Sweet potato",
+      "Tapioca",
+      "Turmeric",
+      "Urad"
+    ],
+    "coverage_level": "basic",
+    "rainfall_status": "Large Deficient",
+    "warning_color": "Green",
+    "available_info": {
+      "rainfall": {
+        "available": true,
+        "status": "Large Deficient",
+        "district_count": 2,
+        "source": "IMD (Rainfall Bulletin)"
+      },
+      "weather_warning": {
+        "available": true,
+        "status": "Green",
+        "district_count": 2,
+        "source": "IMD (District Weather Warning)"
+      },
+      "market_prices": {
+        "available": false,
+        "records_count": 0,
+        "commodity_count": 0,
+        "source": null
+      },
+      "soil_observations": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "advisories": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      },
+      "crop_calendars": {
+        "available": false,
+        "records_count": 0,
+        "source": null
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "IN-SK-EAS": {
+    "geo_id": "IN-SK-EAS",
+    "district_name": "East",
+    "state_name": "Sikkim",
+    "state_geo_id": "IN-SK",
+    "agro_climatic_zone": "North East Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": null,
+    "weather_warning": null,
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  },
+  "IN-SK-NOR": {
+    "geo_id": "IN-SK-NOR",
+    "district_name": "North Sikkim (Mangan)",
+    "state_name": "Sikkim",
+    "state_geo_id": "IN-SK",
+    "agro_climatic_zone": "North East Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": null,
+    "weather_warning": null,
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  },
+  "IN-SK-SOU": {
+    "geo_id": "IN-SK-SOU",
+    "district_name": "South Sikkim (Namchi)",
+    "state_name": "Sikkim",
+    "state_geo_id": "IN-SK",
+    "agro_climatic_zone": "North East Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": null,
+    "weather_warning": null,
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  },
+  "IN-SK-WES": {
+    "geo_id": "IN-SK-WES",
+    "district_name": "West Sikkim (Gyalsing)",
+    "state_name": "Sikkim",
+    "state_geo_id": "IN-SK",
+    "agro_climatic_zone": "North East Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": null,
+    "weather_warning": null,
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  }
+}

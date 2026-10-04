@@ -1,0 +1,96 @@
+{
+  "IN-DH-DAD": {
+    "geo_id": "IN-DH-DAD",
+    "district_name": "Dadra & Nagar Haveli",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_geo_id": "IN-DH",
+    "agro_climatic_zone": "West Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": null,
+    "weather_warning": null,
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  },
+  "IN-DH-DAM": {
+    "geo_id": "IN-DH-DAM",
+    "district_name": "Daman",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_geo_id": "IN-DH",
+    "agro_climatic_zone": "West Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": {
+      "available": true,
+      "bulletin_date": "2026-09-09",
+      "period_type": "daily",
+      "period_label": "24-hour daily rainfall ending 08:30 IST",
+      "actual_rainfall_mm": 0.0,
+      "normal_rainfall_mm": 1.2,
+      "departure_pct": -100.0,
+      "category": "Large Deficient",
+      "source": "IMD District Rainfall Bulletin",
+      "source_url": "https://mausam.imd.gov.in"
+    },
+    "weather_warning": {
+      "available": true,
+      "alert_level": "No Warning",
+      "color_code": "Green",
+      "hazard": "No severe weather expected",
+      "valid_today": "2026-09-10",
+      "source": "IMD District Weather Warning",
+      "source_url": "https://mausam.imd.gov.in/responsive/districtWiseWarning.php"
+    },
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  },
+  "IN-DH-DIU": {
+    "geo_id": "IN-DH-DIU",
+    "district_name": "Diu",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_geo_id": "IN-DH",
+    "agro_climatic_zone": "West Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": {
+      "available": true,
+      "bulletin_date": "2026-09-09",
+      "period_type": "daily",
+      "period_label": "24-hour daily rainfall ending 08:30 IST",
+      "actual_rainfall_mm": 0.0,
+      "normal_rainfall_mm": 13.9,
+      "departure_pct": -100.0,
+      "category": "Large Deficient",
+      "source": "IMD District Rainfall Bulletin",
+      "source_url": "https://mausam.imd.gov.in"
+    },
+    "weather_warning": {
+      "available": true,
+      "alert_level": "No Warning",
+      "color_code": "Green",
+      "hazard": "No severe weather expected",
+      "valid_today": "2026-09-10",
+      "source": "IMD District Weather Warning",
+      "source_url": "https://mausam.imd.gov.in/responsive/districtWiseWarning.php"
+    },
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  },
+  "IN-DH-SIL": {
+    "geo_id": "IN-DH-SIL",
+    "district_name": "Silvassa",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_geo_id": "IN-DH",
+    "agro_climatic_zone": "West Agro-Climatic Zone",
+    "recorded_crops": [],
+    "rainfall": null,
+    "weather_warning": null,
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  }
+}

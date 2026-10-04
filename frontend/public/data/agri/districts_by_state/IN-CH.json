@@ -1,0 +1,48 @@
+{
+  "IN-CH-CHA": {
+    "geo_id": "IN-CH-CHA",
+    "district_name": "Chandigarh",
+    "state_name": "Chandigarh",
+    "state_geo_id": "IN-CH",
+    "agro_climatic_zone": "North Agro-Climatic Zone",
+    "recorded_crops": [
+      "Arhar/Tur",
+      "Gram",
+      "Maize",
+      "Masoor",
+      "Moong(Green Gram)",
+      "Onion",
+      "Potato",
+      "Rapeseed &Mustard",
+      "Rice",
+      "Sunflower",
+      "Urad",
+      "Wheat"
+    ],
+    "rainfall": {
+      "available": true,
+      "bulletin_date": "2026-09-09",
+      "period_type": "daily",
+      "period_label": "24-hour daily rainfall ending 08:30 IST",
+      "actual_rainfall_mm": 0.0,
+      "normal_rainfall_mm": 2.8,
+      "departure_pct": -100.0,
+      "category": "Large Deficient",
+      "source": "IMD District Rainfall Bulletin",
+      "source_url": "https://mausam.imd.gov.in"
+    },
+    "weather_warning": {
+      "available": true,
+      "alert_level": "No Warning",
+      "color_code": "Green",
+      "hazard": "No severe weather expected",
+      "valid_today": "2026-09-10",
+      "source": "IMD District Weather Warning",
+      "source_url": "https://mausam.imd.gov.in/responsive/districtWiseWarning.php"
+    },
+    "market": null,
+    "soil": null,
+    "advisories": null,
+    "crop_calendar": null
+  }
+}

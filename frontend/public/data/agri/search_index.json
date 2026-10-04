@@ -1,0 +1,6326 @@
+[
+  {
+    "type": "state",
+    "name": "Andhra Pradesh",
+    "geo_id": "IN-AP",
+    "state_name": "Andhra Pradesh",
+    "zone": "South",
+    "crops_count": 69,
+    "total_districts": 28
+  },
+  {
+    "type": "state",
+    "name": "Arunachal Pradesh",
+    "geo_id": "IN-AR",
+    "state_name": "Arunachal Pradesh",
+    "zone": "North East",
+    "crops_count": 16,
+    "total_districts": 14
+  },
+  {
+    "type": "state",
+    "name": "Assam",
+    "geo_id": "IN-AS",
+    "state_name": "Assam",
+    "zone": "North East",
+    "crops_count": 40,
+    "total_districts": 26
+  },
+  {
+    "type": "state",
+    "name": "Bihar",
+    "geo_id": "IN-BR",
+    "state_name": "Bihar",
+    "zone": "East",
+    "crops_count": 42,
+    "total_districts": 39
+  },
+  {
+    "type": "state",
+    "name": "Chhattisgarh",
+    "geo_id": "IN-CG",
+    "state_name": "Chhattisgarh",
+    "zone": "Central",
+    "crops_count": 46,
+    "total_districts": 36
+  },
+  {
+    "type": "state",
+    "name": "Goa",
+    "geo_id": "IN-GA",
+    "state_name": "Goa",
+    "zone": "West",
+    "crops_count": 15,
+    "total_districts": 2
+  },
+  {
+    "type": "state",
+    "name": "Gujarat",
+    "geo_id": "IN-GJ",
+    "state_name": "Gujarat",
+    "zone": "West",
+    "crops_count": 84,
+    "total_districts": 34
+  },
+  {
+    "type": "state",
+    "name": "Haryana",
+    "geo_id": "IN-HR",
+    "state_name": "Haryana",
+    "zone": "North",
+    "crops_count": 42,
+    "total_districts": 21
+  },
+  {
+    "type": "state",
+    "name": "Himachal Pradesh",
+    "geo_id": "IN-HP",
+    "state_name": "Himachal Pradesh",
+    "zone": "North",
+    "crops_count": 36,
+    "total_districts": 13
+  },
+  {
+    "type": "state",
+    "name": "Jharkhand",
+    "geo_id": "IN-JH",
+    "state_name": "Jharkhand",
+    "zone": "East",
+    "crops_count": 12,
+    "total_districts": 22
+  },
+  {
+    "type": "state",
+    "name": "Karnataka",
+    "geo_id": "IN-KA",
+    "state_name": "Karnataka",
+    "zone": "South",
+    "crops_count": 145,
+    "total_districts": 32
+  },
+  {
+    "type": "state",
+    "name": "Kerala",
+    "geo_id": "IN-KL",
+    "state_name": "Kerala",
+    "zone": "South",
+    "crops_count": 49,
+    "total_districts": 16
+  },
+  {
+    "type": "state",
+    "name": "Madhya Pradesh",
+    "geo_id": "IN-MP",
+    "state_name": "Madhya Pradesh",
+    "zone": "Central",
+    "crops_count": 62,
+    "total_districts": 55
+  },
+  {
+    "type": "state",
+    "name": "Maharashtra",
+    "geo_id": "IN-MH",
+    "state_name": "Maharashtra",
+    "zone": "West",
+    "crops_count": 134,
+    "total_districts": 38
+  },
+  {
+    "type": "state",
+    "name": "Manipur",
+    "geo_id": "IN-MN",
+    "state_name": "Manipur",
+    "zone": "North East",
+    "crops_count": 41,
+    "total_districts": 11
+  },
+  {
+    "type": "state",
+    "name": "Meghalaya",
+    "geo_id": "IN-ML",
+    "state_name": "Meghalaya",
+    "zone": "North East",
+    "crops_count": 39,
+    "total_districts": 11
+  },
+  {
+    "type": "state",
+    "name": "Mizoram",
+    "geo_id": "IN-MZ",
+    "state_name": "Mizoram",
+    "zone": "North East",
+    "crops_count": 24,
+    "total_districts": 5
+  },
+  {
+    "type": "state",
+    "name": "Nagaland",
+    "geo_id": "IN-NL",
+    "state_name": "Nagaland",
+    "zone": "North East",
+    "crops_count": 48,
+    "total_districts": 12
+  },
+  {
+    "type": "state",
+    "name": "Odisha",
+    "geo_id": "IN-OD",
+    "state_name": "Odisha",
+    "zone": "East",
+    "crops_count": 39,
+    "total_districts": 33
+  },
+  {
+    "type": "state",
+    "name": "Punjab",
+    "geo_id": "IN-PB",
+    "state_name": "Punjab",
+    "zone": "North",
+    "crops_count": 89,
+    "total_districts": 22
+  },
+  {
+    "type": "state",
+    "name": "Rajasthan",
+    "geo_id": "IN-RJ",
+    "state_name": "Rajasthan",
+    "zone": "North",
+    "crops_count": 51,
+    "total_districts": 50
+  },
+  {
+    "type": "state",
+    "name": "Sikkim",
+    "geo_id": "IN-SK",
+    "state_name": "Sikkim",
+    "zone": "North East",
+    "crops_count": 18,
+    "total_districts": 4
+  },
+  {
+    "type": "state",
+    "name": "Tamil Nadu",
+    "geo_id": "IN-TN",
+    "state_name": "Tamil Nadu",
+    "zone": "South",
+    "crops_count": 132,
+    "total_districts": 38
+  },
+  {
+    "type": "state",
+    "name": "Telangana",
+    "geo_id": "IN-TG",
+    "state_name": "Telangana",
+    "zone": "South",
+    "crops_count": 65,
+    "total_districts": 33
+  },
+  {
+    "type": "state",
+    "name": "Tripura",
+    "geo_id": "IN-TR",
+    "state_name": "Tripura",
+    "zone": "North East",
+    "crops_count": 22,
+    "total_districts": 8
+  },
+  {
+    "type": "state",
+    "name": "Uttar Pradesh",
+    "geo_id": "IN-UP",
+    "state_name": "Uttar Pradesh",
+    "zone": "North",
+    "crops_count": 116,
+    "total_districts": 74
+  },
+  {
+    "type": "state",
+    "name": "Uttarakhand",
+    "geo_id": "IN-UK",
+    "state_name": "Uttarakhand",
+    "zone": "North",
+    "crops_count": 39,
+    "total_districts": 14
+  },
+  {
+    "type": "state",
+    "name": "West Bengal",
+    "geo_id": "IN-WB",
+    "state_name": "West Bengal",
+    "zone": "East",
+    "crops_count": 45,
+    "total_districts": 24
+  },
+  {
+    "type": "state",
+    "name": "Andaman and Nicobar Islands",
+    "geo_id": "IN-AN",
+    "state_name": "Andaman and Nicobar Islands",
+    "zone": "South",
+    "crops_count": 20,
+    "total_districts": 3
+  },
+  {
+    "type": "state",
+    "name": "Chandigarh",
+    "geo_id": "IN-CH",
+    "state_name": "Chandigarh",
+    "zone": "North",
+    "crops_count": 12,
+    "total_districts": 1
+  },
+  {
+    "type": "state",
+    "name": "Dadra and Nagar Haveli and Daman and Diu",
+    "geo_id": "IN-DH",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "zone": "West",
+    "crops_count": 21,
+    "total_districts": 4
+  },
+  {
+    "type": "state",
+    "name": "Delhi",
+    "geo_id": "IN-DL",
+    "state_name": "Delhi",
+    "zone": "North",
+    "crops_count": 0,
+    "total_districts": 1
+  },
+  {
+    "type": "state",
+    "name": "Jammu and Kashmir",
+    "geo_id": "IN-JK",
+    "state_name": "Jammu and Kashmir",
+    "zone": "North",
+    "crops_count": 42,
+    "total_districts": 19
+  },
+  {
+    "type": "state",
+    "name": "Ladakh",
+    "geo_id": "IN-LA",
+    "state_name": "Ladakh",
+    "zone": "North",
+    "crops_count": 0,
+    "total_districts": 2
+  },
+  {
+    "type": "state",
+    "name": "Lakshadweep",
+    "geo_id": "IN-LD",
+    "state_name": "Lakshadweep",
+    "zone": "South",
+    "crops_count": 0,
+    "total_districts": 1
+  },
+  {
+    "type": "state",
+    "name": "Puducherry",
+    "geo_id": "IN-PY",
+    "state_name": "Puducherry",
+    "zone": "South",
+    "crops_count": 31,
+    "total_districts": 4
+  },
+  {
+    "type": "district",
+    "name": "Nicobar",
+    "geo_id": "IN-AN-NIC",
+    "state_name": "Andaman and Nicobar Islands",
+    "state_geo_id": "IN-AN",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "North and Middle Andaman",
+    "geo_id": "IN-AN-NOR",
+    "state_name": "Andaman and Nicobar Islands",
+    "state_geo_id": "IN-AN",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "South Andaman",
+    "geo_id": "IN-AN-SOU",
+    "state_name": "Andaman and Nicobar Islands",
+    "state_geo_id": "IN-AN",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Alluri Sitharama Raju",
+    "geo_id": "IN-AP-ALL",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Anakapally",
+    "geo_id": "IN-AP-ANA",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ananthapuramu",
+    "geo_id": "IN-AP-ANA1",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Annamayya",
+    "geo_id": "IN-AP-ANN",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bapatla",
+    "geo_id": "IN-AP-BAP",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chittor",
+    "geo_id": "IN-AP-CHI",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dr.B.R.A.Konaseema",
+    "geo_id": "IN-AP-DRB",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "East Godavari",
+    "geo_id": "IN-AP-EAS",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Eluru",
+    "geo_id": "IN-AP-ELU",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Guntur",
+    "geo_id": "IN-AP-GUN",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kakinada",
+    "geo_id": "IN-AP-KAK",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Krishna",
+    "geo_id": "IN-AP-KRI",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kurnool",
+    "geo_id": "IN-AP-KUR",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Markapuram",
+    "geo_id": "IN-AP-MAR",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "NTR",
+    "geo_id": "IN-AP-NTR",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nandyal",
+    "geo_id": "IN-AP-NAN",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Palnadu",
+    "geo_id": "IN-AP-PAL",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Parvathipuram Manyam",
+    "geo_id": "IN-AP-PAR",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Polavaram",
+    "geo_id": "IN-AP-POL",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Prakasam",
+    "geo_id": "IN-AP-PRA",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "SPSR Nellore",
+    "geo_id": "IN-AP-SPS",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sri Sathya Sai",
+    "geo_id": "IN-AP-SRI",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Srikakulam",
+    "geo_id": "IN-AP-SRI1",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tirupathi",
+    "geo_id": "IN-AP-TIR",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Vijayanagaram",
+    "geo_id": "IN-AP-VIJ",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Visakhapatnam",
+    "geo_id": "IN-AP-VIS",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West Godavari",
+    "geo_id": "IN-AP-WES",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "YSR Kadapa",
+    "geo_id": "IN-AP-YSR",
+    "state_name": "Andhra Pradesh",
+    "state_geo_id": "IN-AP",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Changlang",
+    "geo_id": "IN-AR-CHA",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "East Kameng",
+    "geo_id": "IN-AR-EAS",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "East Siang",
+    "geo_id": "IN-AR-EAS1",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kurung Kummey",
+    "geo_id": "IN-AR-KUR",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lohit",
+    "geo_id": "IN-AR-LOH",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lower Dibang Valley",
+    "geo_id": "IN-AR-LOW",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lower Subansiri",
+    "geo_id": "IN-AR-LOW1",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Papum Pore",
+    "geo_id": "IN-AR-PAP",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tawang",
+    "geo_id": "IN-AR-TAW",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tirap",
+    "geo_id": "IN-AR-TIR",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Upper Siang",
+    "geo_id": "IN-AR-UPP",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Upper Subansiri",
+    "geo_id": "IN-AR-UPP1",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West Kameng",
+    "geo_id": "IN-AR-WES",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West Siang",
+    "geo_id": "IN-AR-WES1",
+    "state_name": "Arunachal Pradesh",
+    "state_geo_id": "IN-AR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Barpeta",
+    "geo_id": "IN-AS-BAR",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bongaigaon",
+    "geo_id": "IN-AS-BON",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Cachar",
+    "geo_id": "IN-AS-CAC",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Darrang",
+    "geo_id": "IN-AS-DAR",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dhemaji",
+    "geo_id": "IN-AS-DHE",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dhubri",
+    "geo_id": "IN-AS-DHU",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dibrugarh",
+    "geo_id": "IN-AS-DIB",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Goalpara",
+    "geo_id": "IN-AS-GOA",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Golaghat",
+    "geo_id": "IN-AS-GOL",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hailakandi",
+    "geo_id": "IN-AS-HAI",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hojai",
+    "geo_id": "IN-AS-HOJ",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jorhat",
+    "geo_id": "IN-AS-JOR",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kamrup",
+    "geo_id": "IN-AS-KAM",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Karbi Anglong",
+    "geo_id": "IN-AS-KAR",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Karimganj",
+    "geo_id": "IN-AS-KAR1",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kokrajhar",
+    "geo_id": "IN-AS-KOK",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lakhimpur",
+    "geo_id": "IN-AS-LAK",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mangaldoi",
+    "geo_id": "IN-AS-MAN",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Morigaon",
+    "geo_id": "IN-AS-MOR",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nagaon",
+    "geo_id": "IN-AS-NAG",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nalbari",
+    "geo_id": "IN-AS-NAL",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "North Cachar Hills",
+    "geo_id": "IN-AS-NOR",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sibsagar",
+    "geo_id": "IN-AS-SIB",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sonitpur",
+    "geo_id": "IN-AS-SON",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sribhumi",
+    "geo_id": "IN-AS-SRI",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tinsukia",
+    "geo_id": "IN-AS-TIN",
+    "state_name": "Assam",
+    "state_geo_id": "IN-AS",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Araria",
+    "geo_id": "IN-BR-ARA",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Arwal",
+    "geo_id": "IN-BR-ARW",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Aurangabad",
+    "geo_id": "IN-BR-AUR",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Banka",
+    "geo_id": "IN-BR-BAN",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Begusarai",
+    "geo_id": "IN-BR-BEG",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhagalpur",
+    "geo_id": "IN-BR-BHA",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhojpur",
+    "geo_id": "IN-BR-BHO",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Buxar",
+    "geo_id": "IN-BR-BUX",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chhapra",
+    "geo_id": "IN-BR-CHH",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Darbhanga",
+    "geo_id": "IN-BR-DAR",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "East Champaran/ Motihari",
+    "geo_id": "IN-BR-EAS",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gaya",
+    "geo_id": "IN-BR-GAY",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gopalgang",
+    "geo_id": "IN-BR-GOP",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jamui",
+    "geo_id": "IN-BR-JAM",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jehanabad",
+    "geo_id": "IN-BR-JEH",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kaimur/Bhabhua",
+    "geo_id": "IN-BR-KAI",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kaithar",
+    "geo_id": "IN-BR-KAI1",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Khagaria",
+    "geo_id": "IN-BR-KHA",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kishanganj",
+    "geo_id": "IN-BR-KIS",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Luckeesarai",
+    "geo_id": "IN-BR-LUC",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Madhepura",
+    "geo_id": "IN-BR-MAD",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Madhubani",
+    "geo_id": "IN-BR-MAD1",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Munghair",
+    "geo_id": "IN-BR-MUN",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Muzaffarpur",
+    "geo_id": "IN-BR-MUZ",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nalanda",
+    "geo_id": "IN-BR-NAL",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nawada",
+    "geo_id": "IN-BR-NAW",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Patna",
+    "geo_id": "IN-BR-PAT",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Purnea",
+    "geo_id": "IN-BR-PUR",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rohtas",
+    "geo_id": "IN-BR-ROH",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Saharsa",
+    "geo_id": "IN-BR-SAH",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Samastipur",
+    "geo_id": "IN-BR-SAM",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Saran",
+    "geo_id": "IN-BR-SAR",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sheikhpura",
+    "geo_id": "IN-BR-SHE",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sheohar",
+    "geo_id": "IN-BR-SHE1",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sitamarhi",
+    "geo_id": "IN-BR-SIT",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Siwan",
+    "geo_id": "IN-BR-SIW",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Supaul",
+    "geo_id": "IN-BR-SUP",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Vaishali",
+    "geo_id": "IN-BR-VAI",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West Chambaran",
+    "geo_id": "IN-BR-WES",
+    "state_name": "Bihar",
+    "state_geo_id": "IN-BR",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chandigarh",
+    "geo_id": "IN-CH-CHA",
+    "state_name": "Chandigarh",
+    "state_geo_id": "IN-CH",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Balod",
+    "geo_id": "IN-CG-BAL",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Balodabazar",
+    "geo_id": "IN-CG-BAL1",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Balrampur",
+    "geo_id": "IN-CG-BAL2",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bastar",
+    "geo_id": "IN-CG-BAS",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bemetara",
+    "geo_id": "IN-CG-BEM",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bijapur",
+    "geo_id": "IN-CG-BIJ",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bilaspur",
+    "geo_id": "IN-CG-BIL",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dantewada",
+    "geo_id": "IN-CG-DAN",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dhamtari",
+    "geo_id": "IN-CG-DHA",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Durg",
+    "geo_id": "IN-CG-DUR",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gariyaband",
+    "geo_id": "IN-CG-GAR",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gourela Pendra Marwahi",
+    "geo_id": "IN-CG-GOU",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jagdalpur",
+    "geo_id": "IN-CG-JAG",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Janjgeer-Champa",
+    "geo_id": "IN-CG-JAN",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jashpur",
+    "geo_id": "IN-CG-JAS",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kabirdham",
+    "geo_id": "IN-CG-KAB",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kanker",
+    "geo_id": "IN-CG-KAN",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kawardha",
+    "geo_id": "IN-CG-KAW",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Khairagarh Chhuikhadan Gandai",
+    "geo_id": "IN-CG-KHA",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kondagaon",
+    "geo_id": "IN-CG-KON",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Korba",
+    "geo_id": "IN-CG-KOR",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Koriya",
+    "geo_id": "IN-CG-KOR1",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mahasamund",
+    "geo_id": "IN-CG-MAH",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Manendragarh Chirmiri Bhartpur",
+    "geo_id": "IN-CG-MAN",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mohla Manpur Ambagarh Chouki",
+    "geo_id": "IN-CG-MOH",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mungeli",
+    "geo_id": "IN-CG-MUN",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Narayanpur",
+    "geo_id": "IN-CG-NAR",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "North Bastar",
+    "geo_id": "IN-CG-NOR",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Raigarh",
+    "geo_id": "IN-CG-RAI",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Raipur",
+    "geo_id": "IN-CG-RAI1",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rajnandgaon",
+    "geo_id": "IN-CG-RAJ",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sakti",
+    "geo_id": "IN-CG-SAK",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sarangarh Bilaigarh",
+    "geo_id": "IN-CG-SAR",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sukma",
+    "geo_id": "IN-CG-SUK",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Surajpur",
+    "geo_id": "IN-CG-SUR",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Surguja",
+    "geo_id": "IN-CG-SUR1",
+    "state_name": "Chhattisgarh",
+    "state_geo_id": "IN-CG",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dadra & Nagar Haveli",
+    "geo_id": "IN-DH-DAD",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_geo_id": "IN-DH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Daman",
+    "geo_id": "IN-DH-DAM",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_geo_id": "IN-DH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Diu",
+    "geo_id": "IN-DH-DIU",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_geo_id": "IN-DH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Silvassa",
+    "geo_id": "IN-DH-SIL",
+    "state_name": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_geo_id": "IN-DH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Delhi",
+    "geo_id": "IN-DL-DEL",
+    "state_name": "Delhi",
+    "state_geo_id": "IN-DL",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "North Goa",
+    "geo_id": "IN-GA-NOR",
+    "state_name": "Goa",
+    "state_geo_id": "IN-GA",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "South Goa",
+    "geo_id": "IN-GA-SOU",
+    "state_name": "Goa",
+    "state_geo_id": "IN-GA",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ahmedabad",
+    "geo_id": "IN-GJ-AHM",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Amreli",
+    "geo_id": "IN-GJ-AMR",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Anand",
+    "geo_id": "IN-GJ-ANA",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Aravalli",
+    "geo_id": "IN-GJ-ARA",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Banaskanth",
+    "geo_id": "IN-GJ-BAN",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bharuch",
+    "geo_id": "IN-GJ-BHA",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhavnagar",
+    "geo_id": "IN-GJ-BHA1",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Botad",
+    "geo_id": "IN-GJ-BOT",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chhota Udaipur",
+    "geo_id": "IN-GJ-CHH",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dahod",
+    "geo_id": "IN-GJ-DAH",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dang",
+    "geo_id": "IN-GJ-DAN",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Devbhumi Dwarka",
+    "geo_id": "IN-GJ-DEV",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gandhinagar",
+    "geo_id": "IN-GJ-GAN",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gir Somnath",
+    "geo_id": "IN-GJ-GIR",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jamnagar",
+    "geo_id": "IN-GJ-JAM",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Junagarh",
+    "geo_id": "IN-GJ-JUN",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kachchh",
+    "geo_id": "IN-GJ-KAC",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kheda",
+    "geo_id": "IN-GJ-KHE",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mahisagar",
+    "geo_id": "IN-GJ-MAH",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mehsana",
+    "geo_id": "IN-GJ-MEH",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Morbi",
+    "geo_id": "IN-GJ-MOR",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Narmada",
+    "geo_id": "IN-GJ-NAR",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Navsari",
+    "geo_id": "IN-GJ-NAV",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Panchmahals",
+    "geo_id": "IN-GJ-PAN",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Patan",
+    "geo_id": "IN-GJ-PAT",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Porbandar",
+    "geo_id": "IN-GJ-POR",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rajkot",
+    "geo_id": "IN-GJ-RAJ",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sabarkantha",
+    "geo_id": "IN-GJ-SAB",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Surat",
+    "geo_id": "IN-GJ-SUR",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Surendranagar",
+    "geo_id": "IN-GJ-SUR1",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tapi",
+    "geo_id": "IN-GJ-TAP",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "The Dangs",
+    "geo_id": "IN-GJ-THE",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Vadodara",
+    "geo_id": "IN-GJ-VAD",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Valsad",
+    "geo_id": "IN-GJ-VAL",
+    "state_name": "Gujarat",
+    "state_geo_id": "IN-GJ",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ambala",
+    "geo_id": "IN-HR-AMB",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhiwani",
+    "geo_id": "IN-HR-BHI",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Faridabad",
+    "geo_id": "IN-HR-FAR",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Fatehabad",
+    "geo_id": "IN-HR-FAT",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gurgaon",
+    "geo_id": "IN-HR-GUR",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hissar",
+    "geo_id": "IN-HR-HIS",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jhajar",
+    "geo_id": "IN-HR-JHA",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jind",
+    "geo_id": "IN-HR-JIN",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kaithal",
+    "geo_id": "IN-HR-KAI",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Karnal",
+    "geo_id": "IN-HR-KAR",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kurukshetra",
+    "geo_id": "IN-HR-KUR",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mahendragarh-Narnaul",
+    "geo_id": "IN-HR-MAH",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mewat",
+    "geo_id": "IN-HR-MEW",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Palwal",
+    "geo_id": "IN-HR-PAL",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Panchkula",
+    "geo_id": "IN-HR-PAN",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Panipat",
+    "geo_id": "IN-HR-PAN1",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rewari",
+    "geo_id": "IN-HR-REW",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rohtak",
+    "geo_id": "IN-HR-ROH",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sirsa",
+    "geo_id": "IN-HR-SIR",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sonipat",
+    "geo_id": "IN-HR-SON",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Yamuna Nagar",
+    "geo_id": "IN-HR-YAM",
+    "state_name": "Haryana",
+    "state_geo_id": "IN-HR",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bilaspur",
+    "geo_id": "IN-HP-BIL",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chamba",
+    "geo_id": "IN-HP-CHA",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hamirpur",
+    "geo_id": "IN-HP-HAM",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kangra",
+    "geo_id": "IN-HP-KAN",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kangra (At Dharmashala)",
+    "geo_id": "IN-HP-KAN1",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kinnaur (At Kalpa)",
+    "geo_id": "IN-HP-KIN",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kullu",
+    "geo_id": "IN-HP-KUL",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lahul & Spiti",
+    "geo_id": "IN-HP-LAH",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mandi",
+    "geo_id": "IN-HP-MAN",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shimla",
+    "geo_id": "IN-HP-SHI",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sirmore",
+    "geo_id": "IN-HP-SIR",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Solan",
+    "geo_id": "IN-HP-SOL",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Una",
+    "geo_id": "IN-HP-UNA",
+    "state_name": "Himachal Pradesh",
+    "state_geo_id": "IN-HP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Anantnag",
+    "geo_id": "IN-JK-ANA",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bandipora",
+    "geo_id": "IN-JK-BAN",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Baramulla",
+    "geo_id": "IN-JK-BAR",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Budgam",
+    "geo_id": "IN-JK-BUD",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Doda",
+    "geo_id": "IN-JK-DOD",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ganderbal",
+    "geo_id": "IN-JK-GAN",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jammu",
+    "geo_id": "IN-JK-JAM",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kathua",
+    "geo_id": "IN-JK-KAT",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kishtwar",
+    "geo_id": "IN-JK-KIS",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kulgam",
+    "geo_id": "IN-JK-KUL",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kupwara",
+    "geo_id": "IN-JK-KUP",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Poonch",
+    "geo_id": "IN-JK-POO",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pulwama",
+    "geo_id": "IN-JK-PUL",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rajouri",
+    "geo_id": "IN-JK-RAJ",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ramban",
+    "geo_id": "IN-JK-RAM",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Samba",
+    "geo_id": "IN-JK-SAM",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shopian",
+    "geo_id": "IN-JK-SHO",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Srinagar",
+    "geo_id": "IN-JK-SRI",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Udhampur",
+    "geo_id": "IN-JK-UDH",
+    "state_name": "Jammu and Kashmir",
+    "state_geo_id": "IN-JK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bokaro",
+    "geo_id": "IN-JH-BOK",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chatra",
+    "geo_id": "IN-JH-CHA",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Deogarh",
+    "geo_id": "IN-JH-DEO",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dhanbad",
+    "geo_id": "IN-JH-DHA",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dumka",
+    "geo_id": "IN-JH-DUM",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "East Singhbhum",
+    "geo_id": "IN-JH-EAS",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Garhwa",
+    "geo_id": "IN-JH-GAR",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Giridih",
+    "geo_id": "IN-JH-GIR",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Godda",
+    "geo_id": "IN-JH-GOD",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gumla",
+    "geo_id": "IN-JH-GUM",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hazaribagh",
+    "geo_id": "IN-JH-HAZ",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jamtara",
+    "geo_id": "IN-JH-JAM",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Koderma",
+    "geo_id": "IN-JH-KOD",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Latehar",
+    "geo_id": "IN-JH-LAT",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lohardaga",
+    "geo_id": "IN-JH-LOH",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pakur",
+    "geo_id": "IN-JH-PAK",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Palamu",
+    "geo_id": "IN-JH-PAL",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ranchi",
+    "geo_id": "IN-JH-RAN",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sahebgang",
+    "geo_id": "IN-JH-SAH",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Saraikela(Kharsanwa)",
+    "geo_id": "IN-JH-SAR",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Simdega",
+    "geo_id": "IN-JH-SIM",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West Singbhum",
+    "geo_id": "IN-JH-WES",
+    "state_name": "Jharkhand",
+    "state_geo_id": "IN-JH",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bagalkot",
+    "geo_id": "IN-KA-BAG",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Belagavi",
+    "geo_id": "IN-KA-BEL",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bellary",
+    "geo_id": "IN-KA-BEL1",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bengaluru",
+    "geo_id": "IN-KA-BEN",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bengaluru Rural",
+    "geo_id": "IN-KA-BEN1",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bengaluru South",
+    "geo_id": "IN-KA-BEN2",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bidar",
+    "geo_id": "IN-KA-BID",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chamarajanagar",
+    "geo_id": "IN-KA-CHA",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chikkaballapur",
+    "geo_id": "IN-KA-CHI",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chikkamagaluru",
+    "geo_id": "IN-KA-CHI1",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chitradurga",
+    "geo_id": "IN-KA-CHI2",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dakshina Kannada",
+    "geo_id": "IN-KA-DAK",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Davangere",
+    "geo_id": "IN-KA-DAV",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dharwad",
+    "geo_id": "IN-KA-DHA",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gadag",
+    "geo_id": "IN-KA-GAD",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hassan",
+    "geo_id": "IN-KA-HAS",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Haveri",
+    "geo_id": "IN-KA-HAV",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kalaburagi",
+    "geo_id": "IN-KA-KAL",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kodagu",
+    "geo_id": "IN-KA-KOD",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kolar",
+    "geo_id": "IN-KA-KOL",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Koppal",
+    "geo_id": "IN-KA-KOP",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mandya",
+    "geo_id": "IN-KA-MAN",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mysuru",
+    "geo_id": "IN-KA-MYS",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Raichur",
+    "geo_id": "IN-KA-RAI",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ramanagar",
+    "geo_id": "IN-KA-RAM",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shivamogga",
+    "geo_id": "IN-KA-SHI",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tumakuru",
+    "geo_id": "IN-KA-TUM",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Udupi",
+    "geo_id": "IN-KA-UDU",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Uttara Kannada",
+    "geo_id": "IN-KA-UTT",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Vijayanagara",
+    "geo_id": "IN-KA-VIJ",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Vijayapura",
+    "geo_id": "IN-KA-VIJ1",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Yadgir",
+    "geo_id": "IN-KA-YAD",
+    "state_name": "Karnataka",
+    "state_geo_id": "IN-KA",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Alappuzha",
+    "geo_id": "IN-KL-ALA",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Alleppey",
+    "geo_id": "IN-KL-ALL",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Calicut",
+    "geo_id": "IN-KL-CAL",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ernakulam",
+    "geo_id": "IN-KL-ERN",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Idukki",
+    "geo_id": "IN-KL-IDU",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kannur",
+    "geo_id": "IN-KL-KAN",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kasargod",
+    "geo_id": "IN-KL-KAS",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kollam",
+    "geo_id": "IN-KL-KOL",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kottayam",
+    "geo_id": "IN-KL-KOT",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kozhikode(Calicut)",
+    "geo_id": "IN-KL-KOZ",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Malappuram",
+    "geo_id": "IN-KL-MAL",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Palakad",
+    "geo_id": "IN-KL-PAL",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pathanamthitta",
+    "geo_id": "IN-KL-PAT",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Thirssur",
+    "geo_id": "IN-KL-THI",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Thiruvananthapuram",
+    "geo_id": "IN-KL-THI1",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Wayanad",
+    "geo_id": "IN-KL-WAY",
+    "state_name": "Kerala",
+    "state_geo_id": "IN-KL",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kargil",
+    "geo_id": "IN-LA-KAR",
+    "state_name": "Ladakh",
+    "state_geo_id": "IN-LA",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Leh",
+    "geo_id": "IN-LA-LEH",
+    "state_name": "Ladakh",
+    "state_geo_id": "IN-LA",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kavaratti",
+    "geo_id": "IN-LD-KAV",
+    "state_name": "Lakshadweep",
+    "state_geo_id": "IN-LD",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Agar Malwa",
+    "geo_id": "IN-MP-AGA",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Alirajpur",
+    "geo_id": "IN-MP-ALI",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Anupur",
+    "geo_id": "IN-MP-ANU",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ashoknagar",
+    "geo_id": "IN-MP-ASH",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Badwani",
+    "geo_id": "IN-MP-BAD",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Balaghat",
+    "geo_id": "IN-MP-BAL",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Betul",
+    "geo_id": "IN-MP-BET",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhind",
+    "geo_id": "IN-MP-BHI",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhopal",
+    "geo_id": "IN-MP-BHO",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Burhanpur",
+    "geo_id": "IN-MP-BUR",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chhatarpur",
+    "geo_id": "IN-MP-CHH",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chhindwara",
+    "geo_id": "IN-MP-CHH1",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Damoh",
+    "geo_id": "IN-MP-DAM",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Datia",
+    "geo_id": "IN-MP-DAT",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dewas",
+    "geo_id": "IN-MP-DEW",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dhar",
+    "geo_id": "IN-MP-DHA",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dindori",
+    "geo_id": "IN-MP-DIN",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Guna",
+    "geo_id": "IN-MP-GUN",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gwalior",
+    "geo_id": "IN-MP-GWA",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Harda",
+    "geo_id": "IN-MP-HAR",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Indore",
+    "geo_id": "IN-MP-IND",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jabalpur",
+    "geo_id": "IN-MP-JAB",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jhabua",
+    "geo_id": "IN-MP-JHA",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Katni",
+    "geo_id": "IN-MP-KAT",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Khandwa",
+    "geo_id": "IN-MP-KHA",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Khargone",
+    "geo_id": "IN-MP-KHA1",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Maihar",
+    "geo_id": "IN-MP-MAI",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mandla",
+    "geo_id": "IN-MP-MAN",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mandsaur",
+    "geo_id": "IN-MP-MAN1",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mauganj",
+    "geo_id": "IN-MP-MAU",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Morena",
+    "geo_id": "IN-MP-MOR",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Narmadapuram",
+    "geo_id": "IN-MP-NAR",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Narsinghpur",
+    "geo_id": "IN-MP-NAR1",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Neemuch",
+    "geo_id": "IN-MP-NEE",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Niwadi",
+    "geo_id": "IN-MP-NIW",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pandhurna",
+    "geo_id": "IN-MP-PAN",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Panna",
+    "geo_id": "IN-MP-PAN1",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Raisen",
+    "geo_id": "IN-MP-RAI",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rajgarh",
+    "geo_id": "IN-MP-RAJ",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ratlam",
+    "geo_id": "IN-MP-RAT",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rewa",
+    "geo_id": "IN-MP-REW",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sagar",
+    "geo_id": "IN-MP-SAG",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Satna",
+    "geo_id": "IN-MP-SAT",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sehore",
+    "geo_id": "IN-MP-SEH",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Seoni",
+    "geo_id": "IN-MP-SEO",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shajapur",
+    "geo_id": "IN-MP-SHA",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shehdol",
+    "geo_id": "IN-MP-SHE",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sheopur",
+    "geo_id": "IN-MP-SHE1",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shivpuri",
+    "geo_id": "IN-MP-SHI",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sidhi",
+    "geo_id": "IN-MP-SID",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Singroli",
+    "geo_id": "IN-MP-SIN",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tikamgarh",
+    "geo_id": "IN-MP-TIK",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ujjain",
+    "geo_id": "IN-MP-UJJ",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Umariya",
+    "geo_id": "IN-MP-UMA",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Vidisha",
+    "geo_id": "IN-MP-VID",
+    "state_name": "Madhya Pradesh",
+    "state_geo_id": "IN-MP",
+    "zone": "Central Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ahilyanagar",
+    "geo_id": "IN-MH-AHI",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Akola",
+    "geo_id": "IN-MH-AKO",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Amarawati",
+    "geo_id": "IN-MH-AMA",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bandra(E)",
+    "geo_id": "IN-MH-BAN",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Beed",
+    "geo_id": "IN-MH-BEE",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhandara",
+    "geo_id": "IN-MH-BHA",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Buldhana",
+    "geo_id": "IN-MH-BUL",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chandrapur",
+    "geo_id": "IN-MH-CHA",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chattrapati Sambhajinagar",
+    "geo_id": "IN-MH-CHA1",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dharashiv",
+    "geo_id": "IN-MH-DHA",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dhule",
+    "geo_id": "IN-MH-DHU",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gadchiroli",
+    "geo_id": "IN-MH-GAD",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gondiya",
+    "geo_id": "IN-MH-GON",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hingoli",
+    "geo_id": "IN-MH-HIN",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jalgaon",
+    "geo_id": "IN-MH-JAL",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jalna",
+    "geo_id": "IN-MH-JAL1",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kolhapur",
+    "geo_id": "IN-MH-KOL",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Latur",
+    "geo_id": "IN-MH-LAT",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mumbai",
+    "geo_id": "IN-MH-MUM",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Murum",
+    "geo_id": "IN-MH-MUR",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nagpur",
+    "geo_id": "IN-MH-NAG",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nanded",
+    "geo_id": "IN-MH-NAN",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nandurbar",
+    "geo_id": "IN-MH-NAN1",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nashik",
+    "geo_id": "IN-MH-NAS",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Osmanabad",
+    "geo_id": "IN-MH-OSM",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Palghar",
+    "geo_id": "IN-MH-PAL",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Parbhani",
+    "geo_id": "IN-MH-PAR",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pune",
+    "geo_id": "IN-MH-PUN",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Raigad",
+    "geo_id": "IN-MH-RAI",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ratnagiri",
+    "geo_id": "IN-MH-RAT",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sangli",
+    "geo_id": "IN-MH-SAN",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Satara",
+    "geo_id": "IN-MH-SAT",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sindhudurg",
+    "geo_id": "IN-MH-SIN",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Solapur",
+    "geo_id": "IN-MH-SOL",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Thane",
+    "geo_id": "IN-MH-THA",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Wardha",
+    "geo_id": "IN-MH-WAR",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Washim",
+    "geo_id": "IN-MH-WAS",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Yavatmal",
+    "geo_id": "IN-MH-YAV",
+    "state_name": "Maharashtra",
+    "state_geo_id": "IN-MH",
+    "zone": "West Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bishnupur",
+    "geo_id": "IN-MN-BIS",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chandel",
+    "geo_id": "IN-MN-CHA",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Churachandpur",
+    "geo_id": "IN-MN-CHU",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Imphal East",
+    "geo_id": "IN-MN-IMP",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Imphal West",
+    "geo_id": "IN-MN-IMP1",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kakching",
+    "geo_id": "IN-MN-KAK",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Senapati",
+    "geo_id": "IN-MN-SEN",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tamenglong",
+    "geo_id": "IN-MN-TAM",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tengnoupal",
+    "geo_id": "IN-MN-TEN",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Thoubal",
+    "geo_id": "IN-MN-THO",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ukhrul",
+    "geo_id": "IN-MN-UKH",
+    "state_name": "Manipur",
+    "state_geo_id": "IN-MN",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "East Garo Hills",
+    "geo_id": "IN-ML-EAS",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "East Jaintia Hills",
+    "geo_id": "IN-ML-EAS1",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "East Khasi Hills",
+    "geo_id": "IN-ML-EAS2",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nongpoh (R-Bhoi)",
+    "geo_id": "IN-ML-NON",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "North Garo Hills",
+    "geo_id": "IN-ML-NOR",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "South Garo Hills",
+    "geo_id": "IN-ML-SOU",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "South West Garo Hills",
+    "geo_id": "IN-ML-SOU1",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "South West Khasi Hills",
+    "geo_id": "IN-ML-SOU2",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West Garo Hills",
+    "geo_id": "IN-ML-WES",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West Jaintia Hills",
+    "geo_id": "IN-ML-WES1",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West Khasi Hills",
+    "geo_id": "IN-ML-WES2",
+    "state_name": "Meghalaya",
+    "state_geo_id": "IN-ML",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Aizawl",
+    "geo_id": "IN-MZ-AIZ",
+    "state_name": "Mizoram",
+    "state_geo_id": "IN-MZ",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kolasib",
+    "geo_id": "IN-MZ-KOL",
+    "state_name": "Mizoram",
+    "state_geo_id": "IN-MZ",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lungli",
+    "geo_id": "IN-MZ-LUN",
+    "state_name": "Mizoram",
+    "state_geo_id": "IN-MZ",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mamit",
+    "geo_id": "IN-MZ-MAM",
+    "state_name": "Mizoram",
+    "state_geo_id": "IN-MZ",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Saiha",
+    "geo_id": "IN-MZ-SAI",
+    "state_name": "Mizoram",
+    "state_geo_id": "IN-MZ",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dimapur",
+    "geo_id": "IN-NL-DIM",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kiphire",
+    "geo_id": "IN-NL-KIP",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kohima",
+    "geo_id": "IN-NL-KOH",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Longleng",
+    "geo_id": "IN-NL-LON",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mokokchung",
+    "geo_id": "IN-NL-MOK",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mon",
+    "geo_id": "IN-NL-MON",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Peren",
+    "geo_id": "IN-NL-PER",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Phek",
+    "geo_id": "IN-NL-PHE",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tsemenyu",
+    "geo_id": "IN-NL-TSE",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tuensang",
+    "geo_id": "IN-NL-TUE",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Wokha",
+    "geo_id": "IN-NL-WOK",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Zunheboto",
+    "geo_id": "IN-NL-ZUN",
+    "state_name": "Nagaland",
+    "state_geo_id": "IN-NL",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Angul",
+    "geo_id": "IN-OD-ANG",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Balasore",
+    "geo_id": "IN-OD-BAL",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bargarh",
+    "geo_id": "IN-OD-BAR",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Berhampur",
+    "geo_id": "IN-OD-BER",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhadrak",
+    "geo_id": "IN-OD-BHA",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhubaneswar",
+    "geo_id": "IN-OD-BHU",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bolangir",
+    "geo_id": "IN-OD-BOL",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Boudh",
+    "geo_id": "IN-OD-BOU",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Cuttack",
+    "geo_id": "IN-OD-CUT",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Deogarh",
+    "geo_id": "IN-OD-DEO",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dhenkanal",
+    "geo_id": "IN-OD-DHE",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gajapati",
+    "geo_id": "IN-OD-GAJ",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ganjam",
+    "geo_id": "IN-OD-GAN",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jagatsinghpur",
+    "geo_id": "IN-OD-JAG",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jajpur",
+    "geo_id": "IN-OD-JAJ",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jharsuguda",
+    "geo_id": "IN-OD-JHA",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kalahandi",
+    "geo_id": "IN-OD-KAL",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kandhamal",
+    "geo_id": "IN-OD-KAN",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kendrapara",
+    "geo_id": "IN-OD-KEN",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Keonjhar",
+    "geo_id": "IN-OD-KEO",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Khurda",
+    "geo_id": "IN-OD-KHU",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Koraput",
+    "geo_id": "IN-OD-KOR",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Malkangiri",
+    "geo_id": "IN-OD-MAL",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mayurbhanja",
+    "geo_id": "IN-OD-MAY",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nayagarh",
+    "geo_id": "IN-OD-NAY",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nowarangpur",
+    "geo_id": "IN-OD-NOW",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nuapada",
+    "geo_id": "IN-OD-NUA",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Puri",
+    "geo_id": "IN-OD-PUR",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rayagada",
+    "geo_id": "IN-OD-RAY",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rourkela",
+    "geo_id": "IN-OD-ROU",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sambalpur",
+    "geo_id": "IN-OD-SAM",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sonepur",
+    "geo_id": "IN-OD-SON",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sundergarh",
+    "geo_id": "IN-OD-SUN",
+    "state_name": "Odisha",
+    "state_geo_id": "IN-OD",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Karaikal",
+    "geo_id": "IN-PY-KAR",
+    "state_name": "Puducherry",
+    "state_geo_id": "IN-PY",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mahe",
+    "geo_id": "IN-PY-MAH",
+    "state_name": "Puducherry",
+    "state_geo_id": "IN-PY",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pondicherry",
+    "geo_id": "IN-PY-PON",
+    "state_name": "Puducherry",
+    "state_geo_id": "IN-PY",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Yanam",
+    "geo_id": "IN-PY-YAN",
+    "state_name": "Puducherry",
+    "state_geo_id": "IN-PY",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Amritsar",
+    "geo_id": "IN-PB-AMR",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Barnala",
+    "geo_id": "IN-PB-BAR",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhatinda",
+    "geo_id": "IN-PB-BHA",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Faridkot",
+    "geo_id": "IN-PB-FAR",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Fatehgarh",
+    "geo_id": "IN-PB-FAT",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Fazilka",
+    "geo_id": "IN-PB-FAZ",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ferozpur",
+    "geo_id": "IN-PB-FER",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gurdaspur",
+    "geo_id": "IN-PB-GUR",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hoshiarpur",
+    "geo_id": "IN-PB-HOS",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jalandhar",
+    "geo_id": "IN-PB-JAL",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kapurthala",
+    "geo_id": "IN-PB-KAP",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ludhiana",
+    "geo_id": "IN-PB-LUD",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mansa",
+    "geo_id": "IN-PB-MAN",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Moga",
+    "geo_id": "IN-PB-MOG",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mohali",
+    "geo_id": "IN-PB-MOH",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Muktsar",
+    "geo_id": "IN-PB-MUK",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nawanshahr",
+    "geo_id": "IN-PB-NAW",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pathankot",
+    "geo_id": "IN-PB-PAT",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Patiala",
+    "geo_id": "IN-PB-PAT1",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ropar (Rupnagar)",
+    "geo_id": "IN-PB-ROP",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sangrur",
+    "geo_id": "IN-PB-SAN",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tarntaran",
+    "geo_id": "IN-PB-TAR",
+    "state_name": "Punjab",
+    "state_geo_id": "IN-PB",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ajmer",
+    "geo_id": "IN-RJ-AJM",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Alwar",
+    "geo_id": "IN-RJ-ALW",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Anupgarh",
+    "geo_id": "IN-RJ-ANU",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Balotra",
+    "geo_id": "IN-RJ-BAL",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Banswara",
+    "geo_id": "IN-RJ-BAN",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Baran",
+    "geo_id": "IN-RJ-BAR",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Barmer",
+    "geo_id": "IN-RJ-BAR1",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Beawar",
+    "geo_id": "IN-RJ-BEA",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bharatpur",
+    "geo_id": "IN-RJ-BHA",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhilwara",
+    "geo_id": "IN-RJ-BHI",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bikaner",
+    "geo_id": "IN-RJ-BIK",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bundi",
+    "geo_id": "IN-RJ-BUN",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chittorgarh",
+    "geo_id": "IN-RJ-CHI",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Churu",
+    "geo_id": "IN-RJ-CHU",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dausa",
+    "geo_id": "IN-RJ-DAU",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Deedwana Kuchaman",
+    "geo_id": "IN-RJ-DEE",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Deeg",
+    "geo_id": "IN-RJ-DEE1",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dholpur",
+    "geo_id": "IN-RJ-DHO",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dudu",
+    "geo_id": "IN-RJ-DUD",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dungarpur",
+    "geo_id": "IN-RJ-DUN",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ganganagar",
+    "geo_id": "IN-RJ-GAN",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gangapur City",
+    "geo_id": "IN-RJ-GAN1",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hanumangarh",
+    "geo_id": "IN-RJ-HAN",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jaipur",
+    "geo_id": "IN-RJ-JAI",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jaipur Rural",
+    "geo_id": "IN-RJ-JAI1",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jaisalmer",
+    "geo_id": "IN-RJ-JAI2",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jalore",
+    "geo_id": "IN-RJ-JAL",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jhafarapatan",
+    "geo_id": "IN-RJ-JHA",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jhalawar",
+    "geo_id": "IN-RJ-JHA1",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jhunjhunu",
+    "geo_id": "IN-RJ-JHU",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jodhpur",
+    "geo_id": "IN-RJ-JOD",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jodhpur Rural",
+    "geo_id": "IN-RJ-JOD1",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Karauli",
+    "geo_id": "IN-RJ-KAR",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kekri",
+    "geo_id": "IN-RJ-KEK",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Khairthal Tijara",
+    "geo_id": "IN-RJ-KHA",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kota",
+    "geo_id": "IN-RJ-KOT",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kotputli- Behror",
+    "geo_id": "IN-RJ-KOT1",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nagaur",
+    "geo_id": "IN-RJ-NAG",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Neem Ka Thana",
+    "geo_id": "IN-RJ-NEE",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pali",
+    "geo_id": "IN-RJ-PAL",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Phalodi",
+    "geo_id": "IN-RJ-PHA",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pratapgarh",
+    "geo_id": "IN-RJ-PRA",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rajsamand",
+    "geo_id": "IN-RJ-RAJ",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sanchore",
+    "geo_id": "IN-RJ-SAN",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shahpura",
+    "geo_id": "IN-RJ-SHA",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sikar",
+    "geo_id": "IN-RJ-SIK",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sirohi",
+    "geo_id": "IN-RJ-SIR",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Swai Madhopur",
+    "geo_id": "IN-RJ-SWA",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tonk",
+    "geo_id": "IN-RJ-TON",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Udaipur",
+    "geo_id": "IN-RJ-UDA",
+    "state_name": "Rajasthan",
+    "state_geo_id": "IN-RJ",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "East",
+    "geo_id": "IN-SK-EAS",
+    "state_name": "Sikkim",
+    "state_geo_id": "IN-SK",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "North Sikkim (Mangan)",
+    "geo_id": "IN-SK-NOR",
+    "state_name": "Sikkim",
+    "state_geo_id": "IN-SK",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "South Sikkim (Namchi)",
+    "geo_id": "IN-SK-SOU",
+    "state_name": "Sikkim",
+    "state_geo_id": "IN-SK",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West Sikkim (Gyalsing)",
+    "geo_id": "IN-SK-WES",
+    "state_name": "Sikkim",
+    "state_geo_id": "IN-SK",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ariyalur",
+    "geo_id": "IN-TN-ARI",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Cauvery Delta Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chengalpattu",
+    "geo_id": "IN-TN-CGL",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chennai",
+    "geo_id": "IN-TN-CHE",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Coimbatore",
+    "geo_id": "IN-TN-COI",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Western Zone"
+  },
+  {
+    "type": "district",
+    "name": "Cuddalore",
+    "geo_id": "IN-TN-CUD",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dharmapuri",
+    "geo_id": "IN-TN-DHA",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Western Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dindigul",
+    "geo_id": "IN-TN-DIN",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Erode",
+    "geo_id": "IN-TN-ERO",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Western Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kallakurichi",
+    "geo_id": "IN-TN-KAL",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kancheepuram",
+    "geo_id": "IN-TN-KAN",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kanniyakumari",
+    "geo_id": "IN-TN-KKI",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "High Rainfall Zone"
+  },
+  {
+    "type": "district",
+    "name": "Karur",
+    "geo_id": "IN-TN-KAR",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Western Zone"
+  },
+  {
+    "type": "district",
+    "name": "Krishnagiri",
+    "geo_id": "IN-TN-KRI",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Western Zone"
+  },
+  {
+    "type": "district",
+    "name": "Madurai",
+    "geo_id": "IN-TN-MAD",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mayiladuthurai",
+    "geo_id": "IN-TN-MAY",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Cauvery Delta Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nagapattinam",
+    "geo_id": "IN-TN-NAG",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Cauvery Delta Zone"
+  },
+  {
+    "type": "district",
+    "name": "Namakkal",
+    "geo_id": "IN-TN-NAM",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Western Zone"
+  },
+  {
+    "type": "district",
+    "name": "Perambalur",
+    "geo_id": "IN-TN-PER",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Cauvery Delta Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pudukkottai",
+    "geo_id": "IN-TN-PUD",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ramanathapuram",
+    "geo_id": "IN-TN-RAM",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ranipet",
+    "geo_id": "IN-TN-RAN",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Salem",
+    "geo_id": "IN-TN-SAL",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Western Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sivaganga",
+    "geo_id": "IN-TN-SIV",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tenkasi",
+    "geo_id": "IN-TN-TEN",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Thanjavur",
+    "geo_id": "IN-TN-THA",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Cauvery Delta Zone"
+  },
+  {
+    "type": "district",
+    "name": "The Nilgiris",
+    "geo_id": "IN-TN-NIL",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Hilly Zone"
+  },
+  {
+    "type": "district",
+    "name": "Theni",
+    "geo_id": "IN-TN-THN",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Thiruvarur",
+    "geo_id": "IN-TN-TUR",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Cauvery Delta Zone"
+  },
+  {
+    "type": "district",
+    "name": "Thoothukudi",
+    "geo_id": "IN-TN-TVR",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tiruchirappalli",
+    "geo_id": "IN-TN-TRI",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Cauvery Delta Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tirunelveli",
+    "geo_id": "IN-TN-TNE",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tirupattur",
+    "geo_id": "IN-TN-TPT",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tiruppur",
+    "geo_id": "IN-TN-TPR",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Western Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tiruvallur",
+    "geo_id": "IN-TN-TVL",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tiruvannamalai",
+    "geo_id": "IN-TN-TVM",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Vellore",
+    "geo_id": "IN-TN-VEL",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Villupuram",
+    "geo_id": "IN-TN-VIL",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "North Eastern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Virudhunagar",
+    "geo_id": "IN-TN-VIR",
+    "state_name": "Tamil Nadu",
+    "state_geo_id": "IN-TN",
+    "zone": "Southern Zone"
+  },
+  {
+    "type": "district",
+    "name": "Adilabad",
+    "geo_id": "IN-TG-ADI",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Asifabad",
+    "geo_id": "IN-TG-ASI",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhadradri Kothagudem",
+    "geo_id": "IN-TG-BHA",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhupalapally",
+    "geo_id": "IN-TG-BHU",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hanumakonda",
+    "geo_id": "IN-TG-HAN",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hyderabad",
+    "geo_id": "IN-TG-HYD",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jagtial",
+    "geo_id": "IN-TG-JAG",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jangaon",
+    "geo_id": "IN-TG-JAN",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jogulamba Gadwal",
+    "geo_id": "IN-TG-JOG",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kamareddy",
+    "geo_id": "IN-TG-KAM",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Karimnagar",
+    "geo_id": "IN-TG-KAR",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Khammam",
+    "geo_id": "IN-TG-KHA",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mahabubabad",
+    "geo_id": "IN-TG-MAH",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mahbubnagar",
+    "geo_id": "IN-TG-MAH1",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mancherial",
+    "geo_id": "IN-TG-MAN",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Medak",
+    "geo_id": "IN-TG-MED",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Medchal Malkajgiri",
+    "geo_id": "IN-TG-MED1",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mulugu",
+    "geo_id": "IN-TG-MUL",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nagarkurnool",
+    "geo_id": "IN-TG-NAG",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nalgonda",
+    "geo_id": "IN-TG-NAL",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Narayanpet",
+    "geo_id": "IN-TG-NAR",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nirmal",
+    "geo_id": "IN-TG-NIR",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nizamabad",
+    "geo_id": "IN-TG-NIZ",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Peddapalli",
+    "geo_id": "IN-TG-PED",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rajanna Siricilla",
+    "geo_id": "IN-TG-RAJ",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ranga Reddy",
+    "geo_id": "IN-TG-RAN",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sangareddy",
+    "geo_id": "IN-TG-SAN",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Siddipet",
+    "geo_id": "IN-TG-SID",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Suryapet",
+    "geo_id": "IN-TG-SUR",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Vikarabad",
+    "geo_id": "IN-TG-VIK",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Wanaparthy",
+    "geo_id": "IN-TG-WAN",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Warangal",
+    "geo_id": "IN-TG-WAR",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Yadadri Bhuvanagiri",
+    "geo_id": "IN-TG-YAD",
+    "state_name": "Telangana",
+    "state_geo_id": "IN-TG",
+    "zone": "South Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dhalai",
+    "geo_id": "IN-TR-DHA",
+    "state_name": "Tripura",
+    "state_geo_id": "IN-TR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gomati",
+    "geo_id": "IN-TR-GOM",
+    "state_name": "Tripura",
+    "state_geo_id": "IN-TR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Khowai",
+    "geo_id": "IN-TR-KHO",
+    "state_name": "Tripura",
+    "state_geo_id": "IN-TR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "North Tripura",
+    "geo_id": "IN-TR-NOR",
+    "state_name": "Tripura",
+    "state_geo_id": "IN-TR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sepahijala",
+    "geo_id": "IN-TR-SEP",
+    "state_name": "Tripura",
+    "state_geo_id": "IN-TR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "South Tripura",
+    "geo_id": "IN-TR-SOU",
+    "state_name": "Tripura",
+    "state_geo_id": "IN-TR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Unokoti",
+    "geo_id": "IN-TR-UNO",
+    "state_name": "Tripura",
+    "state_geo_id": "IN-TR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "West District",
+    "geo_id": "IN-TR-WES",
+    "state_name": "Tripura",
+    "state_geo_id": "IN-TR",
+    "zone": "North East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Agra",
+    "geo_id": "IN-UP-AGR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Aligarh",
+    "geo_id": "IN-UP-ALI",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ambedkarnagar",
+    "geo_id": "IN-UP-AMB",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Amethi",
+    "geo_id": "IN-UP-AME",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Amroha",
+    "geo_id": "IN-UP-AMR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Auraiya",
+    "geo_id": "IN-UP-AUR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ayodhya",
+    "geo_id": "IN-UP-AYO",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Azamgarh",
+    "geo_id": "IN-UP-AZA",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Badaun",
+    "geo_id": "IN-UP-BAD",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Baghpat",
+    "geo_id": "IN-UP-BAG",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bahraich",
+    "geo_id": "IN-UP-BAH",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ballia",
+    "geo_id": "IN-UP-BAL",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Balrampur",
+    "geo_id": "IN-UP-BAL1",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Banda",
+    "geo_id": "IN-UP-BAN",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Barabanki",
+    "geo_id": "IN-UP-BAR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bareilly",
+    "geo_id": "IN-UP-BAR1",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Basti",
+    "geo_id": "IN-UP-BAS",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bhadohi(Sant Ravi Nagar)",
+    "geo_id": "IN-UP-BHA",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bijnor",
+    "geo_id": "IN-UP-BIJ",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bulandshahar",
+    "geo_id": "IN-UP-BUL",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chandauli",
+    "geo_id": "IN-UP-CHA",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chitrakut",
+    "geo_id": "IN-UP-CHI",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Deoria",
+    "geo_id": "IN-UP-DEO",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Etah",
+    "geo_id": "IN-UP-ETA",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Etawah",
+    "geo_id": "IN-UP-ETA1",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Farukhabad",
+    "geo_id": "IN-UP-FAR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Fatehpur",
+    "geo_id": "IN-UP-FAT",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Firozabad",
+    "geo_id": "IN-UP-FIR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gautam Budh Nagar",
+    "geo_id": "IN-UP-GAU",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ghaziabad",
+    "geo_id": "IN-UP-GHA",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Ghazipur",
+    "geo_id": "IN-UP-GHA1",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gonda",
+    "geo_id": "IN-UP-GON",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Gorakhpur",
+    "geo_id": "IN-UP-GOR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hamirpur",
+    "geo_id": "IN-UP-HAM",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hardoi",
+    "geo_id": "IN-UP-HAR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hathras",
+    "geo_id": "IN-UP-HAT",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jalaun (Orai)",
+    "geo_id": "IN-UP-JAL",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jaunpur",
+    "geo_id": "IN-UP-JAU",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jhansi",
+    "geo_id": "IN-UP-JHA",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kannuj",
+    "geo_id": "IN-UP-KAN",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kanpur",
+    "geo_id": "IN-UP-KAN1",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kanpur Dehat",
+    "geo_id": "IN-UP-KAN2",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kasganj",
+    "geo_id": "IN-UP-KAS",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kaushambi",
+    "geo_id": "IN-UP-KAU",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Khiri (Lakhimpur)",
+    "geo_id": "IN-UP-KHI",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kushinagar",
+    "geo_id": "IN-UP-KUS",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lakhimpur",
+    "geo_id": "IN-UP-LAK",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lalitpur",
+    "geo_id": "IN-UP-LAL",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Lucknow",
+    "geo_id": "IN-UP-LUC",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Maharajganj",
+    "geo_id": "IN-UP-MAH",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mahoba",
+    "geo_id": "IN-UP-MAH1",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mainpuri",
+    "geo_id": "IN-UP-MAI",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mathura",
+    "geo_id": "IN-UP-MAT",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mau(Maunathbhanjan)",
+    "geo_id": "IN-UP-MAU",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Meerut",
+    "geo_id": "IN-UP-MEE",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Mirzapur",
+    "geo_id": "IN-UP-MIR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Muzaffarnagar",
+    "geo_id": "IN-UP-MUZ",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Oraya",
+    "geo_id": "IN-UP-ORA",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pillibhit",
+    "geo_id": "IN-UP-PIL",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pratapgarh",
+    "geo_id": "IN-UP-PRA",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Prayagraj",
+    "geo_id": "IN-UP-PRA1",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Raebarelli",
+    "geo_id": "IN-UP-RAE",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rampur",
+    "geo_id": "IN-UP-RAM",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Saharanpur",
+    "geo_id": "IN-UP-SAH",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sambhal",
+    "geo_id": "IN-UP-SAM",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sant Kabir Nagar",
+    "geo_id": "IN-UP-SAN",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shahjahanpur",
+    "geo_id": "IN-UP-SHA",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shamli",
+    "geo_id": "IN-UP-SHA1",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Shravasti",
+    "geo_id": "IN-UP-SHR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Siddharth Nagar",
+    "geo_id": "IN-UP-SID",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sitapur",
+    "geo_id": "IN-UP-SIT",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sonbhadra",
+    "geo_id": "IN-UP-SON",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Unnao",
+    "geo_id": "IN-UP-UNN",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Varanasi",
+    "geo_id": "IN-UP-VAR",
+    "state_name": "Uttar Pradesh",
+    "state_geo_id": "IN-UP",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Almora",
+    "geo_id": "IN-UK-ALM",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bageshwar",
+    "geo_id": "IN-UK-BAG",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Chamoli (Gopeshwar)",
+    "geo_id": "IN-UK-CHA",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Champawat",
+    "geo_id": "IN-UK-CHA1",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dehradoon",
+    "geo_id": "IN-UK-DEH",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Garhwal (Pauri)",
+    "geo_id": "IN-UK-GAR",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Haldwani",
+    "geo_id": "IN-UK-HAL",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Haridwar",
+    "geo_id": "IN-UK-HAR",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nanital",
+    "geo_id": "IN-UK-NAN",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Pithoragarh",
+    "geo_id": "IN-UK-PIT",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Rudraprayag",
+    "geo_id": "IN-UK-RUD",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Tehri Garhwal",
+    "geo_id": "IN-UK-TEH",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Udhamsinghnagar",
+    "geo_id": "IN-UK-UDH",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Uttarkashi",
+    "geo_id": "IN-UK-UTT",
+    "state_name": "Uttarakhand",
+    "state_geo_id": "IN-UK",
+    "zone": "North Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Alipurduar",
+    "geo_id": "IN-WB-ALI",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Bankura",
+    "geo_id": "IN-WB-BAN",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Birbhum",
+    "geo_id": "IN-WB-BIR",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Burdwan",
+    "geo_id": "IN-WB-BUR",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Coochbehar",
+    "geo_id": "IN-WB-COO",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Dakshin Dinajpur",
+    "geo_id": "IN-WB-DAK",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Darjeeling",
+    "geo_id": "IN-WB-DAR",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Hooghly",
+    "geo_id": "IN-WB-HOO",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Howrah",
+    "geo_id": "IN-WB-HOW",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jalpaiguri",
+    "geo_id": "IN-WB-JAL",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Jhargram",
+    "geo_id": "IN-WB-JHA",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kalimpong",
+    "geo_id": "IN-WB-KAL",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Kolkata",
+    "geo_id": "IN-WB-KOL",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Malda",
+    "geo_id": "IN-WB-MAL",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Medinipur(E)",
+    "geo_id": "IN-WB-MED",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Medinipur(W)",
+    "geo_id": "IN-WB-MED1",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Murshidabad",
+    "geo_id": "IN-WB-MUR",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Nadia",
+    "geo_id": "IN-WB-NAD",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "North 24 Parganas",
+    "geo_id": "IN-WB-NOR",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Paschim Bardhaman",
+    "geo_id": "IN-WB-PAS",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Purba Bardhaman",
+    "geo_id": "IN-WB-PUR",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Puruliya",
+    "geo_id": "IN-WB-PUR1",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Sounth 24 Parganas",
+    "geo_id": "IN-WB-SOU",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  },
+  {
+    "type": "district",
+    "name": "Uttar Dinajpur",
+    "geo_id": "IN-WB-UTT",
+    "state_name": "West Bengal",
+    "state_geo_id": "IN-WB",
+    "zone": "East Agro-Climatic Zone"
+  }
+]
