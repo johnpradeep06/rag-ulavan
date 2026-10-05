@@ -130,17 +130,18 @@ export default function ChatInterface({ onActiveConversationChange }: ChatInterf
 
     // Localized suggestions and placeholders
     const suggestedQueries = useMemo(() => [
-        { text: t("chat.suggestions.dripIrrigationQuery"), icon: Droplets, label: t("chat.suggestions.dripIrrigation"), color: "text-emerald-400" },
-        { text: t("chat.suggestions.paddyBlastQuery"), icon: Bug, label: t("chat.suggestions.paddyBlast"), color: "text-amber-400" },
-        { text: t("chat.suggestions.tomatoLeafCurlQuery"), icon: Sprout, label: t("chat.suggestions.tomatoLeafCurl"), color: "text-teal-400" },
-        { text: t("chat.suggestions.cottonFertilizerQuery"), icon: FlaskConical, label: t("chat.suggestions.cottonFertilizer"), color: "text-emerald-400" },
+        { text: t("chat.suggestions.riceBlastQuery"), icon: Bug, label: t("chat.suggestions.riceBlast"), color: "text-amber-400" },
+        { text: t("chat.suggestions.sugarcaneShootBorerQuery"), icon: Droplets, label: t("chat.suggestions.sugarcaneShootBorer"), color: "text-emerald-400" },
+        { text: t("chat.suggestions.riceNutrientsQuery"), icon: FlaskConical, label: t("chat.suggestions.riceNutrients"), color: "text-teal-400" },
+        { text: t("chat.suggestions.bananaSigatokaQuery"), icon: Sprout, label: t("chat.suggestions.bananaSigatoka"), color: "text-emerald-400" },
     ], [t]);
 
     const placeholders = useMemo(() => [
         t("chat.askPlaceholder"),
-        t("chat.suggestions.paddyBlastQuery"),
-        t("chat.suggestions.dripIrrigationQuery"),
-        t("chat.suggestions.tomatoLeafCurlQuery"),
+        t("chat.suggestions.riceBlastQuery"),
+        t("chat.suggestions.sugarcaneShootBorerQuery"),
+        t("chat.suggestions.riceNutrientsQuery"),
+        t("chat.suggestions.bananaSigatokaQuery"),
     ], [t]);
 
     const [currentPlaceholder, setCurrentPlaceholder] = useState("");
